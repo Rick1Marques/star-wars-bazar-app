@@ -19,7 +19,7 @@ export const starships = [
     passengers: "n/a",
     cargo_capacity: "36000000",
     starship_class: "Star Destroyer",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/e/e4/ImperialClassStarDestroyer-TSWB.png/revision/latest?cb=20230515235250",
   },
   {
     name: "Sentinel-class landing craft",
@@ -30,7 +30,7 @@ export const starships = [
     passengers: "75",
     cargo_capacity: "180000",
     starship_class: "landing craft",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/6/6e/Sentinel_negvv.png/revision/latest?cb=20170411232732",
   },
   {
     name: "Death Star",
@@ -42,7 +42,7 @@ export const starships = [
     passengers: "843,342",
     cargo_capacity: "1000000000000",
     starship_class: "Deep Space Mobile Battlestation",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/7/70/DSI-HDapproach.png/revision/latest?cb=20130221005853",
   },
   {
     name: "Millennium Falcon",
@@ -53,7 +53,7 @@ export const starships = [
     passengers: "6",
     cargo_capacity: "100000",
     starship_class: "Light freighter",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/5/52/Millennium_Falcon_Fathead_TROS.png/revision/latest?cb=20221029015218",
   },
   {
     name: "Y-wing",
@@ -64,7 +64,7 @@ export const starships = [
     passengers: "0",
     cargo_capacity: "110",
     starship_class: "assault starfighter",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/8/81/Y-wing.png/revision/latest?cb=20161110013308",
   },
   {
     name: "X-wing",
@@ -75,7 +75,7 @@ export const starships = [
     passengers: "0",
     cargo_capacity: "110",
     starship_class: "Starfighter",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/0/00/Xwing-ROOCE.png/revision/latest?cb=20230516042654",
   },
   {
     name: "TIE Advanced x1",
@@ -86,7 +86,7 @@ export const starships = [
     passengers: "0",
     cargo_capacity: "150",
     starship_class: "Starfighter",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/1/1d/Vader_TIEAdvanced_SWB.png/revision/latest?cb=20160915042032",
   },
   {
     name: "Executor",
@@ -97,7 +97,7 @@ export const starships = [
     passengers: "38000",
     cargo_capacity: "250000000",
     starship_class: "Star dreadnought",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/3/30/Executor_BF2.png/revision/latest?cb=20230405071103",
   },
   {
     name: "Rebel transport",
@@ -108,7 +108,7 @@ export const starships = [
     passengers: "90",
     cargo_capacity: "19000000",
     starship_class: "Medium transport",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/4/44/GR-75MediumTransport-100Scenes.png/revision/latest?cb=20221105213502",
   },
   {
     name: "Slave 1",
@@ -119,7 +119,7 @@ export const starships = [
     passengers: "6",
     cargo_capacity: "70000",
     starship_class: "Patrol craft",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/b/ba/Slave_I_DICE.png/revision/latest?cb=20230723041624",
   },
   {
     name: "Imperial shuttle",
@@ -130,7 +130,7 @@ export const starships = [
     passengers: "20",
     cargo_capacity: "80000",
     starship_class: "Armed government transport",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/6/6d/LambdaShuttle-Fathead.png/revision/latest?cb=20230802043430",
   },
   {
     name: "EF76 Nebulon-B escort frigate",
@@ -141,7 +141,7 @@ export const starships = [
     passengers: "75",
     cargo_capacity: "6000000",
     starship_class: "Escort ship",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/7/71/NebulonB-SWS.png/revision/latest?cb=20210303023412",
   },
   {
     name: "Calamari Cruiser",
@@ -152,7 +152,7 @@ export const starships = [
     passengers: "1200",
     cargo_capacity: "unknown",
     starship_class: "Star Cruiser",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/7/73/MonCalamariCruiser-TSWB.png/revision/latest?cb=20201021040315",
   },
   {
     name: "A-wing",
@@ -163,7 +163,7 @@ export const starships = [
     passengers: "0",
     cargo_capacity: "40",
     starship_class: "Starfighter",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/8/8d/A-wing_DICE.png/revision/latest?cb=20161021230115",
   },
   {
     name: "B-wing",
@@ -174,7 +174,7 @@ export const starships = [
     passengers: "0",
     cargo_capacity: "45",
     starship_class: "Assault Starfighter",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/9/9f/B-wing-Squadronds.png/revision/latest?cb=20210722003428",
   },
   {
     name: "Republic Cruiser",
@@ -185,7 +185,7 @@ export const starships = [
     passengers: "16",
     cargo_capacity: "unknown",
     starship_class: "Space cruiser",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/5/5f/Republic_Cruiser.png/revision/latest?cb=20230311200333",
   },
   {
     name: "Droid control ship",
@@ -196,7 +196,7 @@ export const starships = [
     passengers: "139000",
     cargo_capacity: "4000000000",
     starship_class: "Droid control ship",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/9/95/Lucrehulk_battleship_TCW.jpg/revision/latest?cb=20090311015214",
   },
   {
     name: "Naboo fighter",
@@ -207,7 +207,7 @@ export const starships = [
     passengers: "0",
     cargo_capacity: "65",
     starship_class: "Starfighter",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/4/4f/DinDjarinN1-BHUSC.png/revision/latest?cb=20221205013955",
   },
   {
     name: "Naboo Royal Starship",
@@ -219,7 +219,7 @@ export const starships = [
     passengers: "unknown",
     cargo_capacity: "unknown",
     starship_class: "yacht",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/8/88/Nabooroyal-NEGVV.png/revision/latest?cb=20170411041529",
   },
   {
     name: "Scimitar",
@@ -230,7 +230,7 @@ export const starships = [
     passengers: "6",
     cargo_capacity: "2500000",
     starship_class: "Space Transport",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/1/1c/Scimitar-USC.png/revision/latest?cb=20190604143506",
   },
   {
     name: "J-type diplomatic barge",
@@ -242,7 +242,7 @@ export const starships = [
     passengers: "10",
     cargo_capacity: "unknown",
     starship_class: "Diplomatic barge",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/2/2b/Royalcruiser.jpg/revision/latest?cb=20091201140703",
   },
   {
     name: "AA-9 Coruscant freighter",
@@ -253,7 +253,7 @@ export const starships = [
     passengers: "30000",
     cargo_capacity: "unknown",
     starship_class: "freighter",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/c/c7/Aa9coruscantfreighter.jpg/revision/latest?cb=20091201131352",
   },
   {
     name: "Jedi starfighter",
@@ -264,7 +264,7 @@ export const starships = [
     passengers: "0",
     cargo_capacity: "60",
     starship_class: "Starfighter",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/2/28/Delta-7_Interceptor_SoR.png/revision/latest?cb=20180805054640",
   },
   {
     name: "H-type Nubian yacht",
@@ -275,7 +275,7 @@ export const starships = [
     passengers: "unknown",
     cargo_capacity: "unknown",
     starship_class: "yacht",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/8/87/H-Type_Nubian_yacht_USW.png/revision/latest?cb=20230709053810",
   },
   {
     name: "Republic Assault ship",
@@ -286,7 +286,7 @@ export const starships = [
     passengers: "16000",
     cargo_capacity: "11250000",
     starship_class: "assault ship",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/7/70/Acclamator-TCWIV.png/revision/latest?cb=20221105061503",
   },
   {
     name: "Solar Sailer",
@@ -297,7 +297,7 @@ export const starships = [
     passengers: "11",
     cargo_capacity: "240",
     starship_class: "yacht",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/1/10/CountDookusSolarSailer-WotF.png/revision/latest?cb=20200518063614",
   },
   {
     name: "Trade Federation cruiser",
@@ -308,7 +308,7 @@ export const starships = [
     passengers: "48247",
     cargo_capacity: "50000000",
     starship_class: "capital ship",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/battlefront/images/1/17/Providence-Class.png/revision/latest?cb=20110910180110",
   },
   {
     name: "Theta-class T-2c shuttle",
@@ -319,7 +319,7 @@ export const starships = [
     passengers: "16",
     cargo_capacity: "50000",
     starship_class: "transport",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/7/71/Theta.jpg/revision/latest?cb=20060405185857",
   },
   {
     name: "Republic attack cruiser",
@@ -330,7 +330,7 @@ export const starships = [
     passengers: "2000",
     cargo_capacity: "20000000",
     starship_class: "star destroyer",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/e/ec/Venator_clonewars.jpg/revision/latest?cb=20110918171254",
   },
   {
     name: "Naboo star skiff",
@@ -342,7 +342,7 @@ export const starships = [
     passengers: "3",
     cargo_capacity: "unknown",
     starship_class: "yacht",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/1/1f/Nabooskiff-SWCTP.png/revision/latest?cb=20221031044447",
   },
   {
     name: "Jedi Interceptor",
@@ -353,7 +353,7 @@ export const starships = [
     passengers: "0",
     cargo_capacity: "60",
     starship_class: "starfighter",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/0/04/Eta-2JediInterceptor-USC.png/revision/latest?cb=20190604144353",
   },
   {
     name: "arc-170",
@@ -364,7 +364,7 @@ export const starships = [
     passengers: "0",
     cargo_capacity: "110",
     starship_class: "starfighter",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/thelastofthedroids/images/0/02/ARC170.png/revision/latest?cb=20180802180836",
   },
   {
     name: "Banking clan frigte",
@@ -375,7 +375,7 @@ export const starships = [
     passengers: "unknown",
     cargo_capacity: "40000000",
     starship_class: "cruiser",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/0/07/Munificent_TCW.jpg/revision/latest?cb=20090311013715",
   },
   {
     name: "Belbullab-22 starfighter",
@@ -386,7 +386,7 @@ export const starships = [
     passengers: "0",
     cargo_capacity: "140",
     starship_class: "starfighter",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/8/8c/SoullessOne-TCWIV.png/revision/latest?cb=20221105045811",
   },
   {
     name: "V-wing",
@@ -397,6 +397,6 @@ export const starships = [
     passengers: "0",
     cargo_capacity: "60",
     starship_class: "starfighter",
-    img: "https://static.wikia.nocookie.net/starwars/images/2/24/TantiveIV-TSWB.png/revision/latest?cb=20221006055135",
+    img: "https://static.wikia.nocookie.net/starwars/images/a/a9/V-wing_BF2.png/revision/latest?cb=20170825000555",
   },
 ];

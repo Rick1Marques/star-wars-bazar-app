@@ -8,6 +8,11 @@ export default function StarshipList() {
     return "Loading...";
   }
   console.log(starships);
-  return;
-  <></>;
+  return (
+    <>
+      {starships.map((starship) => (
+        <StarshipCard key={starship._id} {...starship} />
+      ))}
+    </>
+  );
 }
