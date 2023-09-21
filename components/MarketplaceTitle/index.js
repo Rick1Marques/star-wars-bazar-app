@@ -6,9 +6,5 @@ const StyledMarketplaceTitle = styled.h2`
   margin-left: 20px;
 `;
 export default function MarketplaceTitle() {
-  return (
-    <>
-      <StyledMarketplaceTitle>Marketplace</StyledMarketplaceTitle>
-    </>
-  );
+  return <StyledMarketplaceTitle>Marketplace</StyledMarketplaceTitle>;
 }

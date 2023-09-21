@@ -6,9 +6,9 @@ import StarshipCard from "../StarshipCard";
 export default function StarshipList() {
   const { data: starships, isLoading } = useSWR("/api/starships/");
   if (!starships || isLoading) {
-    return "Loading...";
+    return <h1>Loading...</h1>;
   }
-  // console.log(starships);
+
   return (
     <Flex gap="26px" flexWrap="wrap" justifyContent="center">
       {starships.map((starship) => (

@@ -8,17 +8,4 @@ export default async function handler(request, response) {
     response.status(200).json(starships);
     return;
   }
-
-  //   if (request.method === "POST") {
-  //     try {
-  //       const starship = await Starship.create(request.body);
-  //       response.status(201).json(starship);
-  //     } catch (error) {
-  //       console.log("POST /api/starships", error);
-  //       response.status(500).json({ message: "Error creating starship" });
-  //     }
-  //     return;
-  //   }
-
-  //   response.status(405).json({ message: "Method not allowed" });
 }

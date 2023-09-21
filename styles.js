@@ -1,7 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-// import { Blinker } from "next/font/google";
-
-// const blinker = Blinker({ subset: ["latin"] });
 
 export default createGlobalStyle`
   *,
@@ -31,13 +28,6 @@ background: var(--primary-color);
 
 
 `;
-
-// #__next {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 1rem;
-//   min-height: 100vh;
-// }
 
 export const colors = {
   defaultDark: "var(--primary-color)",

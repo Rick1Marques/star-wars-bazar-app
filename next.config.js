@@ -17,6 +17,5 @@ const nextConfig = {
     domains: ["static.wikia.nocookie.net"],
   },
 };
-// https://static.wikia.nocookie.net/starwars/images
 
 module.exports = nextConfig;
