@@ -1,4 +1,5 @@
 import useSWR from "swr";
+import Flex from "../Layout/Flex";
 
 import StarshipCard from "../StarshipCard";
 
@@ -7,12 +8,12 @@ export default function StarshipList() {
   if (!starships || isLoading) {
     return "Loading...";
   }
-  console.log(starships);
+  // console.log(starships);
   return (
-    <>
+    <Flex gap="26px" flexWrap="wrap" justifyContent="center">
       {starships.map((starship) => (
         <StarshipCard key={starship._id} {...starship} />
       ))}
-    </>
+    </Flex>
   );
 }

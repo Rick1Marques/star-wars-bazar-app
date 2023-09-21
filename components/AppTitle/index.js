@@ -1,7 +1,15 @@
+import styled from "styled-components";
+
+const StyledAppTitle = styled.h1`
+  color: var(--primary-title-color);
+  font-size: 2rem;
+  text-align: center;
+`;
+
 export default function AppTitle() {
   return (
     <>
-      <h1>Star Wars Bazar</h1>
+      <StyledAppTitle>Star Wars Bazar</StyledAppTitle>
     </>
   );
 }

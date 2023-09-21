@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import { Blinker } from "next/font/google";
+// import { Blinker } from "next/font/google";
 
-const blinker = Blinker({ subset: ["latin"] });
+// const blinker = Blinker({ subset: ["latin"] });
 
 export default createGlobalStyle`
   *,
@@ -14,13 +14,13 @@ export default createGlobalStyle`
     --primary-color: #1F2326;
     --secondary-color: #F3F3F3;
     --button-color: #363434;
-    --primary-title-color: linear-gradient(90deg, rgba(143	238	204) 0%, rgba(215, 218, 53, 0.65) 100%);
-    --secondary-title-color: #8FEECC;
+    --primary-title-color: #FFE81F;
+    --secondary-title-color: #FFE81F;
   }
 
 
   html {
-    font-family: var(--font-blinker);
+    font-family: Arial, sans-serif;
     font-size: 16px;
   }
 

@@ -9,11 +9,12 @@ const StyledImage = styled.div`
 
 const StyledParagraph = styled.p`
   color: var(--secondary-color);
+  display: inline-block;
 `;
 
 export default function StarshipCard({ _id, name, img }) {
   return (
-    <Flex direction="column">
+    <Flex height="200px" width="160px" direction="column">
       <StyledImage>
         <Image src={img} alt={name} height={160} width={160} />
       </StyledImage>
