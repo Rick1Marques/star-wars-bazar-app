@@ -13,6 +13,9 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    domains: ["static.wikia.nocookie.net"],
+  },
 };
 
 module.exports = nextConfig;
