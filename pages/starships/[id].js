@@ -17,10 +17,21 @@ const StyledDetailPageTitle = styled.h1`
   text-align: center;
 `;
 
-const StyledStarshipImage = styled(Image)`
+const StyledImageWrapper = styled.div`
+  height: 285px;
+  width: 330px;
   border-radius: 11px;
   border: 0.5px solid var(--secondary-color);
   margin-bottom: 2rem;
+  overflow: hidden;
+  position: relative;
+`;
+const StyledStarshipImage = styled(Image)`
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 `;
 
 export default function Starship() {
@@ -51,26 +62,22 @@ export default function Starship() {
 
       <Flex direction="column" padding="1.5rem" alignItems="center">
         <Flex direction="column">
-          <StyledStarshipImage src={img} alt={name} height={285} width={330} />
+          <StyledImageWrapper>
+            <StyledStarshipImage
+              src={img}
+              alt={name}
+              height={0}
+              width={0}
+              layout="responsive"
+            />
+          </StyledImageWrapper>
 
-          <StarshipInfo label="Model:" value={model}></StarshipInfo>
-          <StarshipInfo
-            label="Manufacturer:"
-            value={manufacturer}
-          ></StarshipInfo>
-          <StarshipInfo
-            label="Max. atmosphering speed:"
-            value={max_atmosphering_speed}
-          ></StarshipInfo>
-          <StarshipInfo label="Passengers:" value={passengers}></StarshipInfo>
-          <StarshipInfo
-            label="Cargo capacity:"
-            value={cargo_capacity}
-          ></StarshipInfo>
-          <StarshipInfo
-            label="Starship class:"
-            value={starship_class}
-          ></StarshipInfo>
+          <StarshipInfo label="Model:" value={model} />
+          <StarshipInfo label="Manufacturer:" value={manufacturer} />
+          <StarshipInfo label="Max. speed:" value={max_atmosphering_speed} />
+          <StarshipInfo label="Passengers:" value={passengers} />
+          <StarshipInfo label="Cargo capacity:" value={cargo_capacity} />
+          <StarshipInfo label="Starship class:" value={starship_class} />
         </Flex>
       </Flex>
     </>
