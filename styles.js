@@ -17,8 +17,9 @@ export default createGlobalStyle`
 
 
   html {
-    font-family: Arial, sans-serif;
+    weight: 400;
     font-size: 16px;
+
   }
 
   body {
