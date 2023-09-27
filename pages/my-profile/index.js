@@ -34,7 +34,7 @@ const StyledCredit = styled.h3`
   margin-bottom: 50px;
 `;
 
-export default function Profile() {
+export default function MyProfile() {
   const { data: users, isLoading } = useSWR("/api/users");
   if (!users || isLoading) {
     return <h1>Loading...</h1>;

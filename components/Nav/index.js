@@ -7,13 +7,16 @@ const StyledNav = styled.nav`
   gap: 1rem;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  bottom: 0px;
+  justify-content: space-around;
+  bottom: 15px;
   position: fixed;
   padding: 0 1rem;
   height: 3rem;
-  width: 100%;
-  font-weight: bold;
+  width: 90%;
+  border: 0.5px solid var(--border-color);
+  border-radius: 17px;
+  background-color: var(--bar-color);
+
   a {
     text-decoration: none;
     color: var(--secondary-color);

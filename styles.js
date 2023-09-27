@@ -13,6 +13,8 @@ export default createGlobalStyle`
     --button-color: #363434;
     --primary-title-color: #FFE81F;
     --secondary-title-color: #FFE81F;
+    --bar-color: #313131;
+    --border-color: #baf0e0;
   }
 
 
