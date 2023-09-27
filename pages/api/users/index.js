@@ -1,6 +1,6 @@
 import connect from "@/db/connect";
 import User from "@/db/models/User";
-import Listing from "@/db/models/Listing";
+
 
 export default async function handler(request, response) {
   await connect();
