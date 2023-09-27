@@ -24,6 +24,7 @@ export default createGlobalStyle`
 
   body {
     margin: 0;
+    color: var(--secondary-color);
 background: var(--primary-color);
   }
 
