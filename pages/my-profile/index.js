@@ -1,5 +1,4 @@
 import useSWR from "swr";
-//import Link from "next/link";
 import styled from "styled-components";
 import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
@@ -9,8 +8,8 @@ const StyledUserImage = styled(Image)`
 `;
 
 const StyledUserName = styled.div`
-  width: 260px;
-  height: 40px;
+  width: 16.25rem;
+  height: 2.5rem;
   padding: 7px;
   border-radius: 6px;
   border: 0.5px solid #baf0e0;
@@ -28,7 +27,7 @@ const StyledTitleCredit = styled.h2`
   margin-top: 20px;
 `;
 
-const StyledCredit = styled.h3`
+const StyledCredit = styled.p`
   color: var(--secondary-color);
   font-size: 2rem;
   margin-bottom: 50px;

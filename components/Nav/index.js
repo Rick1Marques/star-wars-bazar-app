@@ -30,7 +30,7 @@ export default function Nav() {
   return (
     <StyledNav>
       <Link href="/marketplace">Marketplace</Link>
-      <Link href="/users-profile">My Profile</Link>
+      <Link href="/my-profile">My Profile</Link>
     </StyledNav>
   );
 }
