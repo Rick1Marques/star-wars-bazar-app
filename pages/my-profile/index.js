@@ -2,6 +2,7 @@ import useSWR from "swr";
 import styled from "styled-components";
 import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
+import Link from "next/link";
 
 const StyledUserImage = styled(Image)`
   border-radius: 50%;
@@ -53,6 +54,7 @@ export default function MyProfile() {
         <StyledTitleCredit>Total amount of Credits:</StyledTitleCredit>
         <StyledCredit>{mainUser.credits}</StyledCredit>
       </Flex>
+      <Link href="./my-selling-list">My selling list</Link>
     </Flex>
   );
 }
