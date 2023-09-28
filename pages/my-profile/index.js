@@ -54,7 +54,7 @@ export default function MyProfile() {
         <StyledTitleCredit>Total amount of Credits:</StyledTitleCredit>
         <StyledCredit>{mainUser.credits}</StyledCredit>
       </Flex>
-      <Link href="./my-selling-list">My selling list</Link>
+      <Link href="./my-profile/my-selling-list">My selling list</Link>
     </Flex>
   );
 }
