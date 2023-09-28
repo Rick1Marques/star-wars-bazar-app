@@ -13,6 +13,8 @@ export default createGlobalStyle`
     --button-color: #363434;
     --primary-title-color: #FFE81F;
     --secondary-title-color: #FFE81F;
+    --bar-color: #313131;
+    --border-color: #baf0e0;
   }
 
 
@@ -24,6 +26,7 @@ export default createGlobalStyle`
 
   body {
     margin: 0;
+    color: var(--secondary-color);
 background: var(--primary-color);
   }
 

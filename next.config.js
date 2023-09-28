@@ -14,7 +14,7 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ["static.wikia.nocookie.net"],
+    domains: ["static.wikia.nocookie.net", "lumiere-a.akamaihd.net","m.media-amazon.com"],
   },
 };
 

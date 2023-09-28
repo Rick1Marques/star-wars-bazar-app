@@ -2,6 +2,7 @@ import GlobalStyle from "../styles";
 import { SWRConfig } from "swr";
 import fetcher from "@/lib/fetcher";
 import { Blinker } from "@next/font/google";
+import MainLayout from "@/components/MainLayout";
 
 const blinker = Blinker({
   subsets: ["latin"],
@@ -14,6 +15,7 @@ export default function App({ Component, pageProps }) {
       <SWRConfig value={{ fetcher }}>
         <GlobalStyle />
         <Component {...pageProps} />
+        <MainLayout />
       </SWRConfig>
     </main>
   );
