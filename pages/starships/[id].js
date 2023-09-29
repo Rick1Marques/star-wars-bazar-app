@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
 import StarshipInfo from "@/components/StarshipInfo";
+import StarshipSellerList from "@/components/StarshipSellersList/StarshipSellerList";
 
 const StyledBackLink = styled(Link)`
   text-decoration: none;
@@ -53,10 +54,11 @@ export default function Starship() {
     cargo_capacity,
     starship_class,
     img,
+    _id,
   } = starship;
 
   return (
-    <>
+    <Flex direction="column" alignItems="center">
       <StyledBackLink href={"/marketplace"}>Back</StyledBackLink>
       <StyledDetailPageTitle>{name}</StyledDetailPageTitle>
 
@@ -80,6 +82,7 @@ export default function Starship() {
           <StarshipInfo label="Starship class:" value={starship_class} />
         </Flex>
       </Flex>
-    </>
+      <StarshipSellerList img={img} name={name} id={_id} />
+    </Flex>
   );
 }
