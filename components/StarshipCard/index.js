@@ -24,17 +24,19 @@ const StyledParagraph = styled.p`
 
 export default function StarshipCard({ _id, name, img }) {
   return (
-    <Flex height="200px" width="160px" direction="column">
-      <StyledImageWrapper>
-        <StyledStarshipImage
-          src={img}
-          alt={name}
-          height={0}
-          width={0}
-          layout="responsive"
-        />
-      </StyledImageWrapper>
-      <StyledParagraph>{name}</StyledParagraph>
-    </Flex>
+    <section>
+      <Flex height="200px" width="160px" direction="column">
+        <StyledImageWrapper>
+          <StyledStarshipImage
+            src={img}
+            alt={name}
+            height={0}
+            width={0}
+            layout="responsive"
+          />
+        </StyledImageWrapper>
+        <StyledParagraph>{name}</StyledParagraph>
+      </Flex>
+    </section>
   );
 }

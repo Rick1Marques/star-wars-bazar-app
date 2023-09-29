@@ -56,7 +56,7 @@ export default function Starship() {
   } = starship;
 
   return (
-    <>
+    <main>
       <StyledBackLink href={"/marketplace"}>Back</StyledBackLink>
       <StyledDetailPageTitle>{name}</StyledDetailPageTitle>
 
@@ -80,6 +80,6 @@ export default function Starship() {
           <StarshipInfo label="Starship class:" value={starship_class} />
         </Flex>
       </Flex>
-    </>
+    </main>
   );
 }
