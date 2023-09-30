@@ -3,8 +3,8 @@ import styled from "styled-components";
 import Flex from "../Layout/Flex";
 
 const StyledImageWrapper = styled.div`
-  height: 160px;
-  width: 160px;
+  height: 135px;
+  width: 135px;
   border-radius: 11px;
   border: 0.5px solid var(--secondary-color);
   overflow: hidden;
@@ -22,10 +22,10 @@ const StyledParagraph = styled.p`
   color: var(--secondary-color);
 `;
 
-export default function StarshipCard({ _id, name, img }) {
+export default function StarshipCollectionCard({ _id, name, img }) {
   return (
     <section>
-      <Flex height="200px" width="160px" direction="column">
+      <Flex height="150px" width="90%">
         <StyledImageWrapper>
           <StyledStarshipImage
             src={img}
@@ -35,7 +35,9 @@ export default function StarshipCard({ _id, name, img }) {
             layout="responsive"
           />
         </StyledImageWrapper>
-        <StyledParagraph>{name}</StyledParagraph>
+        <Flex direction="column">
+          <StyledParagraph>{name}</StyledParagraph>
+        </Flex>
       </Flex>
     </section>
   );
