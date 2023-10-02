@@ -57,11 +57,7 @@ export default function MyProfile() {
         </Flex>
         <Link href="./my-profile/my-collection">My Collection</Link>
       </Flex>
-
-
-
       <Link href="./my-profile/my-selling-list">My selling list</Link>
-    </Flex>
     </main>
   );
 }
