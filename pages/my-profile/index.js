@@ -56,8 +56,8 @@ export default function MyProfile() {
           <StyledCredit>{mainUser.credits}</StyledCredit>
         </Flex>
         <Link href="./my-profile/my-collection">My Collection</Link>
+        <Link href="./my-profile/my-selling-list">My selling list</Link>
       </Flex>
-      <Link href="./my-profile/my-selling-list">My selling list</Link>
     </main>
   );
 }
