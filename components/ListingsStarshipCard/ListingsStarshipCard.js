@@ -2,6 +2,11 @@ import useSWR from "swr";
 import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
+import Link from "next/link";
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
 
 const StyledImageWrapper = styled.div`
   height: 84px;
@@ -57,16 +62,18 @@ export default function ListingsStarshipCard({ userId, name, img, preis }) {
     <StyledCard>
       <Flex justifyContent="space-around">
         <Flex direction="column" alignItems="center" gap=".5px">
-          <StyledImageWrapper>
-            <StyledStarshipImage
-              src={img}
-              alt={name}
-              height={0}
-              width={0}
-              layout="responsive"
-            />
-          </StyledImageWrapper>
-          <StyledParagraph>{name}</StyledParagraph>
+          <StyledLink href={`/users/${userId}`} key={userId}>
+            <StyledImageWrapper>
+              <StyledStarshipImage
+                src={img}
+                alt={name}
+                height={0}
+                width={0}
+                layout="responsive"
+              />
+            </StyledImageWrapper>
+            <StyledParagraph>{name}</StyledParagraph>
+          </StyledLink>
         </Flex>
         <Flex direction="column" alignItems="center" gap="5px">
           <StyledParagraph>Price: </StyledParagraph>

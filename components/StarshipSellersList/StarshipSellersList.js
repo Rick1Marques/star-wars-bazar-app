@@ -2,14 +2,14 @@ import useSWR from "swr";
 import Flex from "@/components/Layout/Flex";
 import ListingsStarshipCard from "../ListingsStarshipCard/ListingsStarshipCard";
 
-export default function StarshipSellerList({ id }) {
+export default function StarshipSellersList({ starshipId }) {
   const { data: listings, isLoading } = useSWR("/api/listings");
   if (!listings || isLoading) {
     return <h1>Loading...</h1>;
   }
 
   const spaceshipListings = listings.filter((listing) => {
-    if (listing.starship._id === id) {
+    if (listing.starship._id === starshipId) {
       return listing;
     }
   });
