@@ -5,10 +5,10 @@ import Flex from "@/components/Layout/Flex";
 
 export default function Marketplace() {
   return (
-    <>
+    <main>
       <AppTitle />
       <MarketplaceTitle />
       <StarshipList />
-    </>
+    </main>
   );
 }

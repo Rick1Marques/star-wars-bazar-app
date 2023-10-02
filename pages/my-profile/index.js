@@ -41,20 +41,23 @@ export default function MyProfile() {
   }
   const mainUser = users[0];
   return (
-    <Flex direction="column" alignItems="center" gap="30px">
-      <StyledProfileTitle>My Profile</StyledProfileTitle>
-      <StyledUserImage
-        alt={mainUser.name}
-        src={mainUser.avatar}
-        width={140}
-        height={140}
-      />
-      <StyledUserName>{mainUser.name}</StyledUserName>
-      <Flex direction="column" alignItems="center">
-        <StyledTitleCredit>Total amount of Credits:</StyledTitleCredit>
-        <StyledCredit>{mainUser.credits}</StyledCredit>
+    <main>
+      <Flex direction="column" alignItems="center" gap="30px">
+        <StyledProfileTitle>My Profile</StyledProfileTitle>
+        <StyledUserImage
+          alt={mainUser.name}
+          src={mainUser.avatar}
+          width={140}
+          height={140}
+        />
+        <StyledUserName>{mainUser.name}</StyledUserName>
+        <Flex direction="column" alignItems="center">
+          <StyledTitleCredit>Total amount of Credits:</StyledTitleCredit>
+          <StyledCredit>{mainUser.credits}</StyledCredit>
+        </Flex>
+        <Link href="./my-profile/my-collection">My Collection</Link>
+        <Link href="./my-profile/my-selling-list">My selling list</Link>
       </Flex>
-      <Link href="./my-profile/my-selling-list">My selling list</Link>
-    </Flex>
+    </main>
   );
 }
