@@ -1,6 +1,12 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
+import Link from "next/link";
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: var(--primary-title-color);
+`;
 
 const StyledImageWrapper = styled.div`
   height: 135px;
@@ -37,6 +43,13 @@ export default function StarshipCollectionCard({ _id, name, img }) {
         </StyledImageWrapper>
         <Flex direction="column">
           <StyledParagraph>{name}</StyledParagraph>
+
+          <StyledLink
+            href={`/my-profile/my-collection/new-offer/${_id}`}
+            key={_id}
+          >
+            Sell
+          </StyledLink>
         </Flex>
       </Flex>
     </section>

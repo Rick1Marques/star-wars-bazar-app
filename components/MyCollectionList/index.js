@@ -23,12 +23,14 @@ export default function MyCollectionList() {
     <Flex gap="1.5rem" flexWrap="wrap" alignItems="center" direction="column">
       {starshipsNotForSale.map((starship) => {
         return (
-          <StarshipCollectionCard
-            {...starship}
-            key={starship._id}
-            name={starship.name}
-            img={starship.img}
-          />
+          <>
+            <StarshipCollectionCard
+              {...starship}
+              name={starship.name}
+              img={starship.img}
+              _id={starship._id}
+            />
+          </>
         );
       })}
     </Flex>

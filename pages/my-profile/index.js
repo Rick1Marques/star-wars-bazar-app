@@ -4,6 +4,11 @@ import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
 import Link from "next/link";
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: var(--primary-title-color);
+`;
+
 const StyledUserImage = styled(Image)`
   border-radius: 50%;
 `;
@@ -55,8 +60,10 @@ export default function MyProfile() {
           <StyledTitleCredit>Total amount of Credits:</StyledTitleCredit>
           <StyledCredit>{mainUser.credits}</StyledCredit>
         </Flex>
-        <Link href="./my-profile/my-collection">My Collection</Link>
-        <Link href="./my-profile/my-selling-list">My selling list</Link>
+        <StyledLink href="./my-profile/my-collection">My Collection</StyledLink>
+        <StyledLink href="./my-profile/my-selling-list">
+          My selling list
+        </StyledLink>
       </Flex>
     </main>
   );
