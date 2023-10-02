@@ -33,6 +33,7 @@ const StyledStarshipImage = styled(Image)`
 
 const StyledParagraph = styled.p`
   color: var(--secondary-color);
+  text-align: center;
 `;
 const StyledParagraphPreis = styled.p`
   color: var(--secondary-color);
