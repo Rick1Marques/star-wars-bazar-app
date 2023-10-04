@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
 
-const StyledSpan = styled.span`
+const StyledDetail = styled.dd`
   color: var(--secondary-color);
 `;
 
-const StyledParagraph = styled.div`
+const StyledTerm = styled.dt`
   color: var(--primary-title-color);
 `;
 
@@ -19,8 +19,8 @@ function info(word) {
 export default function StarshipInfo({ label, value }) {
   return (
     <Flex justifyContent="space-between">
-      <StyledParagraph>{label}</StyledParagraph>
-      <StyledSpan>{info(value)}</StyledSpan>
+      <StyledTerm>{label}</StyledTerm>
+      <StyledDetail>{info(value)}</StyledDetail>
     </Flex>
   );
 }
