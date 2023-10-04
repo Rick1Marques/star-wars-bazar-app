@@ -5,8 +5,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
 import StarshipInfo from "@/components/StarshipInfo";
-import StarshipSellerList from "@/components/StarshipSellersList/StarshipSellerList";
-
+import StarshipSellersList from "@/components/StarshipSellersList/StarshipSellersList";
 const StyledBackLink = styled(Link)`
   text-decoration: none;
   color: white;
@@ -82,7 +81,7 @@ export default function Starship() {
           <StarshipInfo label="Starship class:" value={starship_class} />
         </Flex>
       </Flex>
-      <StarshipSellerList img={img} name={name} id={_id} />
+      <StarshipSellersList img={img} name={name} starshipId={_id} />
     </Flex>
   );
 }
