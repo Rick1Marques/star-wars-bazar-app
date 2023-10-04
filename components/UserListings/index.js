@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import Flex from "@/components/Layout/Flex";
-import ListingCard from "../ListingCard";
+import UsersListingCard from "../UsersListingCard";
 
 export default function UserList({ listings, starships }) {
   function starshipURL(id) {
@@ -9,10 +9,16 @@ export default function UserList({ listings, starships }) {
 
   return (
     <>
-      <Flex gap="1.5rem" flexWrap="wrap" direction="column" width="90%">
+      <Flex
+        gap="1.5rem"
+        flexWrap="wrap"
+        direction="column"
+        width="90%"
+        alignItems="center"
+      >
         {listings.map((listing) => {
           return (
-            <ListingCard
+            <UsersListingCard
               {...listing}
               key={listing._id}
               name={starshipURL(listing.starship).name}
