@@ -40,7 +40,6 @@ export default function NewOffer() {
   if (!starship || isLoading) {
     return <h1>Loading...</h1>;
   }
-  console.log(starship);
 
   const {
     name,
@@ -56,7 +55,7 @@ export default function NewOffer() {
   } = starship;
   return (
     <Flex direction="column" padding="1.5rem" alignItems="center">
-      <StyledBackLink href={"/my-profile/my-collection"}>Back</StyledBackLink>
+      <StyledBackLink href="/my-profile/my-collection">Back</StyledBackLink>
       <h1>New offer</h1>
       <Flex direction="column">
         <StyledImageWrapper>
