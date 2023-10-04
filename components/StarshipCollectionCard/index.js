@@ -30,28 +30,23 @@ const StyledParagraph = styled.p`
 
 export default function StarshipCollectionCard({ _id, name, img }) {
   return (
-    <section>
-      <Flex height="150px" width="90%">
-        <StyledImageWrapper>
-          <StyledStarshipImage
-            src={img}
-            alt={name}
-            height={0}
-            width={0}
-            layout="responsive"
-          />
-        </StyledImageWrapper>
-        <Flex direction="column">
-          <StyledParagraph>{name}</StyledParagraph>
+    <Flex height="150px" width="90%">
+      <StyledImageWrapper>
+        <StyledStarshipImage
+          src={img}
+          alt={name}
+          height={0}
+          width={0}
+          layout="responsive"
+        />
+      </StyledImageWrapper>
+      <Flex direction="column">
+        <StyledParagraph>{name}</StyledParagraph>
 
-          <StyledLink
-            href={`/my-profile/my-collection/new-offer/${_id}`}
-            key={_id}
-          >
-            Sell
-          </StyledLink>
-        </Flex>
+        <StyledLink href={`/my-profile/my-collection/new-offer/${_id}`}>
+          Sell
+        </StyledLink>
       </Flex>
-    </section>
+    </Flex>
   );
 }

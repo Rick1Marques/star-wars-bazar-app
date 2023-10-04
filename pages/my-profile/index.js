@@ -60,8 +60,8 @@ export default function MyProfile() {
           <StyledTitleCredit>Total amount of Credits:</StyledTitleCredit>
           <StyledCredit>{mainUser.credits}</StyledCredit>
         </Flex>
-        <StyledLink href="./my-profile/my-collection">My Collection</StyledLink>
-        <StyledLink href="./my-profile/my-selling-list">
+        <StyledLink href="/my-profile/my-collection">My Collection</StyledLink>
+        <StyledLink href="/my-profile/my-selling-list">
           My selling list
         </StyledLink>
       </Flex>

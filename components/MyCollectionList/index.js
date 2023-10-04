@@ -21,18 +21,9 @@ export default function MyCollectionList() {
 
   return (
     <Flex gap="1.5rem" flexWrap="wrap" alignItems="center" direction="column">
-      {starshipsNotForSale.map((starship) => {
-        return (
-          <>
-            <StarshipCollectionCard
-              {...starship}
-              name={starship.name}
-              img={starship.img}
-              _id={starship._id}
-            />
-          </>
-        );
-      })}
+      {starshipsNotForSale.map((starship) => (
+        <StarshipCollectionCard {...starship} key={starship._id} />
+      ))}
     </Flex>
   );
 }

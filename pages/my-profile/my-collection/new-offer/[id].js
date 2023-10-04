@@ -55,31 +55,29 @@ export default function NewOffer() {
     default_cost_in_credits,
   } = starship;
   return (
-    <>
-      <Flex direction="column" padding="1.5rem" alignItems="center">
-        <StyledBackLink href={"/my-profile/my-collection"}>Back</StyledBackLink>
-        <h1>New offer</h1>
-        <Flex direction="column">
-          <StyledImageWrapper>
-            <StyledStarshipImage
-              src={img}
-              alt={name}
-              height={0}
-              width={0}
-              layout="responsive"
-            />
-          </StyledImageWrapper>
+    <Flex direction="column" padding="1.5rem" alignItems="center">
+      <StyledBackLink href={"/my-profile/my-collection"}>Back</StyledBackLink>
+      <h1>New offer</h1>
+      <Flex direction="column">
+        <StyledImageWrapper>
+          <StyledStarshipImage
+            src={img}
+            alt={name}
+            height={0}
+            width={0}
+            layout="responsive"
+          />
+        </StyledImageWrapper>
 
-          <StarshipInfo label="Model:" value={model} />
-          <StarshipInfo label="Manufacturer:" value={manufacturer} />
-          <StarshipInfo label="Max. speed:" value={max_atmosphering_speed} />
-          <StarshipInfo label="Passengers:" value={passengers} />
-          <StarshipInfo label="Cargo capacity:" value={cargo_capacity} />
-          <StarshipInfo label="Starship class:" value={starship_class} />
-        </Flex>
-        <br />
-        <NewOfferForm credit={default_cost_in_credits} id={_id} />
+        <StarshipInfo label="Model:" value={model} />
+        <StarshipInfo label="Manufacturer:" value={manufacturer} />
+        <StarshipInfo label="Max. speed:" value={max_atmosphering_speed} />
+        <StarshipInfo label="Passengers:" value={passengers} />
+        <StarshipInfo label="Cargo capacity:" value={cargo_capacity} />
+        <StarshipInfo label="Starship class:" value={starship_class} />
       </Flex>
-    </>
+
+      <NewOfferForm credit={default_cost_in_credits} id={_id} />
+    </Flex>
   );
 }
