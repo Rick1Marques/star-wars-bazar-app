@@ -7,5 +7,5 @@ const StyledAppTitle = styled.h1`
 `;
 
 export default function AppTitle() {
-  return <StyledAppTitle>Star Wars Bazar</StyledAppTitle>;
+  return <StyledAppTitle>Star Wars Bazaar</StyledAppTitle>;
 }

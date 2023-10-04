@@ -18,7 +18,7 @@ function info(word) {
 
 export default function StarshipInfo({ label, value }) {
   return (
-    <Flex justifyContent="space-between">
+    <Flex as="dl" justifyContent="space-between">
       <StyledTerm>{label}</StyledTerm>
       <StyledDetail>{info(value)}</StyledDetail>
     </Flex>
