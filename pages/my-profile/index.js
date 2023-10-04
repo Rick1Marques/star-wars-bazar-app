@@ -40,9 +40,7 @@ const StyledCredit = styled.p`
   margin-bottom: 50px;
 `;
 
-export default function MyProfile() {
-  const { mainUser } = useUser();
-
+export default function MyProfile({ mainUser }) {
   return (
     <main>
       <Flex direction="column" alignItems="center" gap="30px">
