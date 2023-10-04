@@ -41,6 +41,9 @@ const StyledCredit = styled.p`
 `;
 
 export default function MyProfile({ mainUser }) {
+  if (!mainUser) {
+    return "Loading";
+  }
   return (
     <main>
       <Flex direction="column" alignItems="center" gap="30px">

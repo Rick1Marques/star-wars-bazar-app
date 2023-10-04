@@ -52,6 +52,9 @@ const StyledBuyButton = styled.button`
 
 export default function ListingsStarshipCard({ userId, name, img, preis }) {
   const { mainUser } = useUser();
+  if (!mainUser) {
+    return "Loading";
+  }
 
   if (userId === mainUser._id) {
     return;

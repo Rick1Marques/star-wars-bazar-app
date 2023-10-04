@@ -17,6 +17,9 @@ const blinker = Blinker({
 
 export default function App({ Component, pageProps }) {
   const { mainUser } = useUser();
+  if (!mainUser) {
+    return "Loading";
+  }
 
   return (
     <StyledMain className={blinker.className}>
