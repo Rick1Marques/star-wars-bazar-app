@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
 import Link from "next/link";
+import useUser from "@/hooks/useUser";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -40,11 +41,8 @@ const StyledCredit = styled.p`
 `;
 
 export default function MyProfile() {
-  const { data: users, isLoading } = useSWR("/api/users");
-  if (!users || isLoading) {
-    return <h1>Loading...</h1>;
-  }
-  const mainUser = users[0];
+  const { mainUser } = useUser();
+
   return (
     <main>
       <Flex direction="column" alignItems="center" gap="30px">

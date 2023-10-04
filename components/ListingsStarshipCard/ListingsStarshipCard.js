@@ -3,6 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
 import Link from "next/link";
+import useUser from "@/hooks/useUser";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -50,11 +51,7 @@ const StyledBuyButton = styled.button`
 `;
 
 export default function ListingsStarshipCard({ userId, name, img, preis }) {
-  const { data: users, isLoading } = useSWR("/api/users");
-  if (!users || isLoading) {
-    return <h1>Loading...</h1>;
-  }
-  const mainUser = users[0];
+  const { mainUser } = useUser();
 
   if (userId === mainUser._id) {
     return;
