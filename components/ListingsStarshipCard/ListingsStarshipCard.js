@@ -1,9 +1,10 @@
-import useSWR from "swr";
+import useSWR, { mutate } from "swr";
 import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
 import Link from "next/link";
 import useUser from "@/hooks/useUser";
+import { buyProtocol, sellProtocol } from "@/lib/api";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -50,7 +51,14 @@ const StyledBuyButton = styled.button`
   color: var(--secondary-color);
 `;
 
-export default function ListingsStarshipCard({ userId, name, img, preis }) {
+export default function ListingsStarshipCard({
+  userId,
+  name,
+  img,
+  preis,
+  starshipId,
+  listingId,
+}) {
   const { mainUser } = useUser();
   if (!mainUser) {
     return "Loading";
@@ -59,6 +67,39 @@ export default function ListingsStarshipCard({ userId, name, img, preis }) {
   if (userId === mainUser._id) {
     return;
   }
+
+  async function onBuy() {
+    try {
+      const starship = await buyProtocol({
+        starship_id: starshipId,
+        user_id: mainUser._id,
+      });
+      mutate(`/api/users/${mainUser._id}`);
+    } catch (error) {
+      console.log("Starship:onBuy", error);
+      alert("Error on the transaction");
+    }
+  }
+  console.log(listingId, userId, starshipId);
+  async function onSell() {
+    try {
+      const starship = await sellProtocol({
+        starship_id: starshipId,
+        user_id: userId,
+        listing_id: listingId,
+      });
+      mutate(`/api/users/${userId}`);
+    } catch (error) {
+      console.log("Starship:onSell", error);
+      alert("Error on the transaction");
+    }
+  }
+
+  // async function transaction() {
+  //   await onBuy();
+  //   await onSell();
+  // }
+
   return (
     <StyledCard>
       <Flex justifyContent="space-around">
@@ -79,7 +120,7 @@ export default function ListingsStarshipCard({ userId, name, img, preis }) {
         <Flex direction="column" alignItems="center" gap="5px">
           <StyledParagraph>Price: </StyledParagraph>
           <StyledParagraphPreis>{preis}</StyledParagraphPreis>
-          <StyledBuyButton>Soon...</StyledBuyButton>
+          <StyledBuyButton onClick={onSell}>Buy</StyledBuyButton>
         </Flex>
       </Flex>
     </StyledCard>
