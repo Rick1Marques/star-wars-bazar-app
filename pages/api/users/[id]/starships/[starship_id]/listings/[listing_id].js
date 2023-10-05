@@ -8,8 +8,8 @@ export default async function handler(request, response) {
   await connect();
   if (request.method === "DELETE") {
     try {
-      const { id: listing_id, user_id, starship_id } = request.query;
-      console.log(listing_id, user_id, starship_id);
+      const { id: user_id, listing_id, starship_id } = request.query;
+      console.log(request.query.id);
       const listing = await Listing.findByIdAndDelete(listing_id);
       await User.findByIdAndUpdate(user_id, {
         $pull: {
@@ -19,7 +19,7 @@ export default async function handler(request, response) {
         //   credits:
         // }
       });
-      response.status(200).json(listing);
+      response.status(200).json({});
     } catch (error) {
       console.log("POST", error);
       response.status(500).json({ message: "Error creating rating" });

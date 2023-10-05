@@ -75,19 +75,18 @@ export default function ListingsStarshipCard({
         user_id: mainUser._id,
       });
       mutate(`/api/users/${mainUser._id}`);
+      await onSell();
     } catch (error) {
       console.log("Starship:onBuy", error);
       alert("Error on the transaction");
     }
   }
+
   console.log(listingId, userId, starshipId);
+
   async function onSell() {
     try {
-      const starship = await sellProtocol({
-        starship_id: starshipId,
-        user_id: userId,
-        listing_id: listingId,
-      });
+      const starship = await sellProtocol(starshipId, userId, listingId);
       mutate(`/api/users/${userId}`);
     } catch (error) {
       console.log("Starship:onSell", error);
@@ -120,7 +119,7 @@ export default function ListingsStarshipCard({
         <Flex direction="column" alignItems="center" gap="5px">
           <StyledParagraph>Price: </StyledParagraph>
           <StyledParagraphPreis>{preis}</StyledParagraphPreis>
-          <StyledBuyButton onClick={onSell}>Buy</StyledBuyButton>
+          <StyledBuyButton onClick={onBuy}>Buy</StyledBuyButton>
         </Flex>
       </Flex>
     </StyledCard>
