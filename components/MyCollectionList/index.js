@@ -1,14 +1,13 @@
 import useSWR from "swr";
 import Flex from "@/components/Layout/Flex";
 import StarshipCollectionCard from "../StarshipCollectionCard";
+import useUser from "@/hooks/useUser";
 
 export default function MyCollectionList() {
-  const { data: users, isLoading } = useSWR("/api/users");
-  if (!users || isLoading) {
-    return <h1>Loading...</h1>;
+  const { mainUser } = useUser();
+  if (!mainUser) {
+    return "Loading";
   }
-
-  const mainUser = users[0];
 
   const starshipsForSale = mainUser.listings.map((listing) => listing.starship);
 

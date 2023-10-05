@@ -1,9 +1,10 @@
 import GlobalStyle from "../styles";
-import { SWRConfig } from "swr";
+import useSWR, { SWRConfig } from "swr";
 import fetcher from "@/lib/fetcher";
 import { Blinker } from "@next/font/google";
 import MainLayout from "@/components/MainLayout";
 import styled from "styled-components";
+import useUser from "@/hooks/useUser";
 
 const StyledMain = styled.main`
   margin-bottom: 6rem;
@@ -15,11 +16,16 @@ const blinker = Blinker({
 });
 
 export default function App({ Component, pageProps }) {
+  const { mainUser } = useUser();
+  if (!mainUser) {
+    return "Loading";
+  }
+
   return (
     <StyledMain className={blinker.className}>
       <SWRConfig value={{ fetcher }}>
         <GlobalStyle />
-        <Component {...pageProps} />
+        <Component {...pageProps} mainUser={mainUser} />
         <MainLayout />
       </SWRConfig>
     </StyledMain>
