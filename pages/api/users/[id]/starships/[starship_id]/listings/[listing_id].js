@@ -8,8 +8,7 @@ export default async function handler(request, response) {
   await connect();
   if (request.method === "DELETE") {
     try {
-      const { id: user_id, listing_id, starship_id } = request.query;
-      console.log(request.query.id);
+      const { user_id, listing_id, starship_id } = request.query;
       const listing = await Listing.findByIdAndDelete(listing_id);
       await User.findByIdAndUpdate(user_id, {
         $pull: {

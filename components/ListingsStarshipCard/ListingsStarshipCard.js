@@ -71,8 +71,8 @@ export default function ListingsStarshipCard({
   async function onBuy() {
     try {
       const starship = await buyProtocol({
-        starship_id: starshipId,
         user_id: mainUser._id,
+        starship_id: starshipId,
       });
       mutate(`/api/users/${mainUser._id}`);
       await onSell();
@@ -81,8 +81,6 @@ export default function ListingsStarshipCard({
       alert("Error on the transaction");
     }
   }
-
-  console.log(listingId, userId, starshipId);
 
   async function onSell() {
     try {
@@ -93,11 +91,6 @@ export default function ListingsStarshipCard({
       alert("Error on the transaction");
     }
   }
-
-  // async function transaction() {
-  //   await onBuy();
-  //   await onSell();
-  // }
 
   return (
     <StyledCard>
