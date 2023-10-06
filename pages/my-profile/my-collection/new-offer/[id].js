@@ -6,6 +6,8 @@ import Flex from "@/components/Layout/Flex";
 import NewOfferForm from "@/components/NewOfferForm";
 import StarshipInfo from "@/components/StarshipInfo";
 import Link from "next/link";
+import { createListing } from "@/lib/api";
+import { mutate } from "swr";
 
 const StyledBackLink = styled(Link)`
   text-decoration: none;
@@ -31,7 +33,7 @@ const StyledImageWrapper = styled.div`
   position: relative;
 `;
 
-export default function NewOffer() {
+export default function NewOffer({ mainUser }) {
   const router = useRouter();
   const { id } = router.query;
   const { data: starship, isLoading } = useSWR(
@@ -39,6 +41,13 @@ export default function NewOffer() {
   );
   if (!starship || isLoading) {
     return <h1>Loading...</h1>;
+  }
+  async function onSubmit(data) {
+    await createListing({
+      ...data,
+    });
+    mutate(`/api/listings`);
+    router.push("/my-profile/my-selling-list");
   }
 
   const {
@@ -76,7 +85,13 @@ export default function NewOffer() {
         <StarshipInfo label="Starship class:" value={starship_class} />
       </Flex>
 
-      <NewOfferForm credit={default_cost_in_credits} id={_id} />
+      <NewOfferForm
+        credit={default_cost_in_credits}
+        id={_id}
+        onSubmit={onSubmit}
+        user={mainUser}
+        starship={starship}
+      />
     </Flex>
   );
 }
