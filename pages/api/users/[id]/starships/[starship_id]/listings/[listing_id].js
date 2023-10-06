@@ -8,20 +8,20 @@ export default async function handler(request, response) {
   await connect();
   if (request.method === "DELETE") {
     try {
-      const { user_id, listing_id, starship_id } = request.query;
+      const { id: user_id, listing_id, starship_id } = request.query;
       const listing = await Listing.findByIdAndDelete(listing_id);
       await User.findByIdAndUpdate(user_id, {
         $pull: {
           starships: { starship_id },
         },
-        // $set: {
-        //   credits:
-        // }
+        $set: {
+          credits: { ...request.body }.balance,
+        },
       });
       response.status(200).json({});
     } catch (error) {
       console.log("POST", error);
-      response.status(500).json({ message: "Error creating rating" });
+      response.status(500).json({ message: "Error on sell protocol" });
     }
     return;
   }

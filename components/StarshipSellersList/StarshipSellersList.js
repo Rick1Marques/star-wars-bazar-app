@@ -30,6 +30,7 @@ export default function StarshipSellersList({ starshipId }) {
               userId={listing.user._id}
               starshipId={listing.starship._id}
               listingId={listing._id}
+              userCredits={listing.user.credits}
             />
           );
         })}

@@ -55,6 +55,7 @@ export default function ListingsStarshipCard({
   userId,
   name,
   img,
+  userCredits,
   preis,
   starshipId,
   listingId,
@@ -69,13 +70,24 @@ export default function ListingsStarshipCard({
   }
 
   async function onBuy() {
+    if (mainUser.credits < preis) {
+      return alert("You don't have enough credits to buy this starship.");
+    }
+    if (mainUser.starships.includes(starshipId)) {
+      return alert("You have this starship already.");
+    }
     try {
-      const starship = await buyProtocol({
+      let data = {
+        balance: mainUser.credits - preis,
+      };
+      await buyProtocol({
         user_id: mainUser._id,
         starship_id: starshipId,
+        ...data,
       });
       mutate(`/api/users/${mainUser._id}`);
       await onSell();
+      alert("The transaction was successful!");
     } catch (error) {
       console.log("Starship:onBuy", error);
       alert("Error on the transaction");
@@ -83,8 +95,11 @@ export default function ListingsStarshipCard({
   }
 
   async function onSell() {
+    let data = {
+      balance: userCredits + preis,
+    };
     try {
-      const starship = await sellProtocol(starshipId, userId, listingId);
+      await sellProtocol(starshipId, userId, listingId, { ...data });
       mutate(`/api/users/${userId}`);
     } catch (error) {
       console.log("Starship:onSell", error);
