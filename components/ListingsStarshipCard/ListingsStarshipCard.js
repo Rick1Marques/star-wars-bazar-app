@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Flex from "../Layout/Flex";
 import Link from "next/link";
 import useUser from "@/hooks/useUser";
-import { buyProtocol, sellProtocol } from "@/lib/api";
+import BuyButton from "../BuyButton";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -42,15 +42,6 @@ const StyledParagraphPreis = styled.p`
   font-size: 2rem;
 `;
 
-const StyledBuyButton = styled.button`
-  background-color: #000000;
-  border-radius: 5px;
-  border: 0.3px solid var(--secondary-color);
-  height: 2rem;
-  width: 6.25rem;
-  color: var(--secondary-color);
-`;
-
 export default function ListingsStarshipCard({
   userId,
   name,
@@ -67,44 +58,6 @@ export default function ListingsStarshipCard({
 
   if (userId === mainUser._id) {
     return;
-  }
-
-  async function onBuy() {
-    if (mainUser.credits < preis) {
-      return alert("You don't have enough credits to buy this starship.");
-    }
-    if (mainUser.starships.includes(starshipId)) {
-      return alert("You have this starship already.");
-    }
-    try {
-      let data = {
-        balance: mainUser.credits - preis,
-      };
-      await buyProtocol({
-        user_id: mainUser._id,
-        starship_id: starshipId,
-        ...data,
-      });
-      mutate(`/api/users/${mainUser._id}`);
-      await onSell();
-      alert("The transaction was successful!");
-    } catch (error) {
-      console.log("Starship:onBuy", error);
-      alert("Error on the transaction");
-    }
-  }
-
-  async function onSell() {
-    let data = {
-      balance: userCredits + preis,
-    };
-    try {
-      await sellProtocol(starshipId, userId, listingId, { ...data });
-      mutate(`/api/users/${userId}`);
-    } catch (error) {
-      console.log("Starship:onSell", error);
-      alert("Error on the transaction");
-    }
   }
 
   return (
@@ -127,7 +80,16 @@ export default function ListingsStarshipCard({
         <Flex direction="column" alignItems="center" gap="5px">
           <StyledParagraph>Price: </StyledParagraph>
           <StyledParagraphPreis>{preis}</StyledParagraphPreis>
-          <StyledBuyButton onClick={onBuy}>Buy</StyledBuyButton>
+          <BuyButton
+            buyerId={mainUser._id}
+            sellerId={userId}
+            starshipId={starshipId}
+            listingId={listingId}
+            preis={preis}
+            buyerCredit={mainUser.credits}
+            sellerCredit={userCredits}
+            buyerStarships={mainUser.starships}
+          />
         </Flex>
       </Flex>
     </StyledCard>
