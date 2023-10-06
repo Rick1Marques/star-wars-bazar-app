@@ -6,7 +6,7 @@ import Starship from "@/db/models/Starship";
 export default async function handler(request, response) {
   await connect();
   if (request.method === "GET") {
-    const user = await User.findById("651ebee42b4437b6db4f7fb9")
+    const user = await User.findById("651fc98dadf5f690555f661f")
       .sort({ createdAt: -1 })
       .populate("listings")
       .populate("starships")
