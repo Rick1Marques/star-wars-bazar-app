@@ -10,7 +10,6 @@ export default async function handler(request, response) {
       await User.findByIdAndUpdate(listing.user, {
         $pull: {
           listings: listing._id,
-          //   listings:{$in: [listing._id]},
         },
       });
 
