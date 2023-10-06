@@ -1,7 +1,5 @@
-import useUser from "@/hooks/useUser";
-
-export default function NewOfferForm({ credit, id, onSubmit, user, starship }) {
-  function _onSubmit(event) {
+export default function NewOfferForm({ credit, onSubmit, user, starship }) {
+  function handleSubmit(event) {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.target));
     onSubmit({
@@ -11,7 +9,7 @@ export default function NewOfferForm({ credit, id, onSubmit, user, starship }) {
     });
   }
   return (
-    <form onSubmit={_onSubmit}>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="preis">Price: </label>
       <input
         type="number"
