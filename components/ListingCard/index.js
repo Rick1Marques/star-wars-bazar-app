@@ -22,7 +22,7 @@ const StyledParagraph = styled.p`
   color: var(--secondary-color);
 `;
 
-export default function ListingCard({ _id, name, img, preis }) {
+export default function ListingCard({ _id, name, img, price }) {
   return (
     <Flex height="150px" width="90%">
       <StyledImageWrapper>
@@ -36,7 +36,7 @@ export default function ListingCard({ _id, name, img, preis }) {
       </StyledImageWrapper>
       <Flex direction="column">
         <StyledParagraph>{name}</StyledParagraph>
-        <StyledParagraph>Price: {preis}</StyledParagraph>
+        <StyledParagraph>Price: {price}</StyledParagraph>
       </Flex>
     </Flex>
   );
