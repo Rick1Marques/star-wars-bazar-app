@@ -16,21 +16,18 @@ export default function BuyButton({
   sellerId,
   starshipId,
   listingId,
-  preis,
+  price,
   buyerCredit,
   sellerCredit,
   buyerStarships,
 }) {
   async function onBuy() {
-    if (buyerCredit < preis) {
+    if (buyerCredit < price) {
       return alert("You don't have enough credits to buy this starship.");
-    }
-    if (buyerStarships.includes(starshipId)) {
-      return alert("You have this starship already.");
     }
     try {
       let data = {
-        balance: buyerCredit - preis,
+        balance: buyerCredit - price,
       };
       await buyProtocol({
         user_id: buyerId,
@@ -48,7 +45,7 @@ export default function BuyButton({
 
   async function onSell() {
     let data = {
-      balance: sellerCredit + preis,
+      balance: sellerCredit + price,
     };
     try {
       await sellProtocol(starshipId, sellerId, listingId, { ...data });

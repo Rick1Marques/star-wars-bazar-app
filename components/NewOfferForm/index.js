@@ -10,11 +10,11 @@ export default function NewOfferForm({ credit, onSubmit, user, starship }) {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="preis">Price: </label>
+      <label htmlFor="price">Price: </label>
       <input
         type="number"
-        name="preis"
-        id="preis"
+        name="price"
+        id="price"
         placeholder={credit}
         required
       />
