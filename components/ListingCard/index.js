@@ -24,7 +24,8 @@ const StyledParagraph = styled.p`
   color: var(--secondary-color);
 `;
 
-export default function ListingCard({ _id, name, img, preis }) {
+
+export default function ListingCard({ _id, name, img, price }) {
   const { data: listings, isLoading, mutate } = useSWR("/api/listings");
   if (!listings || isLoading) {
     return "Loading...";
@@ -37,6 +38,7 @@ export default function ListingCard({ _id, name, img, preis }) {
     await deleteListing(id);
     mutate();
   }
+
   return (
     <Flex height="150px" width="90%">
       <StyledImageWrapper>
@@ -50,7 +52,7 @@ export default function ListingCard({ _id, name, img, preis }) {
       </StyledImageWrapper>
       <Flex direction="column">
         <StyledParagraph>{name}</StyledParagraph>
-        <StyledParagraph>Price: {preis}</StyledParagraph>
+        <StyledParagraph>Price: {price}</StyledParagraph>
         <button type="button" onClick={() => onDelete(_id)}>
           Delete
         </button>

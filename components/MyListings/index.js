@@ -20,7 +20,7 @@ export default function MyListings() {
               key={listing._id}
               _id={listing._id}
               name={starshipURL(listing.starship).name}
-              preis={listing.preis}
+              price={listing.price}
               img={starshipURL(listing.starship).img}
             />
           );

@@ -37,7 +37,7 @@ const StyledParagraph = styled.p`
   color: var(--secondary-color);
   text-align: center;
 `;
-const StyledParagraphPreis = styled.p`
+const StyledParagraphprice = styled.p`
   color: var(--secondary-color);
   font-size: 2rem;
 `;
@@ -47,10 +47,11 @@ export default function ListingsStarshipCard({
   name,
   img,
   userCredits,
-  preis,
+  price,
   starshipId,
   listingId,
 }) {
+
   const { mainUser } = useUser();
   if (!mainUser) {
     return "Loading";
@@ -79,13 +80,13 @@ export default function ListingsStarshipCard({
         </Flex>
         <Flex direction="column" alignItems="center" gap="5px">
           <StyledParagraph>Price: </StyledParagraph>
-          <StyledParagraphPreis>{preis}</StyledParagraphPreis>
+          <StyledParagraphprice>{price}</StyledParagraphprice>
           <BuyButton
             buyerId={mainUser._id}
             sellerId={userId}
             starshipId={starshipId}
             listingId={listingId}
-            preis={preis}
+            price={price}
             buyerCredit={mainUser.credits}
             sellerCredit={userCredits}
             buyerStarships={mainUser.starships}

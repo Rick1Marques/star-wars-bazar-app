@@ -32,12 +32,14 @@ export default function UsersListingCard({
   name,
   img,
   userCredits,
-  preis,
+  price,
 }) {
   const { mainUser } = useUser();
   if (!mainUser) {
     return "Loading";
   }
+
+
 
   return (
     <Flex height="150px" width="90%" justifyContent="space-between">
@@ -52,7 +54,8 @@ export default function UsersListingCard({
       </StyledImageWrapper>
       <Flex width="50%" direction="column" alignItems="center">
         <StyledParagraph>{name}</StyledParagraph>
-        <StyledParagraph>Price: {preis}</StyledParagraph>
+
+        <StyledParagraph>Price: {price}</StyledParagraph>
         <BuyButton
           buyerId={mainUser._id}
           sellerId={userId}
@@ -63,6 +66,7 @@ export default function UsersListingCard({
           sellerCredit={userCredits}
           buyerStarships={mainUser.starships}
         />
+
       </Flex>
     </Flex>
   );

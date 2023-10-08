@@ -10,9 +10,13 @@ function random(max, min) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
+function randomFloat(max, min) {
+  return Math.random() * (max - min) + min;
+}
+
 // sampleSize
-function getStarshipId(arr) {
-  return arr[random(arr.length - 1, 0)]._id;
+function getStarship(arr) {
+  return arr[random(arr.length - 1, 0)];
 }
 
 console.log("Connecting...");
@@ -33,11 +37,18 @@ await Promise.all(
     console.log(`Saving listings for user: ${index}...`);
 
     const savedListings = await Listing.insertMany(
-      listings.map((listing) => ({
-        ...listing,
-        user: newUser._id,
-        starship: getStarshipId(createdStarships),
-      }))
+      listings.map((listing) => {
+        const starship = getStarship(createdStarships);
+        const starshipPrice = Math.floor(
+          starship.default_cost_in_credits *
+            (1 + randomFloat(0.3, 0.05) * (Math.round(Math.random()) ? 1 : -1))
+        );
+        return {
+          price: starshipPrice,
+          user: newUser._id,
+          starship: starship._id,
+        };
+      })
     );
 
     newUser.listings = savedListings.map((x) => x._id);
@@ -45,7 +56,7 @@ await Promise.all(
     newUser.starships = savedListings.map((x) => x.starship);
 
     for (let i = 0; i < random(5, 1); i++) {
-      let starhip_id = getStarshipId(createdStarships);
+      let starhip_id = getStarship(createdStarships)._id;
       if (newUser.starships.includes(starhip_id)) {
         newUser.starships.push();
       }

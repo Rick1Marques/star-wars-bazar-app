@@ -7,10 +7,7 @@ export default async function handler(request, response) {
   await connect();
   if (request.method === "GET") {
 
-
-    const user = await User.findById("651fef220f1867f364ac4596")
-
-
+    const user = await User.findById("652149374276898dcfa3705c")
       .sort({ createdAt: -1 })
       .populate("listings")
       .populate("starships")
