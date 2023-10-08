@@ -23,12 +23,14 @@ export default function StarshipSellersList({ starshipId }) {
         {spaceshipListings.map((listing) => {
           return (
             <ListingsStarshipCard
-              {...listing}
               key={listing._id}
               name={listing.user.name}
               preis={listing.preis}
               img={listing.user.avatar}
               userId={listing.user._id}
+              starshipId={listing.starship._id}
+              listingId={listing._id}
+              userCredits={listing.user.credits}
             />
           );
         })}
