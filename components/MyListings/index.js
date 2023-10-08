@@ -18,6 +18,7 @@ export default function MyListings() {
             <ListingCard
               {...listing}
               key={listing._id}
+              _id={listing._id}
               name={starshipURL(listing.starship).name}
               preis={listing.preis}
               img={starshipURL(listing.starship).img}

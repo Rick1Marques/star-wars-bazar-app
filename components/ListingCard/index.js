@@ -1,6 +1,8 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
+import { deleteListing } from "@/lib/api";
+import useSWR from "swr";
 
 const StyledImageWrapper = styled.div`
   height: 135px;
@@ -23,6 +25,18 @@ const StyledParagraph = styled.p`
 `;
 
 export default function ListingCard({ _id, name, img, preis }) {
+  const { data: listings, isLoading, mutate } = useSWR("/api/listings");
+  if (!listings || isLoading) {
+    return "Loading...";
+  }
+
+  async function onDelete(id) {
+    if (!confirm("Are you sure you want to delete this starship?")) {
+      return;
+    }
+    await deleteListing(id);
+    mutate();
+  }
   return (
     <Flex height="150px" width="90%">
       <StyledImageWrapper>
@@ -37,6 +51,9 @@ export default function ListingCard({ _id, name, img, preis }) {
       <Flex direction="column">
         <StyledParagraph>{name}</StyledParagraph>
         <StyledParagraph>Price: {preis}</StyledParagraph>
+        <button type="button" onClick={() => onDelete(_id)}>
+          Delete
+        </button>
       </Flex>
     </Flex>
   );
