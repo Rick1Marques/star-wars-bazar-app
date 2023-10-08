@@ -39,8 +39,6 @@ export default function UsersListingCard({
     return "Loading";
   }
 
-
-
   return (
     <Flex height="150px" width="90%" justifyContent="space-between">
       <StyledImageWrapper>
@@ -61,12 +59,11 @@ export default function UsersListingCard({
           sellerId={userId}
           starshipId={starshipId}
           listingId={listingId}
-          preis={preis}
+          price={price}
           buyerCredit={mainUser.credits}
           sellerCredit={userCredits}
           buyerStarships={mainUser.starships}
         />
-
       </Flex>
     </Flex>
   );
