@@ -7,18 +7,12 @@ function random(max, min) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-function getSellCostCredit(max, min) {
-  return {
-    price: random(max, min),
-  };
-}
-
 const usersFix = [...defaultUsers];
 
 for (let i = 0; i < usersFix.length; i++) {
-  usersFix[i].credits = random(1000000, 500000);
+  usersFix[i].credits = random(10000000, 1000000);
   for (let n = 0; n < random(15, 5); n++) {
-    usersFix[i].listings.push(getSellCostCredit(5000000, 200000));
+    usersFix[i].listings.push({ price: 1 });
   }
 }
 

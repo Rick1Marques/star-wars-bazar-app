@@ -39,14 +39,19 @@ export default function User() {
     return <h1>Loading...</h1>;
   }
 
-  const { name, avatar, starships, listings } = user;
+  const { name, avatar, starships, listings, _id, credits } = user;
 
   return (
     <Flex direction="column" alignItems="center" gap="30px">
       <StyledUserImage alt={name} src={avatar} width={140} height={140} />
       <StyledUserName>{name}</StyledUserName>
       <p>This user is selling:</p>
-      <UserList listings={listings} starships={starships} />
+      <UserList
+        listings={listings}
+        starships={starships}
+        userId={_id}
+        userCredits={credits}
+      />
     </Flex>
   );
 }

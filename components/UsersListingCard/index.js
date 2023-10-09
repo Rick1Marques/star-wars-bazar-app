@@ -1,6 +1,9 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
+import useUser from "@/hooks/useUser";
+import { mutate } from "swr";
+import BuyButton from "../BuyButton";
 
 const StyledImageWrapper = styled.div`
   height: 135px;
@@ -22,16 +25,23 @@ const StyledParagraph = styled.p`
   color: var(--secondary-color);
 `;
 
-const StyledBuyButton = styled.button`
-  background-color: #000000;
-  border-radius: 5px;
-  border: 0.3px solid var(--secondary-color);
-  height: 2rem;
-  width: 6.25rem;
-  color: var(--secondary-color);
-`;
+export default function UsersListingCard({
+  starshipId,
+  userId,
+  listingId,
+  name,
+  img,
+  userCredits,
+  price,
+}) {
+  const { mainUser } = useUser();
+  if (!mainUser) {
+    return "Loading";
+  }
+
 
 export default function UsersListingCard({ _id, name, img, price }) {
+
   return (
     <Flex height="150px" width="90%" justifyContent="space-between">
       <StyledImageWrapper>
@@ -45,8 +55,20 @@ export default function UsersListingCard({ _id, name, img, price }) {
       </StyledImageWrapper>
       <Flex width="50%" direction="column" alignItems="center">
         <StyledParagraph>{name}</StyledParagraph>
+
+
         <StyledParagraph>Price: {price}</StyledParagraph>
-        <StyledBuyButton>Soon...</StyledBuyButton>
+        <BuyButton
+          buyerId={mainUser._id}
+          sellerId={userId}
+          starshipId={starshipId}
+          listingId={listingId}
+          price={price}
+          buyerCredit={mainUser.credits}
+          sellerCredit={userCredits}
+          buyerStarships={mainUser.starships}
+        />
+
       </Flex>
     </Flex>
   );
