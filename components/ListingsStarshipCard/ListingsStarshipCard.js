@@ -51,11 +51,6 @@ export default function ListingsStarshipCard({
   starshipId,
   listingId,
 }) {
-
-
-export default function ListingsStarshipCard({ userId, name, img, price }) {
-
-
   const { mainUser } = useUser();
   if (!mainUser) {
     return "Loading";
@@ -96,7 +91,6 @@ export default function ListingsStarshipCard({ userId, name, img, price }) {
             sellerCredit={userCredits}
             buyerStarships={mainUser.starships}
           />
-
         </Flex>
       </Flex>
     </StyledCard>
