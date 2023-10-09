@@ -62,6 +62,7 @@ export default function NewOffer({ mainUser }) {
     _id,
     default_cost_in_credits,
   } = starship;
+
   return (
     <Flex direction="column" padding="1.5rem" alignItems="center">
       <StyledBackLink href="/my-profile/my-collection">Back</StyledBackLink>

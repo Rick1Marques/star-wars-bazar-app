@@ -39,7 +39,7 @@ export default function EditOffer({ mainUser }) {
   const { data: listing, isLoading } = useSWR(
     id ? `/api/listings/${id}` : null
   );
-  console.log(listing);
+
   async function onSubmit(data) {
     await updateListing({ ...data, id });
     mutate(`/api/listings`);

@@ -3,7 +3,7 @@ const { Schema, model, models } = mongoose;
 
 const listingSchema = new Schema(
   {
-    preis: {
+    price: {
       type: Number,
       required: true,
     },

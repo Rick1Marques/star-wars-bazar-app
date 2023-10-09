@@ -22,7 +22,7 @@ export default function UserList({ listings, starships }) {
               {...listing}
               key={listing._id}
               name={starshipURL(listing.starship).name}
-              preis={listing.preis}
+              price={listing.price}
               img={starshipURL(listing.starship).img}
             />
           );

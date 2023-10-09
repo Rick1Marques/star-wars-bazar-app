@@ -31,7 +31,7 @@ const StyledBuyButton = styled.button`
   color: var(--secondary-color);
 `;
 
-export default function UsersListingCard({ _id, name, img, preis }) {
+export default function UsersListingCard({ _id, name, img, price }) {
   return (
     <Flex height="150px" width="90%" justifyContent="space-between">
       <StyledImageWrapper>
@@ -45,7 +45,7 @@ export default function UsersListingCard({ _id, name, img, preis }) {
       </StyledImageWrapper>
       <Flex width="50%" direction="column" alignItems="center">
         <StyledParagraph>{name}</StyledParagraph>
-        <StyledParagraph>Price: {preis}</StyledParagraph>
+        <StyledParagraph>Price: {price}</StyledParagraph>
         <StyledBuyButton>Soon...</StyledBuyButton>
       </Flex>
     </Flex>

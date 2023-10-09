@@ -5,12 +5,11 @@ export default async function handler(request, response) {
   await connect();
   if (request.method === "PUT") {
     try {
-      console.log({ ...request.body });
       const listing = await Listing.findOneAndUpdate(
         { _id: request.query.id },
         {
           $set: {
-            preis: { ...request.body }.preis,
+            price: { ...request.body }.price,
           },
         }
       );

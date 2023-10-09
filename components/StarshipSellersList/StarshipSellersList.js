@@ -26,7 +26,7 @@ export default function StarshipSellersList({ starshipId }) {
               {...listing}
               key={listing._id}
               name={listing.user.name}
-              preis={listing.preis}
+              price={listing.price}
               img={listing.user.avatar}
               userId={listing.user._id}
             />

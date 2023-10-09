@@ -9,7 +9,7 @@ function random(max, min) {
 
 function getSellCostCredit(max, min) {
   return {
-    preis: random(max, min),
+    price: random(max, min),
   };
 }
 
