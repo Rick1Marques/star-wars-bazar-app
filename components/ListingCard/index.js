@@ -1,6 +1,8 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
+import Link from "next/link";
+import Listing from "@/db/models/Listing";
 
 const StyledImageWrapper = styled.div`
   height: 135px;
@@ -37,6 +39,7 @@ export default function ListingCard({ _id, name, img, preis }) {
       <Flex direction="column">
         <StyledParagraph>{name}</StyledParagraph>
         <StyledParagraph>Price: {preis}</StyledParagraph>
+        <Link href={`/my-profile/my-selling-list/edit-offer/${_id}`}>edit</Link>
       </Flex>
     </Flex>
   );
