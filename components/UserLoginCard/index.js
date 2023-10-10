@@ -2,6 +2,8 @@ import Flex from "../Layout/Flex";
 import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
+import useUser from "@/hooks/useUser";
+import { useState } from "react";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -17,7 +19,6 @@ const StyledImageWrapper = styled.div`
 
 const StyledStarshipImage = styled(Image)`
   object-fit: cover;
-  position: absolute;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -29,10 +30,23 @@ const StyledParagraph = styled.p`
   font-size: 2rem;
 `;
 
+const StyledButton = styled.button`
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  width: auto;
+  height: auto;
+`;
+
 export default function UserLoginCard({ name, avatar, userId }) {
+  const { login } = useUser();
+  console.log(userId);
+
   return (
-    <StyledLink href={`/my-profile`} key={userId}>
-      <Flex direction="column" alignItems="center" gap="1rem">
+    <Flex direction="column" alignItems="center" gap="1rem">
+      <StyledButton type="button" onClick={() => login(userId)}>
         <StyledImageWrapper>
           <StyledStarshipImage
             src={avatar}
@@ -43,7 +57,7 @@ export default function UserLoginCard({ name, avatar, userId }) {
           />
         </StyledImageWrapper>
         <StyledParagraph>{name}</StyledParagraph>
-      </Flex>
-    </StyledLink>
+      </StyledButton>
+    </Flex>
   );
 }
