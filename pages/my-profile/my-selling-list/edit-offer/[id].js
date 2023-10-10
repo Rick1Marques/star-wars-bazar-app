@@ -6,7 +6,7 @@ import Flex from "@/components/Layout/Flex";
 import NewOfferForm from "@/components/NewOfferForm";
 import StarshipInfo from "@/components/StarshipInfo";
 import Link from "next/link";
-import { updateListing } from "@/lib/api";
+import { getListing, updateListing } from "@/lib/api";
 import { mutate } from "swr";
 
 const StyledBackLink = styled(Link)`
@@ -40,6 +40,8 @@ export default function EditOffer({ mainUser }) {
   const { data: listing, isLoading } = useSWR(
     id ? `/api/listings/${id}` : null
   );
+  // const listing = await getListing(id);
+  // console.log(listing);
 
   async function onSubmit(data) {
     await updateListing({ ...data, id });
