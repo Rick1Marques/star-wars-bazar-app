@@ -6,7 +6,7 @@ import Flex from "@/components/Layout/Flex";
 import NewOfferForm from "@/components/NewOfferForm";
 import StarshipInfo from "@/components/StarshipInfo";
 import Link from "next/link";
-import { getListing, updateListing } from "@/lib/api";
+import { updateListing } from "@/lib/api";
 import { mutate } from "swr";
 
 const StyledBackLink = styled(Link)`
@@ -36,12 +36,9 @@ const StyledImageWrapper = styled.div`
 export default function EditOffer({ mainUser }) {
   const router = useRouter();
   const { id } = router.query;
-  console.log(id);
   const { data: listing, isLoading } = useSWR(
     id ? `/api/listings/${id}` : null
   );
-  // const listing = await getListing(id);
-  // console.log(listing);
 
   async function onSubmit(data) {
     await updateListing({ ...data, id });
@@ -53,13 +50,6 @@ export default function EditOffer({ mainUser }) {
   if (!listing || isLoading) {
     return <h1>Loading...</h1>;
   }
-  //   async function onSubmit(data) {
-  //     await updateListing({
-  //       ...data,
-  //     });
-  //     mutate(`/api/listings`);
-  //     router.push("/my-profile/my-selling-list");
-  //   }
 
   const {
     name,
