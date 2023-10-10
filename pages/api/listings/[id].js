@@ -25,7 +25,7 @@ export default async function handler(request, response) {
         { _id: request.query.id },
         {
           $set: {
-            price: { ...request.body }.price,
+            price: request.body.price,
           },
         }
       );
