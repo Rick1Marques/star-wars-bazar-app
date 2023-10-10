@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import useUser from "@/hooks/useUser";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -41,12 +42,15 @@ const StyledButton = styled.button`
 `;
 
 export default function UserLoginCard({ name, avatar, userId }) {
+  const router = useRouter();
   const { login } = useUser();
-  console.log(userId);
-
+  function loginAction(id) {
+    login(id);
+    router.push(`/my-profile`);
+  }
   return (
     <Flex direction="column" alignItems="center" gap="1rem">
-      <StyledButton type="button" onClick={() => login(userId)}>
+      <StyledButton type="button" onClick={() => loginAction(userId)}>
         <StyledImageWrapper>
           <StyledStarshipImage
             src={avatar}
