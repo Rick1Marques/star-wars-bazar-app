@@ -14,14 +14,14 @@ const StyledUserImage = styled(Image)`
   border-radius: 50%;
 `;
 
-const StyledUserName = styled.div`
+const StyledNameFrame = styled.div`
   width: 16.25rem;
   height: 2.5rem;
   padding: 7px;
   border-radius: 6px;
   border: 0.5px solid #baf0e0;
   text-align: center;
-  color: var(--primary-title-color);
+  // color: var(--primary-title-color);
 `;
 
 const StyledProfileTitle = styled.h1`
@@ -54,17 +54,23 @@ export default function MyProfile({ mainUser }) {
           width={140}
           height={140}
         />
-        <StyledUserName>{mainUser.name}</StyledUserName>
+        <StyledNameFrame>{mainUser.name}</StyledNameFrame>
         <Flex direction="column" alignItems="center">
           <StyledTitleCredit>Total amount of Credits:</StyledTitleCredit>
           <StyledCredit>
             {mainUser.credits.toLocaleString("en-US")}
           </StyledCredit>
         </Flex>
-        <StyledLink href="/my-profile/my-collection">My Collection</StyledLink>
-        <StyledLink href="/my-profile/my-selling-list">
-          My selling list
-        </StyledLink>
+        <StyledNameFrame>
+          <StyledLink href="/my-profile/my-collection">
+            My Collection
+          </StyledLink>{" "}
+        </StyledNameFrame>
+        <StyledNameFrame>
+          <StyledLink href="/my-profile/my-selling-list">
+            My selling list
+          </StyledLink>
+        </StyledNameFrame>
       </Flex>
     </main>
   );

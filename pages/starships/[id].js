@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
 import StarshipInfo from "@/components/StarshipInfo";
-import StarshipSellersList from "@/components/StarshipSellersList/StarshipSellersList";
+import StarshipSellersList from "@/components/StarshipSellersList";
 import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
 import { StyledBackLink } from "@/components/Layout/StyledBackLink";
 

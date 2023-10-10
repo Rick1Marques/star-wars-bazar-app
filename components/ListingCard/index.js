@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Flex from "../Layout/Flex";
 import { deleteListing } from "@/lib/api";
 import useSWR from "swr";
+import { StyledButton } from "../Layout/StyledButton";
 
 const StyledImageWrapper = styled.div`
   height: 135px;
@@ -23,7 +24,6 @@ const StyledStarshipImage = styled(Image)`
 const StyledParagraph = styled.p`
   color: var(--secondary-color);
 `;
-
 
 export default function ListingCard({ _id, name, img, price }) {
   const { data: listings, isLoading, mutate } = useSWR("/api/listings");
@@ -53,9 +53,9 @@ export default function ListingCard({ _id, name, img, price }) {
       <Flex direction="column">
         <StyledParagraph>{name}</StyledParagraph>
         <StyledParagraph>Price: {price}</StyledParagraph>
-        <button type="button" onClick={() => onDelete(_id)}>
+        <StyledButton type="button" onClick={() => onDelete(_id)}>
           Delete
-        </button>
+        </StyledButton>
       </Flex>
     </Flex>
   );

@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import Flex from "@/components/Layout/Flex";
-import ListingsStarshipCard from "../ListingsStarshipCard/ListingsStarshipCard";
+import ListingsStarshipCard from "../ListingsStarshipCard";
 
 export default function StarshipSellersList({ starshipId }) {
   const { data: listings, isLoading } = useSWR("/api/listings");
