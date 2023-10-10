@@ -16,7 +16,7 @@ export default async function handler(request, response) {
       });
       return;
     }
-    response.status(200).json(listing);
+    return response.status(200).json(listing);
   }
 
   if (request.method === "PUT") {
