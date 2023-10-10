@@ -36,6 +36,7 @@ const StyledImageWrapper = styled.div`
 export default function EditOffer({ mainUser }) {
   const router = useRouter();
   const { id } = router.query;
+  console.log(id);
   const { data: listing, isLoading } = useSWR(
     id ? `/api/listings/${id}` : null
   );
