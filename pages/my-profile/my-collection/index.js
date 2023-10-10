@@ -1,9 +1,12 @@
 import MyCollectionList from "@/components/MyCollectionList";
+import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
+import { StyledBackLink } from "@/components/Layout/StyledBackLink";
 
 export default function MyCollection() {
   return (
     <main>
-      <h1>My collection</h1>
+      <StyledBackLink href={"/my-profile"}>Back</StyledBackLink>
+      <StyledPageTitle>My collection</StyledPageTitle>
       <MyCollectionList />
     </main>
   );

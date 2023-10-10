@@ -8,6 +8,7 @@ import StarshipInfo from "@/components/StarshipInfo";
 import Link from "next/link";
 import { createListing } from "@/lib/api";
 import { mutate } from "swr";
+import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
 
 const StyledBackLink = styled(Link)`
   text-decoration: none;
@@ -65,7 +66,7 @@ export default function NewOffer({ mainUser }) {
   return (
     <Flex direction="column" padding="1.5rem" alignItems="center">
       <StyledBackLink href="/my-profile/my-collection">Back</StyledBackLink>
-      <h1>New offer</h1>
+      <StyledPageTitle>New offer</StyledPageTitle>
       <Flex direction="column">
         <StyledImageWrapper>
           <StyledStarshipImage
@@ -86,7 +87,7 @@ export default function NewOffer({ mainUser }) {
       </Flex>
 
       <NewOfferForm
-        credit={default_cost_in_credits}
+        credit={default_cost_in_credits.toLocaleString("en-US")}
         id={_id}
         onSubmit={onSubmit}
         user={mainUser}

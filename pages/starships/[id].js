@@ -6,16 +6,8 @@ import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
 import StarshipInfo from "@/components/StarshipInfo";
 import StarshipSellersList from "@/components/StarshipSellersList/StarshipSellersList";
-const StyledBackLink = styled(Link)`
-  text-decoration: none;
-  color: white;
-  align-self: flex-start;
-`;
-const StyledDetailPageTitle = styled.h1`
-  color: var(--primary-title-color);
-  font-size: 1.5rem;
-  text-align: center;
-`;
+import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
+import { StyledBackLink } from "@/components/Layout/StyledBackLink";
 
 const StyledImageWrapper = styled.div`
   height: 285px;
@@ -59,7 +51,7 @@ export default function Starship() {
   return (
     <Flex direction="column" alignItems="center">
       <StyledBackLink href={"/marketplace"}>Back</StyledBackLink>
-      <StyledDetailPageTitle>{name}</StyledDetailPageTitle>
+      <StyledPageTitle>{name}</StyledPageTitle>
 
       <Flex direction="column" padding="1.5rem" alignItems="center">
         <Flex direction="column">
@@ -77,7 +69,10 @@ export default function Starship() {
           <StarshipInfo label="Manufacturer:" value={manufacturer} />
           <StarshipInfo label="Max. speed:" value={max_atmosphering_speed} />
           <StarshipInfo label="Passengers:" value={passengers} />
-          <StarshipInfo label="Cargo capacity:" value={cargo_capacity} />
+          <StarshipInfo
+            label="Cargo capacity:"
+            value={cargo_capacity.toLocaleString("en-US")}
+          />
           <StarshipInfo label="Starship class:" value={starship_class} />
         </Flex>
       </Flex>

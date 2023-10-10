@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Flex from "../Layout/Flex";
+import Flex from "../Flex";
 import Link from "next/link";
 
 const StyledNav = styled.nav`

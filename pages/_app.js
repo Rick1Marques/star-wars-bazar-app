@@ -2,7 +2,7 @@ import GlobalStyle from "../styles";
 import useSWR, { SWRConfig } from "swr";
 import fetcher from "@/lib/fetcher";
 import { Blinker } from "@next/font/google";
-import MainLayout from "@/components/MainLayout";
+import MainLayout from "@/components/Layout/MainLayout";
 import styled from "styled-components";
 import useUser from "@/hooks/useUser";
 

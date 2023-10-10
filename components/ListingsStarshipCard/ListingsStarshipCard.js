@@ -51,7 +51,6 @@ export default function ListingsStarshipCard({
   starshipId,
   listingId,
 }) {
-
   const { mainUser } = useUser();
   if (!mainUser) {
     return "Loading";
