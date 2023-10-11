@@ -6,7 +6,7 @@ import styled from "styled-components";
 const StyledTitle = styled.h1`
   margin-top: 2rem;
 `;
-
+console.log();
 export default function LoginPage() {
   const { data: users, isLoading } = useSWR(`/api/users`);
   if (!users || isLoading) {
