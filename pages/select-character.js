@@ -7,7 +7,7 @@ const StyledTitle = styled.h1`
   margin-top: 2rem;
 `;
 console.log();
-export default function LoginPage() {
+export default function SelectCharacterPage() {
   const { data: users, isLoading } = useSWR(`/api/users`);
   if (!users || isLoading) {
     return <h1>Loading...</h1>;

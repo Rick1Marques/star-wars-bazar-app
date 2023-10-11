@@ -14,7 +14,9 @@ const StyledLink = styled(Link)`
 export default function HomePage() {
   return (
     <Flex justifyContent="center">
-      <StyledLink href="/login">Welcome to the Star Wars Bazaar!</StyledLink>
+      <StyledLink href="/select-character">
+        Welcome to the Star Wars Bazaar!
+      </StyledLink>
     </Flex>
   );
 }

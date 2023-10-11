@@ -3,7 +3,7 @@ import Nav from "../Nav";
 import Head from "next/head";
 
 export default function MainLayout({ mainUser }) {
-  if (!mainUser) {
+  if (!mainUser._id) {
     return (
       <>
         <Head>
