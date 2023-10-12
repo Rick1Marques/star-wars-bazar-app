@@ -67,11 +67,17 @@ export default function Starship() {
 
           <StarshipInfo label="Model:" value={model} />
           <StarshipInfo label="Manufacturer:" value={manufacturer} />
-          <StarshipInfo label="Max. speed:" value={max_atmosphering_speed} />
-          <StarshipInfo label="Passengers:" value={passengers} />
+          <StarshipInfo
+            label="Max. speed:"
+            value={Number(max_atmosphering_speed).toLocaleString("en-US")}
+          />
+          <StarshipInfo
+            label="Passengers:"
+            value={Number(passengers).toLocaleString("en-US")}
+          />
           <StarshipInfo
             label="Cargo capacity:"
-            value={cargo_capacity.toLocaleString("en-US")}
+            value={Number(cargo_capacity).toLocaleString("en-US")}
           />
           <StarshipInfo label="Starship class:" value={starship_class} />
         </Flex>

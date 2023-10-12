@@ -2,6 +2,9 @@ import styled from "styled-components";
 import Link from "next/link";
 
 export const StyledLink = styled(Link)`
+  outline: 1px ridge #baf0e0;
+  border-radius: 5px;
+  outline-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-decoration: none;
   text-align: center;
   padding-top: 5px;

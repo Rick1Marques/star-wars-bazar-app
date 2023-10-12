@@ -64,6 +64,8 @@ export default function MyProfile({ mainUser }) {
   if (!mainUser) {
     return "Loading";
   }
+  console.log(mainUser);
+
   return (
     <main>
       <Flex direction="column" alignItems="center" gap="30px">
