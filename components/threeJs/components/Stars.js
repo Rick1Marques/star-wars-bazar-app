@@ -1,4 +1,6 @@
 import { useTexture } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
 
 export default function Stars() {
   // Texture
@@ -13,8 +15,15 @@ export default function Stars() {
     colorsStars[i] = Math.random();
   }
 
+  // Animation
+  const starsRef = useRef();
+  useFrame((state, delta) => {
+    starsRef.current.rotation.y += delta * 0.01;
+    starsRef.current.rotation.z += delta * 0.005;
+  });
+
   return (
-    <points>
+    <points ref={starsRef}>
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
@@ -31,7 +40,7 @@ export default function Stars() {
       </bufferGeometry>
       <pointsMaterial
         map={starsTexture}
-        size={Math.random() * 0.6 + 0.2}
+        size={Math.random() * 0.8 + 0.2}
         sizeAttenuation={true}
         transparent={true}
         alphaMap={starsTexture}

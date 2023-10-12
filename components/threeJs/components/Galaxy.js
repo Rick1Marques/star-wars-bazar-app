@@ -71,7 +71,7 @@ export default function Galaxy() {
   return (
     <points
       ref={galaxyRef}
-      position={[0, -bigGroupRadius, -bigGroupRadius * 0.3]}
+      position={[0, -bigGroupRadius, -bigGroupRadius * 0.2]}
       rotation-x={(45 * Math.PI) / 180}
     >
       <bufferGeometry>

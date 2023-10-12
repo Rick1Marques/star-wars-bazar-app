@@ -43,12 +43,14 @@ export default function Planets() {
   const planet2Ref = useRef();
   const planet3Ref = useRef();
   const planet4Ref = useRef();
+  const planet5Ref = useRef();
 
   useFrame((state, delta) => {
     planet1Ref.current.rotation.y += delta * 0.1;
     planet2Ref.current.rotation.y += delta * 0.09;
     planet3Ref.current.rotation.y += delta * 0.08;
     planet4Ref.current.rotation.y += delta * 0.11;
+    planet5Ref.current.rotation.y += delta * 0.05;
   });
   return (
     <>
@@ -84,9 +86,9 @@ export default function Planets() {
         <sphereGeometry />
         <meshStandardMaterial map={planet4Texture} />
       </mesh>
-      <mesh position={[0, 0, 0]} scale={20}>
+      <mesh ref={planet5Ref} position={[0, 0, 0]} scale={18}>
         <sphereGeometry />
-        <meshStandardMaterial map={planet5Texture} />
+        <meshBasicMaterial map={planet5Texture} />
       </mesh>
     </>
   );
