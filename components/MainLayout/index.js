@@ -7,7 +7,7 @@ export default function MainLayout({ mainUser }) {
     return (
       <>
         <Head>
-          <title>Star Wars Bazar</title>
+          <title>Star Wars Bazaar</title>
         </Head>
       </>
     );
@@ -15,7 +15,7 @@ export default function MainLayout({ mainUser }) {
   return (
     <>
       <Head>
-        <title>Star Wars Bazar</title>
+        <title>Star Wars Bazaar</title>
       </Head>
       <Flex justifyContent="center">
         <Nav />
