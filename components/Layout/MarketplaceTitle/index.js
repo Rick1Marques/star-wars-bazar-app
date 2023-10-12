@@ -7,7 +7,6 @@ const StyledMarketplaceTitle = styled.h2`
   background: linear-gradient(90deg, #8feecc 0%, rgba(215, 218, 53, 0.65) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  hight: 10px;
 `;
 export default function MarketplaceTitle() {
   return <StyledMarketplaceTitle>Marketplace</StyledMarketplaceTitle>;

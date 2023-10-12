@@ -9,7 +9,6 @@ export const StyledButton = styled.button`
   color: rgba(243, 243, 243, 1);
   border-radius: 5px;
   border-width: 1px;
-  border-color: #baf0e0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   height: 2rem;
   width: 6.25rem;

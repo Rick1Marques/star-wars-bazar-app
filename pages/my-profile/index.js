@@ -7,11 +7,20 @@ import useUser from "@/hooks/useUser";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: var(--primary-title-color);
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-align: center;
+  background: linear-gradient(90deg, #8feecc 0%, rgba(215, 218, 53, 0.65) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 const StyledUserImage = styled(Image)`
   border-radius: 50%;
+  fill: #303030;
+  stroke-width: 1px;
+  stroke: #646464;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
 
 const StyledNameFrame = styled.div`
@@ -21,17 +30,28 @@ const StyledNameFrame = styled.div`
   border-radius: 6px;
   border: 0.5px solid #baf0e0;
   text-align: center;
+  background: #2c2c2c;
   // color: var(--primary-title-color);
 `;
 
 const StyledProfileTitle = styled.h1`
-  color: var(--primary-title-color);
   margin-top: 75px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  background: linear-gradient(90deg, #8feecc 0%, rgba(215, 218, 53, 0.65) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 const StyledTitleCredit = styled.h2`
-  color: var(--primary-title-color);
   margin-top: 20px;
+  font-size: 1.25rem;
+  font-weight: 300;
+  text-align: center;
+  background: linear-gradient(90deg, #8feecc 0%, rgba(215, 218, 53, 0.65) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 const StyledCredit = styled.p`

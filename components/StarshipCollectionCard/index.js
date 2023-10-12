@@ -6,7 +6,7 @@ import { StyledLink } from "../Layout/StyledLink";
 const StyledImageWrapper = styled.div`
   height: 135px;
   width: 135px;
-  // border-radius: 11px;
+  border-radius: 11px;
   border: 0.5px solid #baf0e0;
   overflow: hidden;
   position: relative;
