@@ -57,9 +57,7 @@ export default function MyProfile({ mainUser }) {
         <StyledNameFrame>{mainUser.name}</StyledNameFrame>
         <Flex direction="column" alignItems="center">
           <StyledTitleCredit>Total amount of Credits:</StyledTitleCredit>
-          <StyledCredit>
-            {mainUser.credits.toLocaleString("en-US")}
-          </StyledCredit>
+          <StyledCredit>{mainUser.credits}</StyledCredit>
         </Flex>
         <StyledNameFrame>
           <StyledLink href="/my-profile/my-collection">

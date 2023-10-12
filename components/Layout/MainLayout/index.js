@@ -6,7 +6,7 @@ export default function MainLayout() {
   return (
     <>
       <Head>
-        <title>Star Wars Bazar</title>
+        <title>Star Wars Bazaar</title>
       </Head>
       <Flex justifyContent="center">
         <Nav />
