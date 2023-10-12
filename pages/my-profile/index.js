@@ -44,6 +44,8 @@ export default function MyProfile({ mainUser }) {
   if (!mainUser) {
     return "Loading";
   }
+  console.log(mainUser);
+
   return (
     <main>
       <Flex direction="column" alignItems="center" gap="30px">
@@ -57,9 +59,7 @@ export default function MyProfile({ mainUser }) {
         <StyledNameFrame>{mainUser.name}</StyledNameFrame>
         <Flex direction="column" alignItems="center">
           <StyledTitleCredit>Total amount of Credits:</StyledTitleCredit>
-          <StyledCredit>
-            {mainUser.credits.toLocaleString("en-US")}
-          </StyledCredit>
+          <StyledCredit>{mainUser.credits}</StyledCredit>
         </Flex>
         <StyledNameFrame>
           <StyledLink href="/my-profile/my-collection">
