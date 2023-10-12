@@ -3,6 +3,7 @@ import Universe from "@/Utilities";
 import Stars from "../components/Stars";
 import Planets from "../components/Planets";
 import PlanetWithRing from "../components/PlanetWithRing";
+import Galaxy from "../components/Galaxy";
 
 export default function Experience() {
   const { bigGroupRadius, angle } = Universe();
@@ -11,9 +12,10 @@ export default function Experience() {
     <>
       <OrbitControls />
       <ambientLight intensity={0.5} />
-      {/* <Planets /> */}
+      <Planets />
       <Stars />
       <PlanetWithRing />
+      <Galaxy />
     </>
   );
 }

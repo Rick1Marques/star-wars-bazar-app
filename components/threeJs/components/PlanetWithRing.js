@@ -34,9 +34,9 @@ export default function PlanetWithRing() {
     // Position
     const angleRing = Math.random() * Math.PI * 2;
 
-    const randomness = 0.5;
+    const randomness = 2;
     const randomXZ = (Math.random() - 0.5) * randomness;
-    const randomY = (Math.random() - 0.5) * randomness * 0.6;
+    const randomY = (Math.random() - 0.5) * randomness * 0.4;
 
     const radius =
       Math.random() * (radiusRing - radiusRing * 0.3) + radiusRing * 0.3;
@@ -46,15 +46,28 @@ export default function PlanetWithRing() {
     positionsRing[i3 + 2] = Math.cos(angleRing) * radius + randomXZ;
   }
 
-  // Animation
+  // Group
+  const planetWithRing = {
+    x: 0,
+    y: bigGroupRadius,
+    z: bigGroupRadius * 0.3,
+  };
 
-  // const planetWithRingRef = useRef();
+  /**
+   * Animation
+   */
 
-  // useFrame((state, delta) => {
-  //   planetWithRingRef.current.rotation.y += delta * 0.1;
-  // });
+  const planetWithRingRef = useRef();
+
+  useFrame((state, delta) => {
+    planetWithRingRef.current.rotation.y += delta * 0.1;
+  });
   return (
-    <>
+    <group
+      ref={planetWithRingRef}
+      position={[planetWithRing.x, planetWithRing.y, planetWithRing.z]}
+      rotation-x={(45 * Math.PI) / 180}
+    >
       <points>
         <bufferGeometry>
           <bufferAttribute
@@ -66,7 +79,7 @@ export default function PlanetWithRing() {
         </bufferGeometry>
         <pointsMaterial
           map={ringTexture}
-          size={0.025}
+          size={0.055}
           sizeAttenuation={true}
           transparent={true}
           alphaMap={ringTexture}
@@ -75,6 +88,11 @@ export default function PlanetWithRing() {
           blending={AdditiveBlending}
         />
       </points>
-    </>
+
+      <mesh position={[0, 0, 0]} scale={4}>
+        <sphereGeometry />
+        <meshStandardMaterial map={planet6Texture} color={"#ff4030"} />
+      </mesh>
+    </group>
   );
 }
