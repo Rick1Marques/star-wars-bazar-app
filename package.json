@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@next/font": "^13.5.2",
+    "@react-three/drei": "9.77",
     "@react-three/fiber": "8.13",
     "dotenv": "^16.3.1",
     "eslint": "8.44.0",
