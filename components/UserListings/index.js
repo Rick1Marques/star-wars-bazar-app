@@ -19,6 +19,7 @@ export default function UserList({ listings, starships, userId, userCredits }) {
       >
         {listings.map((listing) => {
           return (
+
            <UsersListingCard
             {...listing}
             key={listing._id}
@@ -30,6 +31,7 @@ export default function UserList({ listings, starships, userId, userCredits }) {
             userCredits={userCredits}
             listingId={listing._id}
           />
+
           );
         })}
       </Flex>

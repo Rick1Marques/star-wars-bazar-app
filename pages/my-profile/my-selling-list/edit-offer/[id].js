@@ -6,7 +6,7 @@ import Flex from "@/components/Layout/Flex";
 import NewOfferForm from "@/components/NewOfferForm";
 import StarshipInfo from "@/components/StarshipInfo";
 import Link from "next/link";
-import { createListing } from "@/lib/api";
+import { updateListing } from "@/lib/api";
 import { mutate } from "swr";
 
 const StyledBackLink = styled(Link)`
@@ -33,21 +33,22 @@ const StyledImageWrapper = styled.div`
   position: relative;
 `;
 
-export default function NewOffer({ mainUser }) {
+export default function EditOffer({ mainUser }) {
   const router = useRouter();
   const { id } = router.query;
-  const { data: starship, isLoading } = useSWR(
-    id ? `/api/starships/${id}` : null
+  const { data: listing, isLoading } = useSWR(
+    id ? `/api/listings/${id}` : null
   );
-  if (!starship || isLoading) {
-    return <h1>Loading...</h1>;
-  }
+
   async function onSubmit(data) {
-    await createListing({
-      ...data,
-    });
+    await updateListing({ ...data, id });
     mutate(`/api/listings`);
+    mutate(`/api/listings/${id}`);
     router.push("/my-profile/my-selling-list");
+  }
+
+  if (!listing || isLoading) {
+    return <h1>Loading...</h1>;
   }
 
   const {
@@ -61,12 +62,12 @@ export default function NewOffer({ mainUser }) {
     img,
     _id,
     default_cost_in_credits,
-  } = starship;
+  } = listing.starship;
 
   return (
     <Flex direction="column" padding="1.5rem" alignItems="center">
-      <StyledBackLink href="/my-profile/my-collection">Back</StyledBackLink>
-      <h1>New offer</h1>
+      <StyledBackLink href="/my-profile/my-selling-list">Back</StyledBackLink>
+      <h1>Edit offer</h1>
       <Flex direction="column">
         <StyledImageWrapper>
           <StyledStarshipImage
@@ -91,7 +92,7 @@ export default function NewOffer({ mainUser }) {
         id={_id}
         onSubmit={onSubmit}
         user={mainUser}
-        starship={starship}
+        starship={listing.starship}
       />
     </Flex>
   );
