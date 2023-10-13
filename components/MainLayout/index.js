@@ -29,10 +29,12 @@ export default function MainLayout({ mainUser, children }) {
       <Head>
         <title>Star Wars Bazaar</title>
       </Head>
+
       <StyledMain className={blinker.className}>{children}</StyledMain>
       <Flex justifyContent="center">
         <Nav />
       </Flex>
+
     </>
   );
 }

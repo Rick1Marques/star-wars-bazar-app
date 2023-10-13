@@ -1,0 +1,11 @@
+Model Information:
+* title:	Corbeta Republicana Radiant 7 Armada
+* source:	https://sketchfab.com/3d-models/corbeta-republicana-radiant-7-armada-17afa2b180144f13abdec7ed6553a7be
+* author:	doclusifer2 (https://sketchfab.com/doclusifer2)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Corbeta Republicana Radiant 7 Armada" (https://sketchfab.com/3d-models/corbeta-republicana-radiant-7-armada-17afa2b180144f13abdec7ed6553a7be) by doclusifer2 (https://sketchfab.com/doclusifer2) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
