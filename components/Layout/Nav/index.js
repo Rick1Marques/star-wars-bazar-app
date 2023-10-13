@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import Flex from "../Layout/Flex";
+import Flex from "../Flex";
 import Link from "next/link";
+import { BiHomeAlt2 } from "react-icons/bi";
+import { BiUserCircle } from "react-icons/bi";
 import { Blinker } from "@next/font/google";
 
 const blinker = Blinker({
@@ -34,9 +36,13 @@ const StyledNav = styled.nav`
 
 export default function Nav() {
   return (
-    <StyledNav className={blinker.className}>
-      <Link href="/marketplace">Marketplace</Link>
-      <Link href="/my-profile">My Profile</Link>
+    <StyledNav>
+      <Link href="/marketplace">
+        <BiHomeAlt2 size={25} />
+      </Link>
+      <Link href="/my-profile">
+        <BiUserCircle size={25} />
+      </Link>
     </StyledNav>
   );
 }

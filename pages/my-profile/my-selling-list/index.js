@@ -1,9 +1,15 @@
 import MyListings from "@/components/MyListings";
+import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
+import { StyledBackLink } from "@/components/Layout/StyledBackLink";
+import { HiArrowLeft } from "react-icons/hi";
 
 export default function MySellingList() {
   return (
     <>
-      <h1>My selling list</h1>
+      <StyledBackLink href={"/my-profile"}>
+        <HiArrowLeft gap="10px" />
+      </StyledBackLink>
+      <StyledPageTitle>My Selling List</StyledPageTitle>
       <MyListings />
     </>
   );

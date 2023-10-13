@@ -20,7 +20,7 @@ export default function MyListings() {
               key={listing._id}
               _id={listing._id}
               name={starshipURL(listing.starship).name}
-              price={listing.price}
+              price={listing.price.toLocaleString("en-US")}
               img={starshipURL(listing.starship).img}
             />
           );

@@ -8,34 +8,28 @@ export default function UserList({ listings, starships, userId, userCredits }) {
   }
 
   return (
-
-    
-      <Flex
-        gap="1.5rem"
-        flexWrap="wrap"
-        direction="column"
-        width="90%"
-        alignItems="center"
-      >
-        {listings.map((listing) => {
-          return (
-
-           <UsersListingCard
+    <Flex
+      gap="1.5rem"
+      flexWrap="wrap"
+      direction="column"
+      width="90%"
+      alignItems="center"
+    >
+      {listings.map((listing) => {
+        return (
+          <UsersListingCard
             {...listing}
             key={listing._id}
             name={starshipURL(listing.starship).name}
-            price={listing.price}
+            price={listing.price.toLocaleString("en-US")}
             img={starshipURL(listing.starship).img}
             userId={userId}
             starshipId={listing.starship}
             userCredits={userCredits}
             listingId={listing._id}
           />
-
-          );
-        })}
-      </Flex>
-    
-
+        );
+      })}
+    </Flex>
   );
 }

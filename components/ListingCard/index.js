@@ -7,13 +7,13 @@ import Listing from "@/db/models/Listing";
 
 import { deleteListing } from "@/lib/api";
 import useSWR from "swr";
-
+import { StyledButton } from "../Layout/StyledButton";
 
 const StyledImageWrapper = styled.div`
   height: 135px;
   width: 135px;
   border-radius: 11px;
-  border: 0.5px solid var(--secondary-color);
+  border: 0.5px solid #baf0e0;
   overflow: hidden;
   position: relative;
 `;
@@ -29,8 +29,6 @@ const StyledParagraph = styled.p`
   color: var(--secondary-color);
 `;
 
-
-
 export default function ListingCard({ _id, name, img, price }) {
   const { data: listings, isLoading, mutate } = useSWR("/api/listings");
   if (!listings || isLoading) {
@@ -44,7 +42,6 @@ export default function ListingCard({ _id, name, img, price }) {
     await deleteListing(id);
     mutate();
   }
-
 
   return (
     <Flex height="150px" width="90%">
@@ -66,7 +63,6 @@ export default function ListingCard({ _id, name, img, price }) {
         <button type="button" onClick={() => onDelete(_id)}>
           Delete
         </button>
-
       </Flex>
     </Flex>
   );

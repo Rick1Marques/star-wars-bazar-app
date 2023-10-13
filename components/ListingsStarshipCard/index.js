@@ -16,6 +16,10 @@ const StyledImageWrapper = styled.div`
   border-radius: 50%;
   overflow: hidden;
   position: relative;
+  fill: #303030;
+  stroke-width: 0.4px;
+  stroke: #646464;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
 
 const StyledCard = styled.div`
@@ -23,6 +27,10 @@ const StyledCard = styled.div`
   border: 0.5px solid var(--secondary-color);
   padding: 1rem;
   background-color: var(--button-color));
+  border-radius: 20px;
+border: 0.5px solid #C7C7C7;
+background: rgba(242, 242, 242, 0.04);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 
 const StyledStarshipImage = styled(Image)`

@@ -5,17 +5,10 @@ import styled from "styled-components";
 import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
 import StarshipInfo from "@/components/StarshipInfo";
-import StarshipSellersList from "@/components/StarshipSellersList/StarshipSellersList";
-const StyledBackLink = styled(Link)`
-  text-decoration: none;
-  color: white;
-  align-self: flex-start;
-`;
-const StyledDetailPageTitle = styled.h1`
-  color: var(--primary-title-color);
-  font-size: 1.5rem;
-  text-align: center;
-`;
+import StarshipSellersList from "@/components/StarshipSellersList";
+import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
+import { StyledBackLink } from "@/components/Layout/StyledBackLink";
+import { HiArrowLeft } from "react-icons/hi";
 
 const StyledImageWrapper = styled.div`
   height: 285px;
@@ -56,10 +49,14 @@ export default function Starship() {
     _id,
   } = starship;
 
+  console.log(max_atmosphering_speed);
+
   return (
     <Flex direction="column" alignItems="center">
-      <StyledBackLink href={"/marketplace"}>Back</StyledBackLink>
-      <StyledDetailPageTitle>{name}</StyledDetailPageTitle>
+      <StyledBackLink href={"/marketplace"}>
+        <HiArrowLeft gap="10px" />
+      </StyledBackLink>
+      <StyledPageTitle>{name}</StyledPageTitle>
 
       <Flex direction="column" padding="1.5rem" alignItems="center">
         <Flex direction="column">
@@ -75,9 +72,30 @@ export default function Starship() {
 
           <StarshipInfo label="Model:" value={model} />
           <StarshipInfo label="Manufacturer:" value={manufacturer} />
-          <StarshipInfo label="Max. speed:" value={max_atmosphering_speed} />
-          <StarshipInfo label="Passengers:" value={passengers} />
-          <StarshipInfo label="Cargo capacity:" value={cargo_capacity} />
+          <StarshipInfo
+            label="Max. speed:"
+            value={
+              isNaN(max_atmosphering_speed) === true
+                ? max_atmosphering_speed
+                : Number(max_atmosphering_speed).toLocaleString("en-US")
+            }
+          />
+          <StarshipInfo
+            label="Passengers:"
+            value={
+              isNaN(passengers) === true
+                ? passengers
+                : Number(passengers).toLocaleString("en-US")
+            }
+          />
+          <StarshipInfo
+            label="Cargo capacity:"
+            value={
+              isNaN(cargo_capacity) === true
+                ? cargo_capacity
+                : Number(cargo_capacity).toLocaleString("en-US")
+            }
+          />
           <StarshipInfo label="Starship class:" value={starship_class} />
         </Flex>
       </Flex>

@@ -3,12 +3,18 @@ import { buyProtocol, sellProtocol } from "@/lib/api";
 import styled from "styled-components";
 
 const StyledBuyButton = styled.button`
-  background-color: #000000;
+  background: linear-gradient(
+    90deg,
+    #baf0e0 -225%,
+    rgba(64, 64, 64, 0) 133.33%
+  );
+  color: rgba(243, 243, 243, 1);
   border-radius: 5px;
-  border: 0.3px solid var(--secondary-color);
+  border-width: 1px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   height: 2rem;
   width: 6.25rem;
-  color: var(--secondary-color);
+  margin-top: 10px;
 `;
 
 export default function BuyButton({
@@ -55,5 +61,5 @@ export default function BuyButton({
       alert("Error on the transaction");
     }
   }
-  return <StyledBuyButton onClick={onBuy}>Buy</StyledBuyButton>;
+  return <StyledBuyButton onClick={onBuy}>BUY</StyledBuyButton>;
 }

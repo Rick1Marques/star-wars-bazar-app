@@ -1,36 +1,18 @@
 import useSWR from "swr";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
 import NewOfferForm from "@/components/NewOfferForm";
-import StarshipInfo from "@/components/StarshipInfo";
 import Link from "next/link";
 import { createListing } from "@/lib/api";
 import { mutate } from "swr";
+import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
+import Offercard from "@/components/OfferCard";
 
 const StyledBackLink = styled(Link)`
   text-decoration: none;
   color: white;
   align-self: flex-start;
-`;
-
-const StyledStarshipImage = styled(Image)`
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-`;
-
-const StyledImageWrapper = styled.div`
-  height: 285px;
-  width: 330px;
-  border-radius: 11px;
-  border: 0.5px solid var(--secondary-color);
-  margin-bottom: 2rem;
-  overflow: hidden;
-  position: relative;
 `;
 
 export default function NewOffer({ mainUser }) {
@@ -66,28 +48,20 @@ export default function NewOffer({ mainUser }) {
   return (
     <Flex direction="column" padding="1.5rem" alignItems="center">
       <StyledBackLink href="/my-profile/my-collection">Back</StyledBackLink>
-      <h1>New offer</h1>
-      <Flex direction="column">
-        <StyledImageWrapper>
-          <StyledStarshipImage
-            src={img}
-            alt={name}
-            height={0}
-            width={0}
-            layout="responsive"
-          />
-        </StyledImageWrapper>
-
-        <StarshipInfo label="Model:" value={model} />
-        <StarshipInfo label="Manufacturer:" value={manufacturer} />
-        <StarshipInfo label="Max. speed:" value={max_atmosphering_speed} />
-        <StarshipInfo label="Passengers:" value={passengers} />
-        <StarshipInfo label="Cargo capacity:" value={cargo_capacity} />
-        <StarshipInfo label="Starship class:" value={starship_class} />
-      </Flex>
+      <StyledPageTitle>New offer</StyledPageTitle>
+      <Offercard
+        img={img}
+        name={name}
+        model={model}
+        manufacturer={manufacturer}
+        max_atmosphering_speed={max_atmosphering_speed}
+        passengers={passengers}
+        cargo_capacity={cargo_capacity}
+        starship_class={starship_class}
+      />
 
       <NewOfferForm
-        credit={default_cost_in_credits}
+        credit={default_cost_in_credits.toLocaleString("en-US")}
         id={_id}
         onSubmit={onSubmit}
         user={mainUser}

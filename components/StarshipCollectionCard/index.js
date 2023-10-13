@@ -1,18 +1,13 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
-import Link from "next/link";
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: var(--primary-title-color);
-`;
+import { StyledLink } from "../Layout/StyledLink";
 
 const StyledImageWrapper = styled.div`
   height: 135px;
   width: 135px;
   border-radius: 11px;
-  border: 0.5px solid var(--secondary-color);
+  border: 0.5px solid #baf0e0;
   overflow: hidden;
   position: relative;
 `;
@@ -25,7 +20,16 @@ const StyledStarshipImage = styled(Image)`
 `;
 
 const StyledParagraph = styled.p`
+text-align: center;
+font-size: 1.2rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
   color: var(--secondary-color);
+  background: linear-gradient(90deg, #CDFFBB 50%, rgba(143, 238, 204, 0.00) 221.43%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent:
 `;
 
 export default function StarshipCollectionCard({ _id, name, img }) {
@@ -40,9 +44,8 @@ export default function StarshipCollectionCard({ _id, name, img }) {
           layout="responsive"
         />
       </StyledImageWrapper>
-      <Flex direction="column">
+      <Flex direction="column" justifyContent="flex-start">
         <StyledParagraph>{name}</StyledParagraph>
-
         <StyledLink href={`/my-profile/my-collection/new-offer/${_id}`}>
           Sell
         </StyledLink>

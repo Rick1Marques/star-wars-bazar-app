@@ -1,4 +1,4 @@
-import Flex from "../Layout/Flex";
+import Flex from "../Flex";
 import Nav from "../Nav";
 import Head from "next/head";
 import styled from "styled-components";

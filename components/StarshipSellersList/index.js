@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import Flex from "@/components/Layout/Flex";
-import ListingsStarshipCard from "../ListingsStarshipCard/ListingsStarshipCard";
+import ListingsStarshipCard from "../ListingsStarshipCard";
 
 export default function StarshipSellersList({ starshipId }) {
   const { data: listings, isLoading } = useSWR("/api/listings");
@@ -25,7 +25,7 @@ export default function StarshipSellersList({ starshipId }) {
             <ListingsStarshipCard
               key={listing._id}
               name={listing.user.name}
-              price={listing.price}
+              price={listing.price.toLocaleString("en-US")}
               img={listing.user.avatar}
               userId={listing.user._id}
               starshipId={listing.starship._id}
