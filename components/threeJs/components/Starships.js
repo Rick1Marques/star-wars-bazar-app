@@ -1,16 +1,17 @@
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import Universe from "@/Utilities";
-
 import { useGLTF } from "@react-three/drei";
 
 export default function Starships() {
   const { bigGroupRadius, angle } = Universe();
 
-  const deathStar = useGLTF("./models/death_star_-_star_wars/scene.gltf");
-  const tieFighter = useGLTF("./models/tie_fighter/scene.gltf");
-  const xWing = useGLTF("./models/x-_wing/scene.gltf");
-  const milleniumFalcon = useGLTF("./models/millenium_falcon/scene.gltf");
+  const tieFighter = useGLTF("./models/tie_fighter/scene.gltf", "/draco-gltf");
+  const xWing = useGLTF("./models/x-_wing/scene.gltf", "/draco-gltf");
+  const milleniumFalcon = useGLTF(
+    "./models/millenium_falcon/scene.gltf",
+    "/draco-gltf"
+  );
 
   //Animation
   const tieFighterRef = useRef();
