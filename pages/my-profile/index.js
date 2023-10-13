@@ -78,8 +78,12 @@ export default function MyProfile({ mainUser }) {
         />
         <StyledNameFrame>{mainUser.name}</StyledNameFrame>
         <Flex direction="column" alignItems="center">
-          <StyledTitleCredit>Total amount of Credits:</StyledTitleCredit>
-          <StyledCredit>{mainUser.credits}</StyledCredit>
+          <StyledTitleCredit>Total amount of credits:</StyledTitleCredit>
+          <StyledCredit>
+            {mainUser.credits === null
+              ? 0
+              : mainUser.credits.toLocaleString("en-US")}
+          </StyledCredit>
         </Flex>
         <StyledNameFrame>
           <StyledLink href="/my-profile/my-collection">
@@ -88,7 +92,7 @@ export default function MyProfile({ mainUser }) {
         </StyledNameFrame>
         <StyledNameFrame>
           <StyledLink href="/my-profile/my-selling-list">
-            My selling list
+            My Selling List
           </StyledLink>
         </StyledNameFrame>
       </Flex>

@@ -8,6 +8,7 @@ import StarshipInfo from "@/components/StarshipInfo";
 import StarshipSellersList from "@/components/StarshipSellersList";
 import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
 import { StyledBackLink } from "@/components/Layout/StyledBackLink";
+import { HiArrowLeft } from "react-icons/hi";
 
 const StyledImageWrapper = styled.div`
   height: 285px;
@@ -48,9 +49,13 @@ export default function Starship() {
     _id,
   } = starship;
 
+  console.log(max_atmosphering_speed);
+
   return (
     <Flex direction="column" alignItems="center">
-      <StyledBackLink href={"/marketplace"}>Back</StyledBackLink>
+      <StyledBackLink href={"/marketplace"}>
+        <HiArrowLeft gap="10px" />
+      </StyledBackLink>
       <StyledPageTitle>{name}</StyledPageTitle>
 
       <Flex direction="column" padding="1.5rem" alignItems="center">
@@ -69,15 +74,27 @@ export default function Starship() {
           <StarshipInfo label="Manufacturer:" value={manufacturer} />
           <StarshipInfo
             label="Max. speed:"
-            value={Number(max_atmosphering_speed).toLocaleString("en-US")}
+            value={
+              isNaN(max_atmosphering_speed) === true
+                ? max_atmosphering_speed
+                : Number(max_atmosphering_speed).toLocaleString("en-US")
+            }
           />
           <StarshipInfo
             label="Passengers:"
-            value={Number(passengers).toLocaleString("en-US")}
+            value={
+              isNaN(passengers) === true
+                ? passengers
+                : Number(passengers).toLocaleString("en-US")
+            }
           />
           <StarshipInfo
             label="Cargo capacity:"
-            value={Number(cargo_capacity).toLocaleString("en-US")}
+            value={
+              isNaN(cargo_capacity) === true
+                ? cargo_capacity
+                : Number(cargo_capacity).toLocaleString("en-US")
+            }
           />
           <StarshipInfo label="Starship class:" value={starship_class} />
         </Flex>
