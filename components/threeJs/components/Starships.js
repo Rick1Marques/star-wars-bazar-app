@@ -22,9 +22,6 @@ export default function Starships() {
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
 
-    groupRef.current.rotation.x = elapsedTime * 0.2;
-    groupRef.current.rotation.y = elapsedTime * 0.5;
-
     const starshipsAngle1 = elapsedTime * 1.9;
     const starshipsAngle2 = elapsedTime * 1.8;
     const starshipsAngle3 = elapsedTime * 1.5;

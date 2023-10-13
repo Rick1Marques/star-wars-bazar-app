@@ -26,7 +26,7 @@ export default function Experience() {
   return (
     <>
       <OrbitControls />
-      <pointLight intensity={1} />
+      <pointLight intensity={1.5} color={"#FFDBCF"} />
 
       <Stars />
       <group ref={bigGroupRef}>
