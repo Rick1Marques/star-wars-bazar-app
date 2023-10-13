@@ -6,14 +6,6 @@ import MainLayout from "@/components/MainLayout";
 import styled from "styled-components";
 import useUser from "@/hooks/useUser";
 
-const StyledMain = styled.main`
-  margin-bottom: 6rem;
-`;
-
-const blinker = Blinker({
-  subsets: ["latin"],
-  weight: ["400", "600"],
-});
 
 export default function App({ Component, pageProps }) {
   const { mainUser } = useUser();
@@ -22,12 +14,13 @@ export default function App({ Component, pageProps }) {
   }
 
   return (
-    <StyledMain className={blinker.className}>
+    
       <SWRConfig value={{ fetcher }}>
+        <MainLayout mainUser={mainUser}>
         <GlobalStyle />
         <Component {...pageProps} mainUser={mainUser} />
-        <MainLayout mainUser={mainUser} />
+        </MainLayout>
       </SWRConfig>
-    </StyledMain>
+    
   );
 }
