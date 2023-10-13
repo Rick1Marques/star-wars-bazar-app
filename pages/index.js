@@ -65,6 +65,7 @@ const StyledBoxLink = styled.div`
 export default function HomePage() {
   const { bigGroupRadius } = Universe();
   return (
+
     <>
       <div className="space-background">
         <StyledAppTitle>Star Wars Bazaar</StyledAppTitle>
@@ -85,5 +86,6 @@ export default function HomePage() {
         </Canvas>
       </div>
     </>
+
   );
 }
