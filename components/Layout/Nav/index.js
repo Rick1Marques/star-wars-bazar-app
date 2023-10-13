@@ -3,6 +3,12 @@ import Flex from "../Flex";
 import Link from "next/link";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { BiUserCircle } from "react-icons/bi";
+import { Blinker } from "@next/font/google";
+
+const blinker = Blinker({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+});
 
 const StyledNav = styled.nav`
   display: flex;

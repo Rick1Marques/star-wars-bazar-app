@@ -1,6 +1,10 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
+
+import Link from "next/link";
+import Listing from "@/db/models/Listing";
+
 import { deleteListing } from "@/lib/api";
 import useSWR from "swr";
 import { StyledButton } from "../Layout/StyledButton";
@@ -53,9 +57,12 @@ export default function ListingCard({ _id, name, img, price }) {
       <Flex direction="column">
         <StyledParagraph>{name}</StyledParagraph>
         <StyledParagraph>Price: {price}</StyledParagraph>
-        <StyledButton type="button" onClick={() => onDelete(_id)}>
+
+        <Link href={`/my-profile/my-selling-list/edit-offer/${_id}`}>edit</Link>
+
+        <button type="button" onClick={() => onDelete(_id)}>
           Delete
-        </StyledButton>
+        </button>
       </Flex>
     </Flex>
   );

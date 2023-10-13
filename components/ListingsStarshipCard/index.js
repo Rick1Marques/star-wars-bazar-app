@@ -88,6 +88,7 @@ export default function ListingsStarshipCard({
         <Flex direction="column" alignItems="center" gap="5px">
           <StyledParagraph>Price: </StyledParagraph>
           <StyledParagraphprice>{price}</StyledParagraphprice>
+
           <BuyButton
             buyerId={mainUser._id}
             sellerId={userId}
