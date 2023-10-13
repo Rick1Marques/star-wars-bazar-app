@@ -31,7 +31,6 @@ const StyledNameFrame = styled.div`
   border: 0.5px solid #baf0e0;
   text-align: center;
   background: #2c2c2c;
-  // color: var(--primary-title-color);
 `;
 
 const StyledProfileTitle = styled.h1`
@@ -64,7 +63,6 @@ export default function MyProfile({ mainUser }) {
   if (!mainUser) {
     return "Loading";
   }
-  console.log(mainUser);
 
   return (
     <main>

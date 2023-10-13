@@ -3,12 +3,6 @@ import { buyProtocol, sellProtocol } from "@/lib/api";
 import styled from "styled-components";
 
 const StyledBuyButton = styled.button`
-  // background-color: #000000;
-  // border-radius: 5px;
-  // border: 0.3px solid var(--secondary-color);
-  // height: 2rem;
-  // width: 6.25rem;
-  // color: var(--secondary-color);
   background: linear-gradient(
     90deg,
     #baf0e0 -225%,
