@@ -8,9 +8,7 @@ export default function MainLayout() {
       <Head>
         <title>Star Wars Bazar</title>
       </Head>
-      <Flex justifyContent="center">
-        <Nav />
-      </Flex>
+      <Flex justifyContent="center">{/* <Nav /> */}</Flex>
     </>
   );
 }

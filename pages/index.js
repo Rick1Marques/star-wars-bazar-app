@@ -12,10 +12,10 @@ const StyledAppTitle = styled.h1`
   left: 50%;
   transform: translate(-50%, 0);
   text-wrap: nowrap;
-  margin-top: 1rem;
+  margin-top: 2rem;
 `;
 
-const StyledText = styled.p`
+const StyledTextTop = styled.p`
   z-index: 1;
   color: var(--primary-title-color);
   font-size: 0.8rem;
@@ -23,8 +23,32 @@ const StyledText = styled.p`
   left: 50%;
   transform: translate(-50%, 0%);
   text-wrap: nowrap;
-  margin-top: 3.5rem;
+  margin-top: 4.5rem;
 `;
+
+const StyledTextBottomOne = styled.p`
+  z-index: 1;
+  color: var(--primary-title-color);
+  font-size: 0.8rem;
+  position: absolute;
+  left: 50%;
+  top: 85%;
+  transform: translate(-50%, 0%);
+  text-wrap: nowrap;
+  margin-bottom: 4.5rem;
+`;
+const StyledTextBottomTwo = styled.p`
+  z-index: 1;
+  color: var(--primary-title-color);
+  font-size: 0.8rem;
+  position: absolute;
+  left: 50%;
+  top: 88%;
+  transform: translate(-50%, 0%);
+  text-wrap: nowrap;
+  margin-bottom: 4.5rem;
+`;
+
 const StyledLink = styled(Link)`
   position: absolute;
   top: 50%;
@@ -44,7 +68,9 @@ export default function HomePage() {
     <>
       <div className="space-background">
         <StyledAppTitle>Star Wars Bazaar</StyledAppTitle>
-        <StyledText>Touch the sun to pick your character</StyledText>
+        <StyledTextTop>Tap the sun to pick your character</StyledTextTop>
+        <StyledTextBottomOne>Drag to explore the universe</StyledTextBottomOne>
+        <StyledTextBottomTwo>Pinch/spread to zoom in/out</StyledTextBottomTwo>
         <StyledLink className="link-login-page" href="my-profile">
           <StyledBoxLink></StyledBoxLink>
         </StyledLink>
@@ -52,7 +78,7 @@ export default function HomePage() {
         <Canvas
           camera={{
             fov: 45,
-            position: [0, 0, 1.2 * bigGroupRadius],
+            position: [0, 0, 5 * bigGroupRadius],
           }}
         >
           <Experience />
