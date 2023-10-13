@@ -6,7 +6,7 @@ export default function Stars() {
   // Texture
   const starsTexture = useTexture("./textures/particles.png");
 
-  const countStars = 40000;
+  const countStars = 35000;
   const positionsStars = new Float32Array(countStars * 3);
   const colorsStars = new Float32Array(countStars * 3);
 
@@ -40,7 +40,7 @@ export default function Stars() {
       </bufferGeometry>
       <pointsMaterial
         map={starsTexture}
-        size={Math.random() * 0.4 + 0.2}
+        size={Math.random() * 0.6 + 0.2}
         sizeAttenuation={true}
         transparent={true}
         alphaMap={starsTexture}

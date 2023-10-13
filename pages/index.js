@@ -2,7 +2,7 @@ import Experience from "@/components/threeJs/Experience/Experience";
 import { Canvas } from "@react-three/fiber";
 import Link from "next/link";
 import styled from "styled-components";
-import Flex from "@/components/Layout/Flex";
+import Universe from "@/Utilities";
 
 const StyledAppTitle = styled.h1`
   z-index: 1;
@@ -39,6 +39,7 @@ const StyledBoxLink = styled.div`
 `;
 
 export default function HomePage() {
+  const { bigGroupRadius } = Universe();
   return (
     <>
       <div className="space-background">
@@ -48,7 +49,12 @@ export default function HomePage() {
           <StyledBoxLink></StyledBoxLink>
         </StyledLink>
 
-        <Canvas>
+        <Canvas
+          camera={{
+            fov: 45,
+            position: [0, 0, 1.2 * bigGroupRadius],
+          }}
+        >
           <Experience />
         </Canvas>
       </div>

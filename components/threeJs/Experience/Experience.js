@@ -1,4 +1,4 @@
-import { OrbitControls, Html } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import Stars from "../components/Stars";
 import Planets from "../components/Planets";
 import PlanetWithRing from "../components/PlanetWithRing";
@@ -8,12 +8,9 @@ import { useFrame } from "@react-three/fiber";
 import { useRef, Suspense } from "react";
 import DeathStar from "../components/DeathStar";
 import Universe from "@/Utilities";
-import { Camera } from "three";
-import Link from "next/link";
 
 export default function Experience() {
   const { bigGroupRadius } = Universe();
-
   const bigGroupRef = useRef();
   const StarshipsRef = useRef();
 
@@ -31,7 +28,7 @@ export default function Experience() {
 
       <pointLight intensity={1.5} color={"#FFDBCF"} />
       <Stars />
-      <group ref={bigGroupRef}>
+      <group ref={bigGroupRef} rotation-x={(20 * Math.PI) / 180}>
         <Planets />
         <PlanetWithRing />
         <Galaxy />
