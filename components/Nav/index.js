@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
 import Link from "next/link";
+import { Blinker } from "@next/font/google";
+
+const blinker = Blinker({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+});
 
 const StyledNav = styled.nav`
   display: flex;
@@ -28,7 +34,7 @@ const StyledNav = styled.nav`
 
 export default function Nav() {
   return (
-    <StyledNav>
+    <StyledNav className={blinker.className}>
       <Link href="/marketplace">Marketplace</Link>
       <Link href="/my-profile">My Profile</Link>
     </StyledNav>
