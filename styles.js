@@ -40,6 +40,14 @@ background: var(--primary-color);
     overflow: hidden;
     background: black;
   }
+  .red {
+    border: 0.5px solid red;
+
+  }
+  .green {
+    border: 0.5px solid green;
+  }
+
 
 `;
 

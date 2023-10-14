@@ -6,21 +6,18 @@ import MainLayout from "@/components/Layout/MainLayout";
 import styled from "styled-components";
 import useUser from "@/hooks/useUser";
 
-
 export default function App({ Component, pageProps }) {
-  const { mainUser } = useUser();
+  const { mainUser, mainTheme } = useUser();
   if (!mainUser) {
     return "Loading";
   }
 
   return (
-    
-      <SWRConfig value={{ fetcher }}>
-        <MainLayout mainUser={mainUser}>
+    <SWRConfig value={{ fetcher }}>
+      <MainLayout mainUser={mainUser} mainTheme={mainTheme}>
         <GlobalStyle />
         <Component {...pageProps} mainUser={mainUser} />
-        </MainLayout>
-      </SWRConfig>
-    
+      </MainLayout>
+    </SWRConfig>
   );
 }

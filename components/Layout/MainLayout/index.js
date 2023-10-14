@@ -13,7 +13,7 @@ const blinker = Blinker({
   weight: ["400", "600"],
 });
 
-export default function MainLayout({ mainUser, children }) {
+export default function MainLayout({ mainUser, children, mainTheme }) {
   if (!mainUser._id) {
     return (
       <>
@@ -32,9 +32,8 @@ export default function MainLayout({ mainUser, children }) {
 
       <StyledMain className={blinker.className}>{children}</StyledMain>
       <Flex justifyContent="center">
-        <Nav />
+        <Nav mainTheme={mainTheme} />
       </Flex>
-
     </>
   );
 }

@@ -2,12 +2,12 @@ import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
 import { StyledLink } from "../Layout/StyledLink";
+import useUser from "@/hooks/useUser";
 
 const StyledImageWrapper = styled.div`
   height: 135px;
   width: 135px;
   border-radius: 11px;
-  border: 0.5px solid #baf0e0;
   overflow: hidden;
   position: relative;
 `;
@@ -33,9 +33,10 @@ line-height: normal;
 `;
 
 export default function StarshipCollectionCard({ _id, name, img }) {
+  const { mainTheme } = useUser();
   return (
     <Flex height="150px" width="90%">
-      <StyledImageWrapper>
+      <StyledImageWrapper className={mainTheme}>
         <StyledStarshipImage
           src={img}
           alt={name}
@@ -46,7 +47,10 @@ export default function StarshipCollectionCard({ _id, name, img }) {
       </StyledImageWrapper>
       <Flex direction="column" justifyContent="flex-start">
         <StyledParagraph>{name}</StyledParagraph>
-        <StyledLink href={`/my-profile/my-collection/new-offer/${_id}`}>
+        <StyledLink
+          className={mainTheme}
+          href={`/my-profile/my-collection/new-offer/${_id}`}
+        >
           Sell
         </StyledLink>
       </Flex>

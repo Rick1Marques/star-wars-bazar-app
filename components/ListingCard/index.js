@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
-
+import useUser from "@/hooks/useUser";
 import Link from "next/link";
 import Listing from "@/db/models/Listing";
 
@@ -13,7 +13,6 @@ const StyledImageWrapper = styled.div`
   height: 135px;
   width: 135px;
   border-radius: 11px;
-  border: 0.5px solid #baf0e0;
   overflow: hidden;
   position: relative;
 `;
@@ -30,6 +29,7 @@ const StyledParagraph = styled.p`
 `;
 
 export default function ListingCard({ _id, name, img, price }) {
+  const { mainTheme } = useUser();
   const { data: listings, isLoading, mutate } = useSWR("/api/listings");
   if (!listings || isLoading) {
     return "Loading...";
@@ -45,7 +45,7 @@ export default function ListingCard({ _id, name, img, price }) {
 
   return (
     <Flex height="150px" width="90%">
-      <StyledImageWrapper>
+      <StyledImageWrapper className={mainTheme}>
         <StyledStarshipImage
           src={img}
           alt={name}
@@ -60,7 +60,11 @@ export default function ListingCard({ _id, name, img, price }) {
 
         <Link href={`/my-profile/my-selling-list/edit-offer/${_id}`}>edit</Link>
 
-        <button type="button" onClick={() => onDelete(_id)}>
+        <button
+          className={mainTheme}
+          type="button"
+          onClick={() => onDelete(_id)}
+        >
           Delete
         </button>
       </Flex>
