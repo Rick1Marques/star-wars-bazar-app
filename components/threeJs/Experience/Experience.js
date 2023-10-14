@@ -27,7 +27,7 @@ export default function Experience() {
       <OrbitControls />
 
       <pointLight intensity={1.5} color={"#FFDBCF"} />
-      <Stars />
+      {/* <Stars /> */}
       <group ref={bigGroupRef} rotation-x={(20 * Math.PI) / 180}>
         <Planets />
         <PlanetWithRing />
