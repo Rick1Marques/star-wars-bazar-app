@@ -1,6 +1,7 @@
 import Flex from "../Flex";
 import Nav from "../Nav";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 import { Blinker } from "@next/font/google";
 
@@ -14,6 +15,7 @@ const blinker = Blinker({
 });
 
 export default function MainLayout({ mainUser, children }) {
+  const router = useRouter();
   if (!mainUser._id) {
     return (
       <>
@@ -32,9 +34,8 @@ export default function MainLayout({ mainUser, children }) {
 
       <StyledMain className={blinker.className}>{children}</StyledMain>
       <Flex justifyContent="center">
-        <Nav />
+        {router.pathname != "" && router.pathname != "/" && <Nav />}
       </Flex>
-
     </>
   );
 }
