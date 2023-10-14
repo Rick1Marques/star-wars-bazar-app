@@ -56,7 +56,13 @@ export default function User() {
   return (
     <Flex direction="column" alignItems="center" gap="30px">
       <StyledImageWrapper className={mainTheme}>
-        <StyledUserImage alt={name} src={avatar} width={140} height={140} />
+        <StyledUserImage
+          alt={name}
+          src={avatar}
+          height={0}
+          width={0}
+          layout="responsive"
+        />
       </StyledImageWrapper>
 
       <StyledUserName className={mainTheme}>{name}</StyledUserName>

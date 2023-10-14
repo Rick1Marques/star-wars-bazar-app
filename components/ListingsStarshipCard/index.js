@@ -25,18 +25,15 @@ const StyledImageWrapper = styled.div`
 
 const StyledCard = styled.div`
   border-radius: 11px;
-
   padding: 1rem;
   background-color: var(--button-color));
   border-radius: 20px;
-
 background: rgba(242, 242, 242, 0.04);
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 
 const StyledStarshipImage = styled(Image)`
   object-fit: cover;
-  position: absolute;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -45,6 +42,7 @@ const StyledStarshipImage = styled(Image)`
 const StyledParagraph = styled.p`
   color: var(--secondary-color);
   text-align: center;
+  margin-bottom: 0;
 `;
 const StyledParagraphprice = styled.p`
   color: var(--secondary-color);
