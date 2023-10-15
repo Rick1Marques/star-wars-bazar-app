@@ -13,6 +13,7 @@ const StyledLink = styled(Link)`
   background: linear-gradient(90deg, #8feecc 0%, rgba(215, 218, 53, 0.65) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  z-index: 1;
 `;
 
 const StyledUserImage = styled(Image)`

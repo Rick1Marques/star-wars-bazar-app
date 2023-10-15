@@ -68,13 +68,13 @@ export default function Planets() {
   const planet8Ref = useRef();
 
   useFrame((state, delta) => {
-    planet1Ref.current.rotation.y += delta * 0.1;
-    planet2Ref.current.rotation.y += delta * 0.09;
-    planet3Ref.current.rotation.y += delta * 0.08;
+    planet1Ref.current.rotation.y += delta * 0.15;
+    planet2Ref.current.rotation.y += delta * 0.12;
+    planet3Ref.current.rotation.y += delta * 0.1;
     planet4Ref.current.rotation.y += delta * 0.11;
-    planet5Ref.current.rotation.y += delta * 0.05;
-    planet6Ref.current.rotation.y += delta * 0.08;
-    planet7Ref.current.rotation.y += delta * 0.06;
+    planet5Ref.current.rotation.y += delta * 0.14;
+    planet6Ref.current.rotation.y += delta * 0.1;
+    planet7Ref.current.rotation.y += delta * 0.12;
     planet8Ref.current.rotation.y += delta * 0.09;
   });
   return (
