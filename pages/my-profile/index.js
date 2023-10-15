@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
 import Link from "next/link";
+import useUser from "@/hooks/useUser";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -22,14 +23,9 @@ const StyledImageWrapper = styled.div`
 `;
 
 const StyledUserImage = styled(Image)`
-
-  border-radius: 50%;
-
-
   fill: #303030;
   stroke-width: 1px;
   stroke: #646464;
-
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   object-position: top;
   object-fit: cover;

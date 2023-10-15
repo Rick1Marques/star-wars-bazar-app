@@ -5,8 +5,8 @@ import useUser from "@/hooks/useUser";
 import { useRouter } from "next/router";
 
 const StyledImageWrapper = styled.div`
-  height: 100px;
-  width: 100px;
+  height: 125px;
+  width: 125px;
   border-radius: 50%;
   overflow: hidden;
   border: solid 1px #646464;

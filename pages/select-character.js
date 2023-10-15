@@ -23,7 +23,6 @@ export default function SelectCharacterPage() {
     return <div>Loading...</div>;
   }
   return (
-
     <>
       <div className="space-background">
         <Canvas
@@ -40,6 +39,5 @@ export default function SelectCharacterPage() {
         <LoginList users={users} />
       </Flex>
     </>
-
   );
 }

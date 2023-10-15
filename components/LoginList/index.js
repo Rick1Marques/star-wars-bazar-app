@@ -11,8 +11,6 @@ export default function LoginList({ users }) {
             userId={user._id}
             name={user.name}
             avatar={user.avatar}
-            width={140}
-            height={140}
           />
         );
       })}

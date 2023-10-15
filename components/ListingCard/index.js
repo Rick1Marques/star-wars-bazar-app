@@ -1,10 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
-
-
 import useUser from "@/hooks/useUser";
-
 import Link from "next/link";
 import { deleteListing } from "@/lib/api";
 import useSWR from "swr";
@@ -31,9 +28,8 @@ const StyledParagraph = styled.p`
 `;
 
 export default function ListingCard({ _id, name, img, price }) {
-
-  const {data: listings, mutate } = useSWR("/api/listings");
-
+  const { mainTheme } = useUser();
+  const { data: listings, mutate } = useSWR("/api/listings");
 
   async function onDelete(id) {
     if (!confirm("Are you sure you want to delete this starship?")) {
@@ -44,7 +40,6 @@ export default function ListingCard({ _id, name, img, price }) {
   }
 
   return (
-
     <Flex
       height="150px"
       width="90%"
@@ -53,11 +48,7 @@ export default function ListingCard({ _id, name, img, price }) {
       padding="1rem"
       gap=".5rem"
     >
-
-
-    
       <StyledImageWrapper className={mainTheme}>
-
         <StyledStarshipImage
           src={img}
           alt={name}
@@ -78,10 +69,6 @@ export default function ListingCard({ _id, name, img, price }) {
             Delete
           </StyledButton>
         </Flex>
-
-
-    
-
       </Flex>
     </Flex>
   );
