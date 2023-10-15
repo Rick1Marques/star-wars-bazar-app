@@ -1,9 +1,7 @@
-import useSWR from "swr";
 import styled from "styled-components";
 import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
 import Link from "next/link";
-import useUser from "@/hooks/useUser";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -17,10 +15,10 @@ const StyledLink = styled(Link)`
 
 const StyledUserImage = styled(Image)`
   border-radius: 50%;
-  fill: #303030;
-  stroke-width: 1px;
-  stroke: #646464;
+  border: solid 1px #646464;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  object-position: top;
+  object-fit: cover;
 `;
 
 const StyledNameFrame = styled.div`
@@ -28,15 +26,15 @@ const StyledNameFrame = styled.div`
   height: 2.5rem;
   padding: 7px;
   border-radius: 6px;
-  border: 0.5px solid #baf0e0;
+  border: solid 1px #baf0e0;
   text-align: center;
   background: #2c2c2c;
 `;
 
 const StyledProfileTitle = styled.h1`
-  margin-top: 75px;
+  margin-top: 30px;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
   text-align: center;
   background: linear-gradient(90deg, #8feecc 0%, rgba(215, 218, 53, 0.65) 100%);
   -webkit-background-clip: text;
@@ -44,7 +42,7 @@ const StyledProfileTitle = styled.h1`
 `;
 
 const StyledTitleCredit = styled.h2`
-  margin-top: 20px;
+  margin-top: 5px;
   font-size: 1.25rem;
   font-weight: 300;
   text-align: center;
@@ -57,6 +55,7 @@ const StyledCredit = styled.p`
   color: var(--secondary-color);
   font-size: 2rem;
   margin-bottom: 50px;
+  height: 10px;
 `;
 
 export default function MyProfile({ mainUser }) {
