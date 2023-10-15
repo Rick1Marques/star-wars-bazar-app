@@ -6,7 +6,7 @@ import useUser from "@/hooks/useUser";
 export default function MyCollectionList() {
   const { mainUser } = useUser();
   if (!mainUser) {
-    return "Loading";
+    return <div>Loading...</div>;
   }
 
   const starshipsForSale = mainUser.listings.map((listing) => listing.starship);
