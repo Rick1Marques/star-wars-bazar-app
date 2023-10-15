@@ -4,5 +4,7 @@ import Link from "next/link";
 export const StyledBackLink = styled(Link)`
   text-decoration: none;
   color: white;
-  align-self: flex-start;
+  position: absolute;
+  top: 35px;
+  left: 20px;
 `;

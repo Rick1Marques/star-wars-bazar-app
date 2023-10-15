@@ -9,7 +9,7 @@ const StyledImageWrapper = styled.div`
   height: 135px;
   width: 135px;
   border-radius: 11px;
-  border: 0.5px solid var(--secondary-color);
+  border: solid 1px #baf0e0;
   overflow: hidden;
   position: relative;
 `;
@@ -50,7 +50,12 @@ export default function UsersListingCard({
           layout="responsive"
         />
       </StyledImageWrapper>
-      <Flex width="50%" direction="column" alignItems="center">
+      <Flex
+        width="50%"
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+      >
         <StyledParagraph>{name}</StyledParagraph>
 
         <StyledParagraph>Price: {price}</StyledParagraph>

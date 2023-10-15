@@ -20,21 +20,15 @@ const StyledStarshipImage = styled(Image)`
 `;
 
 const StyledParagraph = styled.p`
-text-align: center;
-font-size: 1.2rem;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: normal;
   color: var(--secondary-color);
-  background: linear-gradient(90deg, #CDFFBB 50%, rgba(143, 238, 204, 0.00) 221.43%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent:
 `;
 
 export default function StarshipCollectionCard({ _id, name, img }) {
   return (
-    <Flex height="150px" width="90%">
+    <Flex justifyContent="center" height="150px" width="90%" padding=".5rem">
       <StyledImageWrapper>
         <StyledStarshipImage
           src={img}
@@ -44,7 +38,14 @@ export default function StarshipCollectionCard({ _id, name, img }) {
           layout="responsive"
         />
       </StyledImageWrapper>
-      <Flex direction="column" justifyContent="flex-start">
+      <Flex
+        direction="column"
+        width="50%"
+        alignItems="center"
+        justifyContent="center"
+        gap="0rem"
+        padding="0 0 2rem 0"
+      >
         <StyledParagraph>{name}</StyledParagraph>
         <StyledLink href={`/my-profile/my-collection/new-offer/${_id}`}>
           Sell

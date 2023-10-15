@@ -5,15 +5,11 @@ import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
 import NewOfferForm from "@/components/NewOfferForm";
 import StarshipInfo from "@/components/StarshipInfo";
-import Link from "next/link";
 import { updateListing } from "@/lib/api";
 import { mutate } from "swr";
-
-const StyledBackLink = styled(Link)`
-  text-decoration: none;
-  color: white;
-  align-self: flex-start;
-`;
+import { HiArrowLeft } from "react-icons/hi";
+import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
+import { StyledBackLink } from "@/components/Layout/StyledBackLink";
 
 const StyledStarshipImage = styled(Image)`
   object-fit: cover;
@@ -27,8 +23,8 @@ const StyledImageWrapper = styled.div`
   height: 285px;
   width: 330px;
   border-radius: 11px;
-  border: 0.5px solid var(--secondary-color);
-  margin-bottom: 2rem;
+  border: 0.5px solid #baf0e0;
+  margin-bottom: 0.5rem;
   overflow: hidden;
   position: relative;
 `;
@@ -48,7 +44,7 @@ export default function EditOffer({ mainUser }) {
   }
 
   if (!listing || isLoading) {
-    return <h1>Loading...</h1>;
+    return <div>Loading...</div>;
   }
 
   const {
@@ -65,35 +61,39 @@ export default function EditOffer({ mainUser }) {
   } = listing.starship;
 
   return (
-    <Flex direction="column" padding="1.5rem" alignItems="center">
-      <StyledBackLink href="/my-profile/my-selling-list">Back</StyledBackLink>
-      <h1>Edit offer</h1>
-      <Flex direction="column">
-        <StyledImageWrapper>
-          <StyledStarshipImage
-            src={img}
-            alt={name}
-            height={0}
-            width={0}
-            layout="responsive"
-          />
-        </StyledImageWrapper>
+    <>
+      <StyledBackLink href="/my-profile/my-selling-list">
+        <HiArrowLeft />
+      </StyledBackLink>
+      <Flex direction="column" padding="1.5rem" alignItems="center">
+        <StyledPageTitle>Edit offer</StyledPageTitle>
+        <Flex direction="column">
+          <StyledImageWrapper>
+            <StyledStarshipImage
+              src={img}
+              alt={name}
+              height={0}
+              width={0}
+              layout="responsive"
+            />
+          </StyledImageWrapper>
 
-        <StarshipInfo label="Model:" value={model} />
-        <StarshipInfo label="Manufacturer:" value={manufacturer} />
-        <StarshipInfo label="Max. speed:" value={max_atmosphering_speed} />
-        <StarshipInfo label="Passengers:" value={passengers} />
-        <StarshipInfo label="Cargo capacity:" value={cargo_capacity} />
-        <StarshipInfo label="Starship class:" value={starship_class} />
+          <StarshipInfo label="Model:" value={model} />
+          <StarshipInfo label="Manufacturer:" value={manufacturer} />
+          <StarshipInfo label="Max. speed:" value={max_atmosphering_speed} />
+          <StarshipInfo label="Passengers:" value={passengers} />
+          <StarshipInfo label="Cargo capacity:" value={cargo_capacity} />
+          <StarshipInfo label="Starship class:" value={starship_class} />
+        </Flex>
+
+        <NewOfferForm
+          credit={default_cost_in_credits}
+          id={_id}
+          onSubmit={onSubmit}
+          user={mainUser}
+          starship={listing.starship}
+        />
       </Flex>
-
-      <NewOfferForm
-        credit={default_cost_in_credits}
-        id={_id}
-        onSubmit={onSubmit}
-        user={mainUser}
-        starship={listing.starship}
-      />
-    </Flex>
+    </>
   );
 }
