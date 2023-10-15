@@ -9,10 +9,10 @@ export default function useUser() {
   function login(id) {
     setMainUserId(id);
   }
-  console.log();
   const { data: mainUser, isLoading } = useSWR(
     `/api/users/${mainUserId}`,
     fetcher
   );
-  return { mainUser, login };
+
+  return { mainUser, login, isLoading };
 }
