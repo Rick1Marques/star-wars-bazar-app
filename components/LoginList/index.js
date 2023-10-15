@@ -3,7 +3,7 @@ import UserLoginCard from "../UserLoginCard";
 
 export default function LoginList({ users }) {
   return (
-    <Flex direction="column" gap="4rem">
+    <Flex direction="row" flexWrap="wrap" justifyContent="center" gap="2rem">
       {users.map((user) => {
         return (
           <UserLoginCard
@@ -11,6 +11,8 @@ export default function LoginList({ users }) {
             userId={user._id}
             name={user.name}
             avatar={user.avatar}
+            width={140}
+            height={140}
           />
         );
       })}
