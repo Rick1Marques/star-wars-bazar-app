@@ -53,7 +53,9 @@ export default function UsersListingCard({
       <Flex width="50%" direction="column" alignItems="center">
         <StyledParagraph>{name}</StyledParagraph>
 
-        <StyledParagraph>Price: {price}</StyledParagraph>
+        <StyledParagraph>
+          Price: {price.toLocaleString("en-US")}
+        </StyledParagraph>
         <BuyButton
           buyerId={mainUser._id}
           sellerId={userId}

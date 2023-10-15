@@ -21,7 +21,7 @@ export default function UserList({ listings, starships, userId, userCredits }) {
             {...listing}
             key={listing._id}
             name={starshipURL(listing.starship).name}
-            price={listing.price.toLocaleString("en-US")}
+            price={listing.price}
             img={starshipURL(listing.starship).img}
             userId={userId}
             starshipId={listing.starship}

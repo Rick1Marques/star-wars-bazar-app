@@ -86,7 +86,9 @@ export default function ListingsStarshipCard({
         </Flex>
         <Flex direction="column" alignItems="center" gap="5px">
           <StyledParagraph>Price: </StyledParagraph>
-          <StyledParagraphprice>{price}</StyledParagraphprice>
+          <StyledParagraphprice>
+            {price.toLocaleString("en-US")}
+          </StyledParagraphprice>
 
           <BuyButton
             buyerId={mainUser._id}
