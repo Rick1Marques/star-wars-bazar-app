@@ -27,7 +27,8 @@ export default createGlobalStyle`
   body {
     margin: 0;
     color: var(--secondary-color);
-background: var(--primary-color);
+background: black;
+
   }
 
 
@@ -38,7 +39,8 @@ background: var(--primary-color);
     width: 100%;
     height:100%;
     overflow: hidden;
-    background: black;
+    background: transparent;
+    z-index: -1;
   }
   .red {
     border: 0.5px solid red;

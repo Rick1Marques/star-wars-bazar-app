@@ -14,7 +14,9 @@ export default function App({ Component, pageProps }) {
 
   return (
     <SWRConfig value={{ fetcher }}>
+
       <MainLayout mainUser={mainUser} mainTheme={mainTheme}>
+
         <GlobalStyle />
         <Component {...pageProps} mainUser={mainUser} />
       </MainLayout>
