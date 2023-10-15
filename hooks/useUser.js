@@ -5,14 +5,19 @@ import { useRouter } from "next/router";
 
 export default function useUser() {
   const [mainUserId, setMainUserId] = useLocalStorage("userId", "");
+  const [mainTheme, setMainTheme] = useLocalStorage("userTheme", "green");
 
   function login(id) {
     setMainUserId(id);
   }
-  console.log();
+
+  function theme(color) {
+    setMainTheme(color);
+  }
+
   const { data: mainUser, isLoading } = useSWR(
     `/api/users/${mainUserId}`,
     fetcher
   );
-  return { mainUser, login };
+  return { mainUser, login, mainTheme, theme };
 }

@@ -9,7 +9,7 @@ const StyledImageWrapper = styled.div`
   height: 135px;
   width: 135px;
   border-radius: 11px;
-  border: 0.5px solid var(--secondary-color);
+
   overflow: hidden;
   position: relative;
 `;
@@ -34,14 +34,14 @@ export default function UsersListingCard({
   userCredits,
   price,
 }) {
-  const { mainUser } = useUser();
+  const { mainUser, mainTheme } = useUser();
   if (!mainUser) {
     return "Loading";
   }
 
   return (
     <Flex height="150px" width="90%" justifyContent="space-between">
-      <StyledImageWrapper>
+      <StyledImageWrapper className={mainTheme}>
         <StyledStarshipImage
           src={img}
           alt={name}

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
 import UserList from "@/components/UserListings";
+import useUser from "@/hooks/useUser";
 
 const StyledBackLink = styled(Link)`
   text-decoration: none;
@@ -16,9 +17,20 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-const StyledUserImage = styled(Image)`
+const StyledImageWrapper = styled.div`
   margin-top: 3rem;
+  height: 140px;
+  width: 140px;
   border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+`;
+
+const StyledUserImage = styled(Image)`
+  fill: #303030;
+  stroke-width: 1px;
+  stroke: #646464;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
 
 const StyledUserName = styled.div`
@@ -26,12 +38,12 @@ const StyledUserName = styled.div`
   height: 2.5rem;
   padding: 7px;
   border-radius: 6px;
-  border: 0.5px solid #baf0e0;
   text-align: center;
   color: var(--primary-title-color);
 `;
 
 export default function User() {
+  const { mainTheme } = useUser();
   const router = useRouter();
   const { id } = router.query;
   const { data: user, isLoading } = useSWR(id ? `/api/users/${id}` : null);
@@ -43,8 +55,17 @@ export default function User() {
 
   return (
     <Flex direction="column" alignItems="center" gap="30px">
-      <StyledUserImage alt={name} src={avatar} width={140} height={140} />
-      <StyledUserName>{name}</StyledUserName>
+      <StyledImageWrapper className={mainTheme}>
+        <StyledUserImage
+          alt={name}
+          src={avatar}
+          height={0}
+          width={0}
+          layout="responsive"
+        />
+      </StyledImageWrapper>
+
+      <StyledUserName className={mainTheme}>{name}</StyledUserName>
       <p>This user is selling:</p>
       <UserList
         listings={listings}

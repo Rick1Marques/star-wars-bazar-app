@@ -17,8 +17,12 @@ const blinker = Blinker({
   weight: ["400", "600"],
 });
 
-export default function MainLayout({ mainUser, children }) {
+
+export default function MainLayout({ mainUser, children, mainTheme }) {
+
+
   const { bigGroupRadius } = Universe();
+
   if (!mainUser._id) {
     return (
       <>
@@ -49,7 +53,7 @@ export default function MainLayout({ mainUser, children }) {
         {children}
       </StyledMain>
       <Flex justifyContent="center">
-        <Nav />
+        <Nav mainTheme={mainTheme} />
       </Flex>
     </>
   );

@@ -42,6 +42,14 @@ background: black;
     background: transparent;
     z-index: -1;
   }
+  .red {
+    border: 0.5px solid red;
+
+  }
+  .green {
+    border: 0.5px solid green;
+  }
+
 
 `;
 

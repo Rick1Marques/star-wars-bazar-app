@@ -19,23 +19,21 @@ const StyledImageWrapper = styled.div`
   fill: #303030;
   stroke-width: 0.4px;
   stroke: #646464;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+  border: ;
 `;
 
 const StyledCard = styled.div`
   border-radius: 11px;
-  border: 0.5px solid var(--secondary-color);
   padding: 1rem;
   background-color: var(--button-color));
   border-radius: 20px;
-border: 0.5px solid #C7C7C7;
 background: rgba(242, 242, 242, 0.04);
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 
 const StyledStarshipImage = styled(Image)`
   object-fit: cover;
-  position: absolute;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -44,6 +42,7 @@ const StyledStarshipImage = styled(Image)`
 const StyledParagraph = styled.p`
   color: var(--secondary-color);
   text-align: center;
+  margin-bottom: 0;
 `;
 const StyledParagraphprice = styled.p`
   color: var(--secondary-color);
@@ -59,7 +58,7 @@ export default function ListingsStarshipCard({
   starshipId,
   listingId,
 }) {
-  const { mainUser } = useUser();
+  const { mainUser, mainTheme } = useUser();
   if (!mainUser) {
     return "Loading";
   }
@@ -69,7 +68,7 @@ export default function ListingsStarshipCard({
   }
 
   return (
-    <StyledCard>
+    <StyledCard className={mainTheme}>
       <Flex justifyContent="space-around">
         <Flex direction="column" alignItems="center" gap=".5px">
           <StyledLink href={`/users/${userId}`} key={userId}>

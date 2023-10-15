@@ -9,12 +9,13 @@ import StarshipSellersList from "@/components/StarshipSellersList";
 import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
 import { StyledBackLink } from "@/components/Layout/StyledBackLink";
 import { HiArrowLeft } from "react-icons/hi";
+import useUser from "@/hooks/useUser";
 
 const StyledImageWrapper = styled.div`
   height: 285px;
   width: 330px;
   border-radius: 11px;
-  border: 0.5px solid var(--secondary-color);
+
   margin-bottom: 2rem;
   overflow: hidden;
   position: relative;
@@ -28,6 +29,7 @@ const StyledStarshipImage = styled(Image)`
 `;
 
 export default function Starship() {
+  const { mainTheme } = useUser();
   const router = useRouter();
   const { id } = router.query;
   const { data: starship, isLoading } = useSWR(
@@ -60,7 +62,7 @@ export default function Starship() {
 
       <Flex direction="column" padding="1.5rem" alignItems="center">
         <Flex direction="column">
-          <StyledImageWrapper>
+          <StyledImageWrapper className={mainTheme}>
             <StyledStarshipImage
               src={img}
               alt={name}

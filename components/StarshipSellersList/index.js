@@ -19,7 +19,7 @@ export default function StarshipSellersList({ starshipId }) {
   }
   return (
     <>
-      <Flex gap="1.5rem" flexWrap="wrap" direction="column" width="90%">
+      <Flex gap="1.5rem" direction="column" width="90%">
         {spaceshipListings.map((listing) => {
           return (
             <ListingsStarshipCard
