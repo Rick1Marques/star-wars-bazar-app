@@ -36,7 +36,7 @@ export default function UsersListingCard({
 }) {
   const { mainUser } = useUser();
   if (!mainUser) {
-    return "Loading";
+    return <div>Loading</div>;
   }
 
   return (
