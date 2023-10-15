@@ -11,13 +11,18 @@ export default function useUser() {
     setMainUserId(id);
   }
 
+
   function theme(color) {
     setMainTheme(color);
   }
+
 
   const { data: mainUser, isLoading } = useSWR(
     `/api/users/${mainUserId}`,
     fetcher
   );
+
+
   return { mainUser, login, mainTheme, theme };
+
 }

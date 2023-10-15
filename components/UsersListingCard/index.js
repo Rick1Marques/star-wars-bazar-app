@@ -9,7 +9,6 @@ const StyledImageWrapper = styled.div`
   height: 135px;
   width: 135px;
   border-radius: 11px;
-
   overflow: hidden;
   position: relative;
 `;
@@ -36,7 +35,7 @@ export default function UsersListingCard({
 }) {
   const { mainUser, mainTheme } = useUser();
   if (!mainUser) {
-    return "Loading";
+    return <div>Loading</div>;
   }
 
   return (
@@ -50,7 +49,12 @@ export default function UsersListingCard({
           layout="responsive"
         />
       </StyledImageWrapper>
-      <Flex width="50%" direction="column" alignItems="center">
+      <Flex
+        width="50%"
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+      >
         <StyledParagraph>{name}</StyledParagraph>
 
         <StyledParagraph>

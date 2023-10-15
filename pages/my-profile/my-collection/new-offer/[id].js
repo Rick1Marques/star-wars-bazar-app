@@ -22,7 +22,7 @@ export default function NewOffer({ mainUser }) {
     id ? `/api/starships/${id}` : null
   );
   if (!starship || isLoading) {
-    return <h1>Loading...</h1>;
+    return <div>Loading...</div>;
   }
   async function onSubmit(data) {
     await createListing({

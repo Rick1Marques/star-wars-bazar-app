@@ -16,7 +16,9 @@ const StyledImageWrapper = styled.div`
   width: 330px;
   border-radius: 11px;
 
+
   margin-bottom: 2rem;
+
   overflow: hidden;
   position: relative;
 `;
@@ -36,7 +38,7 @@ export default function Starship() {
     id ? `/api/starships/${id}` : null
   );
   if (!starship || isLoading) {
-    return <h1>Loading...</h1>;
+    return <div>Loading...</div>;
   }
 
   const {
@@ -51,57 +53,58 @@ export default function Starship() {
     _id,
   } = starship;
 
-  console.log(max_atmosphering_speed);
-
   return (
-    <Flex direction="column" alignItems="center">
+    <>
       <StyledBackLink href={"/marketplace"}>
-        <HiArrowLeft gap="10px" />
+        <HiArrowLeft />
       </StyledBackLink>
-      <StyledPageTitle>{name}</StyledPageTitle>
+      <Flex direction="column" alignItems="center">
+        <StyledPageTitle>{name}</StyledPageTitle>
+        <Flex direction="column" padding="1.5rem" alignItems="center">
+          <Flex direction="column">
+            <StyledImageWrapper className={mainTheme}>
+              <StyledStarshipImage
+                src={img}
+                alt={name}
+                height={0}
+                width={0}
+                layout="responsive"
+              />
+            </StyledImageWrapper>
 
-      <Flex direction="column" padding="1.5rem" alignItems="center">
-        <Flex direction="column">
-          <StyledImageWrapper className={mainTheme}>
-            <StyledStarshipImage
-              src={img}
-              alt={name}
-              height={0}
-              width={0}
-              layout="responsive"
+
+            <StarshipInfo label="Model:" value={model} />
+            <StarshipInfo label="Manufacturer:" value={manufacturer} />
+            <StarshipInfo
+              label="Max. speed:"
+              value={
+                isNaN(max_atmosphering_speed) === true
+                  ? max_atmosphering_speed
+                  : Number(max_atmosphering_speed).toLocaleString("en-US")
+              }
+
             />
-          </StyledImageWrapper>
-
-          <StarshipInfo label="Model:" value={model} />
-          <StarshipInfo label="Manufacturer:" value={manufacturer} />
-          <StarshipInfo
-            label="Max. speed:"
-            value={
-              isNaN(max_atmosphering_speed) === true
-                ? max_atmosphering_speed
-                : Number(max_atmosphering_speed).toLocaleString("en-US")
-            }
-          />
-          <StarshipInfo
-            label="Passengers:"
-            value={
-              isNaN(passengers) === true
-                ? passengers
-                : Number(passengers).toLocaleString("en-US")
-            }
-          />
-          <StarshipInfo
-            label="Cargo capacity:"
-            value={
-              isNaN(cargo_capacity) === true
-                ? cargo_capacity
-                : Number(cargo_capacity).toLocaleString("en-US")
-            }
-          />
-          <StarshipInfo label="Starship class:" value={starship_class} />
+            <StarshipInfo
+              label="Passengers:"
+              value={
+                isNaN(passengers) === true
+                  ? passengers
+                  : Number(passengers).toLocaleString("en-US")
+              }
+            />
+            <StarshipInfo
+              label="Cargo capacity:"
+              value={
+                isNaN(cargo_capacity) === true
+                  ? cargo_capacity
+                  : Number(cargo_capacity).toLocaleString("en-US")
+              }
+            />
+            <StarshipInfo label="Starship class:" value={starship_class} />
+          </Flex>
         </Flex>
+        <StarshipSellersList img={img} name={name} starshipId={_id} />
       </Flex>
-      <StarshipSellersList img={img} name={name} starshipId={_id} />
-    </Flex>
+    </>
   );
 }

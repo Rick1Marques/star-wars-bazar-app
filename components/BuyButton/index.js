@@ -8,7 +8,7 @@ const StyledBuyButton = styled.button`
     #baf0e0 -225%,
     rgba(64, 64, 64, 0) 133.33%
   );
-  color: rgba(243, 243, 243, 1);
+  color: var(--secondary-color);
   border-radius: 5px;
   border-width: 1px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -62,5 +62,5 @@ export default function BuyButton({
       alert("Error on the transaction");
     }
   }
-  return <StyledBuyButton onClick={onBuy}>BUY</StyledBuyButton>;
+  return <StyledBuyButton onClick={onBuy}>Buy</StyledBuyButton>;
 }

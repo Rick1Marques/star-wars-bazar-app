@@ -13,4 +13,6 @@ export const StyledButton = styled.button`
   height: 2rem;
   width: 6.25rem;
   margin-top: 10px;
+  font-family: "__Blinker_e074f9", "__Blinker_Fallback_e074f9";
+  font-size: 16px;
 `;

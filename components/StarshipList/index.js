@@ -10,8 +10,8 @@ const StyledLink = styled(Link)`
 
 export default function StarshipList() {
   const { data: starships, isLoading } = useSWR("/api/starships");
-  if (!starships || isLoading) {
-    return <h1>Loading...</h1>;
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
 
   return (

@@ -3,7 +3,7 @@ import UserLoginCard from "../UserLoginCard";
 
 export default function LoginList({ users }) {
   return (
-    <Flex direction="column" gap="4rem">
+    <Flex direction="row" flexWrap="wrap" justifyContent="center" gap="2rem">
       {users.map((user) => {
         return (
           <UserLoginCard

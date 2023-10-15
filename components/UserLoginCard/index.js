@@ -1,25 +1,19 @@
 import Flex from "../Layout/Flex";
 import styled from "styled-components";
-import Link from "next/link";
 import Image from "next/image";
 import useUser from "@/hooks/useUser";
-import { useState } from "react";
 import { useRouter } from "next/router";
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-`;
-
 const StyledImageWrapper = styled.div`
-  height: 200px;
-  width: 200px;
+  height: 125px;
+  width: 125px;
   border-radius: 50%;
   overflow: hidden;
-  position: relative;
+  border: solid 1px #646464;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
 
 const StyledStarshipImage = styled(Image)`
-  object-fit: cover;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -28,7 +22,6 @@ const StyledStarshipImage = styled(Image)`
 const StyledParagraph = styled.p`
   color: var(--secondary-color);
   text-align: center;
-  font-size: 2rem;
 `;
 
 const StyledButton = styled.button`

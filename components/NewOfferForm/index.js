@@ -13,7 +13,7 @@ export const StyledForm = styled.form`
 
 const StyledLabel = styled.label`
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
   background: linear-gradient(90deg, #CDFFBB 50%, rgba(143, 238, 204, 0.00) 221.43%);
@@ -44,10 +44,7 @@ export default function NewOfferForm({ credit, onSubmit, user, starship }) {
           required
         />
       </Flex>
-
-      <StyledButton marginTop="10px" type="submit">
-        Submit
-      </StyledButton>
+      <StyledButton type="submit">Submit</StyledButton>
     </StyledForm>
   );
 }

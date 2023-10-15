@@ -5,7 +5,7 @@ import ListingsStarshipCard from "../ListingsStarshipCard";
 export default function StarshipSellersList({ starshipId }) {
   const { data: listings, isLoading } = useSWR("/api/listings");
   if (!listings || isLoading) {
-    return <h1>Loading...</h1>;
+    return <div>Loading...</div>;
   }
 
   const spaceshipListings = listings.filter((listing) => {

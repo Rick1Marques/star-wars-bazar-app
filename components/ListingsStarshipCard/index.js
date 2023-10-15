@@ -15,28 +15,25 @@ const StyledImageWrapper = styled.div`
   width: 84px;
   border-radius: 50%;
   overflow: hidden;
-  position: relative;
-  fill: #303030;
-  stroke-width: 0.4px;
-  stroke: #646464;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
-  border: ;
+
+  border: solid 1px #646464;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
 
 const StyledCard = styled.div`
-  border-radius: 11px;
-  padding: 1rem;
-  background-color: var(--button-color));
   border-radius: 20px;
-background: rgba(242, 242, 242, 0.04);
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: 0.5px solid #c7c7c7;
+  padding: 1rem;
+  background: rgba(242, 242, 242, 0.04);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
 `;
 
 const StyledStarshipImage = styled(Image)`
   object-fit: cover;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+
+  object-position: top;
+
 `;
 
 const StyledParagraph = styled.p`
@@ -46,7 +43,7 @@ const StyledParagraph = styled.p`
 `;
 const StyledParagraphprice = styled.p`
   color: var(--secondary-color);
-  font-size: 2rem;
+  font-size: 1.5rem;
 `;
 
 export default function ListingsStarshipCard({
@@ -60,7 +57,7 @@ export default function ListingsStarshipCard({
 }) {
   const { mainUser, mainTheme } = useUser();
   if (!mainUser) {
-    return "Loading";
+    return <div>Loading...</div>;
   }
 
   if (userId === mainUser._id) {
@@ -84,7 +81,12 @@ export default function ListingsStarshipCard({
             <StyledParagraph>{name}</StyledParagraph>
           </StyledLink>
         </Flex>
-        <Flex direction="column" alignItems="center" gap="5px">
+        <Flex
+          direction="column"
+          alignItems="center"
+          justifyContent="center"
+          gap="0px"
+        >
           <StyledParagraph>Price: </StyledParagraph>
           <StyledParagraphprice>
             {price.toLocaleString("en-US")}

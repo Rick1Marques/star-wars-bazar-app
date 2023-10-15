@@ -1,4 +1,3 @@
-import useSWR from "swr";
 import Flex from "@/components/Layout/Flex";
 import UsersListingCard from "../UsersListingCard";
 

@@ -4,7 +4,10 @@ import ListingCard from "@/components/ListingCard";
 import useUser from "@/hooks/useUser";
 
 export default function MyListings() {
-  const { mainUser } = useUser();
+  const { mainUser, isLoading } = useUser();
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   function starshipURL(id) {
     return mainUser.starships.find((starship) => starship._id === id);
