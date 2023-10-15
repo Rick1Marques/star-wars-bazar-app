@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Flex from "../Flex";
 import Link from "next/link";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { BiUserCircle } from "react-icons/bi";
@@ -16,11 +15,11 @@ const StyledNav = styled.nav`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  bottom: 15px;
+  bottom: 7px;
   position: fixed;
   padding: 0 1rem;
   height: 3rem;
-  width: 90%;
+  width: 97%;
   border: 0.5px solid var(--border-color);
   border-radius: 17px;
   background-color: var(--bar-color);
