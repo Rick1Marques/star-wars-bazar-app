@@ -11,11 +11,25 @@ const StyledLink = styled(Link)`
   background: linear-gradient(90deg, #8feecc 0%, rgba(215, 218, 53, 0.65) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  z-index: 1;
+`;
+const StyledImageWrapper = styled.div`
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
 `;
 
 const StyledUserImage = styled(Image)`
+
   border-radius: 50%;
-  border: solid 1px #646464;
+
+
+  fill: #303030;
+  stroke-width: 1px;
+  stroke: #646464;
+
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   object-position: top;
   object-fit: cover;
@@ -26,7 +40,7 @@ const StyledNameFrame = styled.div`
   height: 2.5rem;
   padding: 7px;
   border-radius: 6px;
-  border: solid 1px #baf0e0;
+
   text-align: center;
   background: #2c2c2c;
 `;
@@ -59,6 +73,7 @@ const StyledCredit = styled.p`
 `;
 
 export default function MyProfile({ mainUser }) {
+  const { mainTheme, theme } = useUser();
   if (!mainUser) {
     return "Loading";
   }
@@ -67,13 +82,17 @@ export default function MyProfile({ mainUser }) {
     <main>
       <Flex direction="column" alignItems="center" gap="30px">
         <StyledProfileTitle>My Profile</StyledProfileTitle>
-        <StyledUserImage
-          alt={mainUser.name}
-          src={mainUser.avatar}
-          width={140}
-          height={140}
-        />
-        <StyledNameFrame>{mainUser.name}</StyledNameFrame>
+        <StyledImageWrapper className={mainTheme}>
+          <StyledUserImage
+            alt={mainUser.name}
+            src={mainUser.avatar}
+            height={0}
+            width={0}
+            layout="responsive"
+          />
+        </StyledImageWrapper>
+
+        <StyledNameFrame className={mainTheme}>{mainUser.name}</StyledNameFrame>
         <Flex direction="column" alignItems="center">
           <StyledTitleCredit>Total amount of credits:</StyledTitleCredit>
           <StyledCredit>
@@ -82,16 +101,20 @@ export default function MyProfile({ mainUser }) {
               : mainUser.credits.toLocaleString("en-US")}
           </StyledCredit>
         </Flex>
-        <StyledNameFrame>
+        <StyledNameFrame className={mainTheme}>
           <StyledLink href="/my-profile/my-collection">
             My Collection
           </StyledLink>{" "}
         </StyledNameFrame>
-        <StyledNameFrame>
+        <StyledNameFrame className={mainTheme}>
           <StyledLink href="/my-profile/my-selling-list">
             My Selling List
           </StyledLink>
         </StyledNameFrame>
+        <Flex>
+          <button onClick={() => theme("red")}>Sith</button>
+          <button onClick={() => theme("green")}>Jedi</button>
+        </Flex>
       </Flex>
     </main>
   );

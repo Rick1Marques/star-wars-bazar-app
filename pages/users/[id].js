@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
 import UserList from "@/components/UserListings";
+import useUser from "@/hooks/useUser";
 import { HiArrowLeft } from "react-icons/hi";
 
 const StyledUserImage = styled(Image)`
@@ -13,6 +14,10 @@ const StyledUserImage = styled(Image)`
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   object-position: top;
   object-fit: cover;
+
+
+
+
 `;
 
 const StyledUserName = styled.div`
@@ -20,12 +25,12 @@ const StyledUserName = styled.div`
   height: 2.5rem;
   padding: 7px;
   border-radius: 6px;
-  border: 0.5px solid #baf0e0;
   text-align: center;
   color: var(--secondary-color);
 `;
 
 export default function User() {
+  const { mainTheme } = useUser();
   const router = useRouter();
   const { id } = router.query;
   const { data: user, isLoading } = useSWR(id ? `/api/users/${id}` : null);
@@ -36,6 +41,7 @@ export default function User() {
   const { name, avatar, starships, listings, _id, credits } = user;
 
   return (
+
     <>
       <button
         style={{
@@ -49,8 +55,8 @@ export default function User() {
         <HiArrowLeft gap="10px" color="white" />
       </button>
       <Flex direction="column" alignItems="center" gap="30px">
-        <StyledUserImage alt={name} src={avatar} width={140} height={140} />
-        <StyledUserName>{name}</StyledUserName>
+        <StyledUserImage className={mainTheme} alt={name} src={avatar} width={140} height={140} />
+        <StyledUserName className={mainTheme}>{name}</StyledUserName>
         <p style={{ color: "#cdffbb", fontSize: "1.1rem" }}>
           This user is selling:
         </p>
@@ -62,5 +68,6 @@ export default function User() {
         />
       </Flex>
     </>
+
   );
 }

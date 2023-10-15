@@ -32,6 +32,7 @@ const StyledButton = styled.button`
   overflow: hidden;
   width: auto;
   height: auto;
+  padding: 0;
 `;
 
 export default function UserLoginCard({ name, avatar, userId }) {

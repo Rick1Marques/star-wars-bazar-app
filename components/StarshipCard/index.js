@@ -1,12 +1,13 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
+import useUser from "@/hooks/useUser";
 
 const StyledImageWrapper = styled.div`
   height: 160px;
   width: 160px;
   border-radius: 11px;
-  border: 0.5px solid #baf0e0;
+
   overflow: hidden;
   position: relative;
 `;
@@ -23,10 +24,11 @@ const StyledParagraph = styled.p`
 `;
 
 export default function StarshipCard({ _id, name, img }) {
+  const { mainTheme } = useUser();
   return (
     <section>
       <Flex height="200px" width="160px" direction="column">
-        <StyledImageWrapper>
+        <StyledImageWrapper className={mainTheme}>
           <StyledStarshipImage
             src={img}
             alt={name}

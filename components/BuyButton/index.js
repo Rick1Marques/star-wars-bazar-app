@@ -35,6 +35,7 @@ export default function BuyButton({
       let data = {
         balance: buyerCredit - price,
       };
+      console.log(buyerCredit, price);
       await buyProtocol({
         user_id: buyerId,
         starship_id: starshipId,

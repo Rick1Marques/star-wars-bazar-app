@@ -19,8 +19,10 @@ const StyledNav = styled.nav`
   position: fixed;
   padding: 0 1rem;
   height: 3rem;
+
   width: 97%;
   border: 0.5px solid var(--border-color);
+
   border-radius: 17px;
   background-color: var(--bar-color);
 
@@ -33,9 +35,9 @@ const StyledNav = styled.nav`
   }
 `;
 
-export default function Nav() {
+export default function Nav({ mainTheme }) {
   return (
-    <StyledNav>
+    <StyledNav className={mainTheme}>
       <Link href="/marketplace">
         <BiHomeAlt2 size={25} />
       </Link>

@@ -9,13 +9,16 @@ import StarshipSellersList from "@/components/StarshipSellersList";
 import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
 import { StyledBackLink } from "@/components/Layout/StyledBackLink";
 import { HiArrowLeft } from "react-icons/hi";
+import useUser from "@/hooks/useUser";
 
 const StyledImageWrapper = styled.div`
   height: 285px;
   width: 330px;
   border-radius: 11px;
-  border: solid 1px #baf0e0;
-  margin-bottom: 1rem;
+
+
+  margin-bottom: 2rem;
+
   overflow: hidden;
   position: relative;
 `;
@@ -28,6 +31,7 @@ const StyledStarshipImage = styled(Image)`
 `;
 
 export default function Starship() {
+  const { mainTheme } = useUser();
   const router = useRouter();
   const { id } = router.query;
   const { data: starship, isLoading } = useSWR(
@@ -58,7 +62,7 @@ export default function Starship() {
         <StyledPageTitle>{name}</StyledPageTitle>
         <Flex direction="column" padding="1.5rem" alignItems="center">
           <Flex direction="column">
-            <StyledImageWrapper>
+            <StyledImageWrapper className={mainTheme}>
               <StyledStarshipImage
                 src={img}
                 alt={name}
@@ -67,6 +71,7 @@ export default function Starship() {
                 layout="responsive"
               />
             </StyledImageWrapper>
+
 
             <StarshipInfo label="Model:" value={model} />
             <StarshipInfo label="Manufacturer:" value={manufacturer} />
@@ -77,6 +82,7 @@ export default function Starship() {
                   ? max_atmosphering_speed
                   : Number(max_atmosphering_speed).toLocaleString("en-US")
               }
+
             />
             <StarshipInfo
               label="Passengers:"

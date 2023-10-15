@@ -5,14 +5,17 @@ import MainLayout from "@/components/Layout/MainLayout";
 import useUser from "@/hooks/useUser";
 
 export default function App({ Component, pageProps }) {
-  const { mainUser } = useUser();
+  const { mainUser, mainTheme } = useUser();
   if (!mainUser) {
     return <div>Loading</div>;
   }
 
   return (
     <SWRConfig value={{ fetcher }}>
-      <MainLayout mainUser={mainUser}>
+
+      <MainLayout mainUser={mainUser} mainTheme={mainTheme}>
+
+
         <GlobalStyle />
         <Component {...pageProps} mainUser={mainUser} />
       </MainLayout>

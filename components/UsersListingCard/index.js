@@ -9,7 +9,6 @@ const StyledImageWrapper = styled.div`
   height: 135px;
   width: 135px;
   border-radius: 11px;
-  border: solid 1px #baf0e0;
   overflow: hidden;
   position: relative;
 `;
@@ -34,14 +33,14 @@ export default function UsersListingCard({
   userCredits,
   price,
 }) {
-  const { mainUser } = useUser();
+  const { mainUser, mainTheme } = useUser();
   if (!mainUser) {
     return <div>Loading</div>;
   }
 
   return (
     <Flex height="150px" width="90%" justifyContent="space-between">
-      <StyledImageWrapper>
+      <StyledImageWrapper className={mainTheme}>
         <StyledStarshipImage
           src={img}
           alt={name}
@@ -58,7 +57,9 @@ export default function UsersListingCard({
       >
         <StyledParagraph>{name}</StyledParagraph>
 
-        <StyledParagraph>Price: {price}</StyledParagraph>
+        <StyledParagraph>
+          Price: {price.toLocaleString("en-US")}
+        </StyledParagraph>
         <BuyButton
           buyerId={mainUser._id}
           sellerId={userId}
