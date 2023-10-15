@@ -16,8 +16,8 @@ const StyledLink = styled(Link)`
   z-index: 1;
 `;
 const StyledImageWrapper = styled.div`
-  height: 140px;
-  width: 140px;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
   overflow: hidden;
   position: relative;

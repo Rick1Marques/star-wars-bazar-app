@@ -19,8 +19,8 @@ const StyledLink = styled(Link)`
 
 const StyledImageWrapper = styled.div`
   margin-top: 3rem;
-  height: 140px;
-  width: 140px;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
   overflow: hidden;
   position: relative;

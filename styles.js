@@ -43,11 +43,13 @@ background: black;
     z-index: -1;
   }
   .red {
-    border: 0.5px solid red;
+    // border: 0.5px solid red;
+    box-shadow: 0 0 8px 2px red
 
   }
   .green {
-    border: 0.5px solid green;
+    // border: 0.5px solid green;
+    box-shadow: 0 0 8px 2px green
   }
 
 
