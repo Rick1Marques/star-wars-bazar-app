@@ -5,6 +5,15 @@ import useUser from "@/hooks/useUser";
 import { mutate } from "swr";
 import BuyButton from "../BuyButton";
 
+const StyledCard = styled.div`
+  height: 170px;
+  width: 90%;
+  border-radius: 20px;
+
+  padding: 1rem;
+  background: rgba(242, 242, 242, 0.04);
+`;
+
 const StyledImageWrapper = styled.div`
   height: 135px;
   width: 135px;
@@ -22,6 +31,7 @@ const StyledStarshipImage = styled(Image)`
 
 const StyledParagraph = styled.p`
   color: var(--secondary-color);
+  text-align: center;
 `;
 
 export default function UsersListingCard({
@@ -39,38 +49,40 @@ export default function UsersListingCard({
   }
 
   return (
-    <Flex height="150px" width="90%" justifyContent="space-between">
-      <StyledImageWrapper className={mainTheme}>
-        <StyledStarshipImage
-          src={img}
-          alt={name}
-          height={0}
-          width={0}
-          layout="responsive"
-        />
-      </StyledImageWrapper>
-      <Flex
-        width="50%"
-        direction="column"
-        alignItems="center"
-        justifyContent="center"
-      >
-        <StyledParagraph>{name}</StyledParagraph>
+    <StyledCard className={mainTheme}>
+      <Flex justifyContent="space-between">
+        <StyledImageWrapper>
+          <StyledStarshipImage
+            src={img}
+            alt={name}
+            height={0}
+            width={0}
+            layout="responsive"
+          />
+        </StyledImageWrapper>
+        <Flex
+          width="50%"
+          direction="column"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <StyledParagraph>{name}</StyledParagraph>
 
-        <StyledParagraph>
-          Price: {price.toLocaleString("en-US")}
-        </StyledParagraph>
-        <BuyButton
-          buyerId={mainUser._id}
-          sellerId={userId}
-          starshipId={starshipId}
-          listingId={listingId}
-          price={price}
-          buyerCredit={mainUser.credits}
-          sellerCredit={userCredits}
-          buyerStarships={mainUser.starships}
-        />
+          <StyledParagraph>
+            Price: {price.toLocaleString("en-US")}
+          </StyledParagraph>
+          <BuyButton
+            buyerId={mainUser._id}
+            sellerId={userId}
+            starshipId={starshipId}
+            listingId={listingId}
+            price={price}
+            buyerCredit={mainUser.credits}
+            sellerCredit={userCredits}
+            buyerStarships={mainUser.starships}
+          />
+        </Flex>
       </Flex>
-    </Flex>
+    </StyledCard>
   );
 }
