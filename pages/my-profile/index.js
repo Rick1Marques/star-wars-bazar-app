@@ -15,11 +15,16 @@ const StyledLink = styled(Link)`
   z-index: 1;
 `;
 const StyledImageWrapper = styled.div`
-  height: 200px;
-  width: 200px;
+  height: 160px;
+  width: 160px;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
+`;
+const StyledButton = styled.button`
+  border-radius: 50%;
+  padding: 0;
+  border: 0;
 `;
 
 const StyledUserImage = styled(Image)`
@@ -31,12 +36,28 @@ const StyledUserImage = styled(Image)`
   object-fit: cover;
 `;
 
+const StyledImageThemeWrapper = styled.div`
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+`;
+
+const StyledThemeImage = styled(Image)`
+  fill: #303030;
+  stroke-width: 1px;
+  stroke: #646464;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  object-position: top;
+  object-fit: cover;
+`;
+
 const StyledNameFrame = styled.div`
   width: 16.25rem;
   height: 2.5rem;
-  padding: 7px;
+  padding-top: 7px;
   border-radius: 6px;
-
   text-align: center;
   background: #2c2c2c;
 `;
@@ -67,6 +88,10 @@ const StyledCredit = styled.p`
   margin-bottom: 50px;
   height: 10px;
 `;
+const StyledName = styled.p`
+  color: var(--secondary-color);
+  margin-top: 2px;
+`;
 
 export default function MyProfile({ mainUser }) {
   const { mainTheme, theme } = useUser();
@@ -88,7 +113,9 @@ export default function MyProfile({ mainUser }) {
           />
         </StyledImageWrapper>
 
-        <StyledNameFrame className={mainTheme}>{mainUser.name}</StyledNameFrame>
+        <StyledNameFrame className={mainTheme}>
+          <StyledName>{mainUser.name}</StyledName>
+        </StyledNameFrame>
         <Flex direction="column" alignItems="center">
           <StyledTitleCredit>Total amount of credits:</StyledTitleCredit>
           <StyledCredit>
@@ -107,9 +134,32 @@ export default function MyProfile({ mainUser }) {
             My Selling List
           </StyledLink>
         </StyledNameFrame>
-        <Flex>
-          <button onClick={() => theme("red")}>Sith</button>
-          <button onClick={() => theme("green")}>Jedi</button>
+        <StyledTitleCredit>Choose your theme</StyledTitleCredit>
+        <Flex width="70%" justifyContent="space-around">
+          <StyledButton onClick={() => theme("red")} className="red">
+            <StyledImageThemeWrapper>
+              <StyledThemeImage
+                alt="Sith logo"
+                src="https://m.media-amazon.com/images/I/51f7d5vaMGL._AC_UF894,1000_QL80_.jpg"
+                height={0}
+                width={0}
+                layout="responsive"
+              />
+            </StyledImageThemeWrapper>
+          </StyledButton>
+          <StyledButton onClick={() => theme("green")} className="green">
+            <StyledImageThemeWrapper>
+              <StyledThemeImage
+                alt="Jedi logo"
+                src={
+                  "https://img.elo7.com.br/product/zoom/314BBC3/adesivo-branco-starwars-ordem-jedi-10x10cm-alianca.jpg"
+                }
+                height={0}
+                width={0}
+                layout="responsive"
+              />
+            </StyledImageThemeWrapper>
+          </StyledButton>
         </Flex>
       </Flex>
     </main>
