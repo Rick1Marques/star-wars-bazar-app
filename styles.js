@@ -28,6 +28,7 @@ export default createGlobalStyle`
     margin: 0;
     color: var(--secondary-color);
 background: black;
+
   }
 
 
@@ -39,6 +40,7 @@ background: black;
     height:100%;
     overflow: hidden;
     background: transparent;
+    z-index: -1;
   }
 
 `;

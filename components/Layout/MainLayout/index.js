@@ -9,6 +9,7 @@ import Stars from "@/components/threeJs/components/Stars";
 
 const StyledMain = styled.main`
   margin-bottom: 6rem;
+  z-index: 1;
 `;
 
 const blinker = Blinker({
