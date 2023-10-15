@@ -1,13 +1,9 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
-
 import Link from "next/link";
-import Listing from "@/db/models/Listing";
-
 import { deleteListing } from "@/lib/api";
 import useSWR from "swr";
-import { StyledButton } from "../Layout/StyledButton";
 
 const StyledImageWrapper = styled.div`
   height: 135px;
@@ -30,10 +26,7 @@ const StyledParagraph = styled.p`
 `;
 
 export default function ListingCard({ _id, name, img, price }) {
-  const { data: listings, isLoading, mutate } = useSWR("/api/listings");
-  if (!listings || isLoading) {
-    return "Loading...";
-  }
+  const { mutate } = useSWR("/api/listings");
 
   async function onDelete(id) {
     if (!confirm("Are you sure you want to delete this starship?")) {
