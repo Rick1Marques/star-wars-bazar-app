@@ -22,18 +22,16 @@ const StyledImageWrapper = styled.div`
 
 const StyledCard = styled.div`
   border-radius: 20px;
-  border: 0.5px solid #c7c7c7;
+
   padding: 1rem;
   background: rgba(242, 242, 242, 0.04);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
+  box-shadow: 0 0 6px 1px #c8c8c8;
 `;
 
 const StyledStarshipImage = styled(Image)`
   object-fit: cover;
 
   object-position: top;
-
 `;
 
 const StyledParagraph = styled.p`
@@ -65,7 +63,7 @@ export default function ListingsStarshipCard({
   }
 
   return (
-    <StyledCard className={mainTheme}>
+    <StyledCard>
       <Flex justifyContent="space-around">
         <Flex direction="column" alignItems="center" gap=".5px">
           <StyledLink href={`/users/${userId}`} key={userId}>
