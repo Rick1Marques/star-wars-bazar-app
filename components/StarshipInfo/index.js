@@ -6,7 +6,7 @@ const StyledDetail = styled.dd`
 `;
 
 const StyledTerm = styled.dt`
-  color: var(--primary-title-color);
+  color: #cdffbb;
 `;
 
 function info(word) {
