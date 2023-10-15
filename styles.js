@@ -27,7 +27,7 @@ export default createGlobalStyle`
   body {
     margin: 0;
     color: var(--secondary-color);
-background: #080808;
+background: black;
   }
 
 

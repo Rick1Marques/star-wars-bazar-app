@@ -24,20 +24,7 @@ export default function MainLayout({ mainUser, children }) {
         <Head>
           <title>Star Wars Bazaar</title>
         </Head>
-        <StyledMain className={blinker.className}>
-          <div className="space-background">
-            <Canvas
-              camera={{
-                fov: 45,
-                position: [0, 0, 5 * bigGroupRadius],
-              }}
-            >
-              <Stars />
-            </Canvas>
-          </div>
-
-          {children}
-        </StyledMain>
+        <StyledMain className={blinker.className}>{children}</StyledMain>
       </>
     );
   }
