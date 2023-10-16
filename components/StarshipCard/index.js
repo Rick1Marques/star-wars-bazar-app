@@ -7,7 +7,7 @@ const StyledImageWrapper = styled.div`
   height: 160px;
   width: 160px;
   border-radius: 11px;
-
+  background: rgba(242, 242, 242, 0.04);
   overflow: hidden;
   position: relative;
 `;

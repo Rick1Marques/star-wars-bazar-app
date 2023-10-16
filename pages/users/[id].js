@@ -11,10 +11,10 @@ import { StyledBackLink } from "@/components/Layout/StyledBackLink";
 const StyledUserImage = styled(Image)`
   margin-top: 3rem;
   border-radius: 50%;
-  border: solid 1px #646464;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   object-position: top;
   object-fit: cover;
+  box-shadow: 0 0 5px 0.5px grey;
 `;
 
 const StyledUserName = styled.div`
@@ -24,6 +24,7 @@ const StyledUserName = styled.div`
   border-radius: 6px;
   text-align: center;
   color: var(--secondary-color);
+  box-shadow: 0 0 5px 0.5px grey;
 `;
 const StyledBackButton = styled.button`
   position: absolute;
@@ -56,14 +57,8 @@ export default function User() {
         <HiArrowLeft gap="10px" color="white" />
       </StyledBackButton>
       <Flex direction="column" alignItems="center" gap="30px">
-        <StyledUserImage
-          className={mainTheme}
-          alt={name}
-          src={avatar}
-          width={140}
-          height={140}
-        />
-        <StyledUserName className={mainTheme}>{name}</StyledUserName>
+        <StyledUserImage alt={name} src={avatar} width={140} height={140} />
+        <StyledUserName>{name}</StyledUserName>
         <p style={{ color: "#cdffbb", fontSize: "1.1rem" }}>
           This user is selling:
         </p>

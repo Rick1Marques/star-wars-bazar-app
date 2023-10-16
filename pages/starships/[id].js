@@ -15,12 +15,10 @@ const StyledImageWrapper = styled.div`
   height: 285px;
   width: 330px;
   border-radius: 11px;
-
-
   margin-bottom: 2rem;
-
   overflow: hidden;
   position: relative;
+  background: rgba(242, 242, 242, 0.04);
 `;
 const StyledStarshipImage = styled(Image)`
   object-fit: cover;
@@ -72,7 +70,6 @@ export default function Starship() {
               />
             </StyledImageWrapper>
 
-
             <StarshipInfo label="Model:" value={model} />
             <StarshipInfo label="Manufacturer:" value={manufacturer} />
             <StarshipInfo
@@ -82,7 +79,6 @@ export default function Starship() {
                   ? max_atmosphering_speed
                   : Number(max_atmosphering_speed).toLocaleString("en-US")
               }
-
             />
             <StarshipInfo
               label="Passengers:"
