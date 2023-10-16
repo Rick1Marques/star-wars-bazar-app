@@ -23,7 +23,7 @@ const StyledCard = styled.div`
   border-radius: 20px;
   padding: 1rem;
   background: rgba(242, 242, 242, 0.04);
-  box-shadow: 0 0 2px 0px #c8c8c8;
+  box-shadow: 0 0 5px 0.5px grey;
 `;
 
 const StyledStarshipImage = styled(Image)`

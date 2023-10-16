@@ -31,6 +31,7 @@ const StyledParagraph = styled.p`
   font-weight: 300;
   line-height: normal;
   color: var(--secondary-color);
+  text-align: center;
 `;
 
 export default function StarshipCollectionCard({ _id, name, img }) {

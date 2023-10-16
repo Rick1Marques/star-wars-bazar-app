@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
 import StarshipInfo from "@/components/StarshipInfo";
+import useUser from "@/hooks/useUser";
 
 const StyledStarshipImage = styled(Image)`
   object-fit: cover;
@@ -15,7 +16,7 @@ const StyledImageWrapper = styled.div`
   height: 285px;
   width: 330px;
   border-radius: 11px;
-  border: 0.5px solid var(--secondary-color);
+
   margin-bottom: 2rem;
   overflow: hidden;
   position: relative;
@@ -31,9 +32,10 @@ export default function Offercard({
   cargo_capacity,
   starship_class,
 }) {
+  const { mainTheme } = useUser();
   return (
     <Flex direction="column">
-      <StyledImageWrapper>
+      <StyledImageWrapper className={mainTheme}>
         <StyledStarshipImage
           src={img}
           alt={name}

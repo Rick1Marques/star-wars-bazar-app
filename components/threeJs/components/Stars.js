@@ -40,7 +40,7 @@ export default function Stars() {
       </bufferGeometry>
       <pointsMaterial
         map={starsTexture}
-        size={0.8}
+        size={10}
         sizeAttenuation={true}
         transparent={true}
         alphaMap={starsTexture}

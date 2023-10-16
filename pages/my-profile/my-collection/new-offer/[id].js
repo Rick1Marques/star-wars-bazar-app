@@ -8,12 +8,8 @@ import { createListing } from "@/lib/api";
 import { mutate } from "swr";
 import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
 import Offercard from "@/components/OfferCard";
-
-const StyledBackLink = styled(Link)`
-  text-decoration: none;
-  color: white;
-  align-self: flex-start;
-`;
+import { StyledBackLink } from "@/components/Layout/StyledBackLink";
+import { HiArrowLeft } from "react-icons/hi";
 
 export default function NewOffer({ mainUser }) {
   const router = useRouter();
@@ -47,7 +43,9 @@ export default function NewOffer({ mainUser }) {
 
   return (
     <Flex direction="column" padding="1.5rem" alignItems="center">
-      <StyledBackLink href="/my-profile/my-collection">Back</StyledBackLink>
+      <StyledBackLink href="/my-profile/my-collection">
+        <HiArrowLeft />
+      </StyledBackLink>
       <StyledPageTitle>New offer</StyledPageTitle>
       <Offercard
         img={img}
@@ -61,7 +59,7 @@ export default function NewOffer({ mainUser }) {
       />
 
       <NewOfferForm
-        credit={default_cost_in_credits.toLocaleString("en-US")}
+        credit={default_cost_in_credits}
         id={_id}
         onSubmit={onSubmit}
         user={mainUser}

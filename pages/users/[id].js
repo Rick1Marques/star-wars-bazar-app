@@ -6,18 +6,15 @@ import Flex from "@/components/Layout/Flex";
 import UserList from "@/components/UserListings";
 import useUser from "@/hooks/useUser";
 import { HiArrowLeft } from "react-icons/hi";
+import { StyledBackLink } from "@/components/Layout/StyledBackLink";
 
 const StyledUserImage = styled(Image)`
-  margin-top: 30px;
+  margin-top: 3rem;
   border-radius: 50%;
   border: solid 1px #646464;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   object-position: top;
   object-fit: cover;
-
-
-
-
 `;
 
 const StyledUserName = styled.div`
@@ -27,6 +24,11 @@ const StyledUserName = styled.div`
   border-radius: 6px;
   text-align: center;
   color: var(--secondary-color);
+`;
+const StyledBackButton = styled.button`
+  position: absolute;
+  top: 35px;
+  left: 20px;
 `;
 
 export default function User() {
@@ -41,9 +43,8 @@ export default function User() {
   const { name, avatar, starships, listings, _id, credits } = user;
 
   return (
-
     <>
-      <button
+      <StyledBackButton
         style={{
           background: "transparent",
           borderColor: "transparent",
@@ -53,9 +54,15 @@ export default function User() {
         onClick={() => router.back()}
       >
         <HiArrowLeft gap="10px" color="white" />
-      </button>
+      </StyledBackButton>
       <Flex direction="column" alignItems="center" gap="30px">
-        <StyledUserImage className={mainTheme} alt={name} src={avatar} width={140} height={140} />
+        <StyledUserImage
+          className={mainTheme}
+          alt={name}
+          src={avatar}
+          width={140}
+          height={140}
+        />
         <StyledUserName className={mainTheme}>{name}</StyledUserName>
         <p style={{ color: "#cdffbb", fontSize: "1.1rem" }}>
           This user is selling:
@@ -68,6 +75,5 @@ export default function User() {
         />
       </Flex>
     </>
-
   );
 }
