@@ -28,6 +28,16 @@ const StyledStarshipImage = styled(Image)`
   margin: auto;
 `;
 
+const StyledTitleCredit = styled.h2`
+  margin-top: 10px;
+  font-size: 1.25rem;
+  font-weight: 300;
+  text-align: center;
+  background: linear-gradient(90deg, #8feecc 0%, rgba(215, 218, 53, 0.65) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;
+
 export default function Starship() {
   const { mainTheme } = useUser();
   const router = useRouter();
@@ -98,6 +108,7 @@ export default function Starship() {
             />
             <StarshipInfo label="Starship class:" value={starship_class} />
           </Flex>
+          <StyledTitleCredit>Sellers:</StyledTitleCredit>
         </Flex>
         <StarshipSellersList img={img} name={name} starshipId={_id} />
       </Flex>
