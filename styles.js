@@ -27,8 +27,7 @@ export default createGlobalStyle`
   body {
     margin: 0;
     color: var(--secondary-color);
-background: black;
-
+    background: #030917;
   }
 
 
@@ -43,13 +42,13 @@ background: black;
     z-index: -1;
   }
   .red {
-
-    box-shadow: 0 0 8px 2px red
+    border: 0.5px solid #a60303; 
+    box-shadow: 0 0 10px 0 #a60303; 
 
   }
   .green {
-
-    box-shadow: 0 0 8px 2px green
+    border: 0.5px solid #0DF205; 
+    box-shadow: 0 0 10px 0 #0DF205; 
   }
 
 

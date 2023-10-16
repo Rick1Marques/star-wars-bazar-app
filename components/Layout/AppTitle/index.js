@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledAppTitle = styled.h1`
-  color: var(--primary-title-color);
+  color: var(--secondary-color);
   font-size: 2rem;
   text-align: center;
   font-weight: 500;
