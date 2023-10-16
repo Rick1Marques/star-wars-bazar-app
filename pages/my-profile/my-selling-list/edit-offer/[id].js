@@ -1,4 +1,5 @@
 import useSWR from "swr";
+import useUser from "@/hooks/useUser";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import Image from "next/image";
@@ -23,7 +24,6 @@ const StyledImageWrapper = styled.div`
   height: 285px;
   width: 330px;
   border-radius: 11px;
-  border: 0.5px solid #baf0e0;
   margin-bottom: 0.5rem;
   overflow: hidden;
   position: relative;
@@ -31,6 +31,7 @@ const StyledImageWrapper = styled.div`
 
 export default function EditOffer({ mainUser }) {
   const router = useRouter();
+  const { mainTheme } = useUser();
   const { id } = router.query;
   const { data: listing, isLoading } = useSWR(
     id ? `/api/listings/${id}` : null
@@ -68,7 +69,7 @@ export default function EditOffer({ mainUser }) {
       <Flex direction="column" padding="1.5rem" alignItems="center">
         <StyledPageTitle>Edit offer</StyledPageTitle>
         <Flex direction="column">
-          <StyledImageWrapper>
+          <StyledImageWrapper className={mainTheme}>
             <StyledStarshipImage
               src={img}
               alt={name}

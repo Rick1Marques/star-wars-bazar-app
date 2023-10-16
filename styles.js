@@ -28,7 +28,6 @@ export default createGlobalStyle`
     margin: 0;
     color: var(--secondary-color);
     background: #030917;
-
   }
 
 
@@ -48,8 +47,8 @@ export default createGlobalStyle`
 
   }
   .green {
-    border: 0.5px solid #31a62d; 
-    box-shadow: 0 0 10px 0 #31a62d; 
+    border: 0.5px solid #0DF205; 
+    box-shadow: 0 0 10px 0 #0DF205; 
   }
 
 

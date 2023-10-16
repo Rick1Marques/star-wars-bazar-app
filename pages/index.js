@@ -6,8 +6,9 @@ import Universe from "@/Utilities";
 
 const StyledAppTitle = styled.h1`
   z-index: 1;
-  color: var(--primary-title-color);
+  color: #fcff69;
   font-size: 2rem;
+  font-weight: 500;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
@@ -17,7 +18,7 @@ const StyledAppTitle = styled.h1`
 
 const StyledTextTop = styled.p`
   z-index: 1;
-  color: var(--primary-title-color);
+  color: #fcff69;
   font-size: 0.8rem;
   position: absolute;
   left: 50%;
@@ -28,7 +29,7 @@ const StyledTextTop = styled.p`
 
 const StyledTextBottomOne = styled.p`
   z-index: 1;
-  color: var(--primary-title-color);
+  color: #fcff69;
   font-size: 0.8rem;
   position: absolute;
   left: 50%;
@@ -39,7 +40,7 @@ const StyledTextBottomOne = styled.p`
 `;
 const StyledTextBottomTwo = styled.p`
   z-index: 1;
-  color: var(--primary-title-color);
+  color: #fcff69;
   font-size: 0.8rem;
   position: absolute;
   left: 50%;

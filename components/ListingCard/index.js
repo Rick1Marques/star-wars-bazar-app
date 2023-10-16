@@ -8,12 +8,21 @@ import useSWR from "swr";
 import { StyledLink } from "../Layout/StyledLink";
 import { StyledButton } from "../Layout/StyledButton";
 
+const StyledListingCard = styled.div`
+  height: 280px;
+  width: 80%;
+  border-radius: 20px;
+  padding: 0rem;
+  background: rgba(242, 242, 242, 0.04);
+`;
+
 const StyledImageWrapper = styled.div`
   height: 135px;
   width: 135px;
   border-radius: 11px;
   overflow: hidden;
   position: relative;
+  margin-top: 10px;
 `;
 const StyledStarshipImage = styled(Image)`
   object-fit: cover;
@@ -40,36 +49,38 @@ export default function ListingCard({ _id, name, img, price }) {
   }
 
   return (
-    <Flex
-      height="150px"
-      width="90%"
-      direction="column"
-      alignItems="center"
-      padding="1rem"
-      gap=".5rem"
-    >
-      <StyledImageWrapper className={mainTheme}>
-        <StyledStarshipImage
-          src={img}
-          alt={name}
-          height={0}
-          width={0}
-          layout="responsive"
-        />
-      </StyledImageWrapper>
-      <Flex direction="column" alignItems="center">
-        <StyledParagraph>{name}</StyledParagraph>
-        <StyledParagraph>Price: {price}</StyledParagraph>
+    <StyledListingCard className={mainTheme}>
+      <Flex
+        height="50%"
+        width="100%"
+        direction="column"
+        alignItems="center"
+        padding="0rem"
+        gap=".5rem"
+      >
+        <StyledImageWrapper>
+          <StyledStarshipImage
+            src={img}
+            alt={name}
+            height={0}
+            width={0}
+            layout="responsive"
+          />
+        </StyledImageWrapper>
+        <Flex direction="column" alignItems="center">
+          <StyledParagraph>{name}</StyledParagraph>
+          <StyledParagraph>Price: {price}</StyledParagraph>
 
-        <Flex direction="row" gap="1rem">
-          <StyledLink href={`/my-profile/my-selling-list/edit-offer/${_id}`}>
-            Edit
-          </StyledLink>
-          <StyledButton type="button" onClick={() => onDelete(_id)}>
-            Delete
-          </StyledButton>
+          <Flex direction="row" gap="1rem">
+            <StyledLink href={`/my-profile/my-selling-list/edit-offer/${_id}`}>
+              Edit
+            </StyledLink>
+            <StyledButton type="button" onClick={() => onDelete(_id)}>
+              Delete
+            </StyledButton>
+          </Flex>
         </Flex>
       </Flex>
-    </Flex>
+    </StyledListingCard>
   );
 }
