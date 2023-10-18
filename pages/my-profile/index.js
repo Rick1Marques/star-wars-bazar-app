@@ -3,6 +3,10 @@ import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
 import Link from "next/link";
 import useUser from "@/hooks/useUser";
+import {
+  StyledPageTitle,
+  StyledTitleCredit,
+} from "@/components/Layout/StyledTitles";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -62,26 +66,6 @@ const StyledNameFrame = styled.div`
   background: #2c2c2c;
 `;
 
-const StyledProfileTitle = styled.h1`
-  margin-top: 30px;
-  font-size: 1.5rem;
-  font-weight: 400;
-  text-align: center;
-  background: linear-gradient(90deg, #8feecc 0%, rgba(215, 218, 53, 0.65) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-`;
-
-const StyledTitleCredit = styled.h2`
-  margin-top: 5px;
-  font-size: 1.25rem;
-  font-weight: 300;
-  text-align: center;
-  background: linear-gradient(90deg, #8feecc 0%, rgba(215, 218, 53, 0.65) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-`;
-
 const StyledCredit = styled.p`
   color: var(--secondary-color);
   font-size: 2rem;
@@ -102,7 +86,7 @@ export default function MyProfile({ mainUser }) {
   return (
     <main>
       <Flex direction="column" alignItems="center" gap="30px">
-        <StyledProfileTitle>My Profile</StyledProfileTitle>
+        <StyledPageTitle>My Profile</StyledPageTitle>
         <StyledImageWrapper className={mainTheme}>
           <StyledUserImage
             alt={mainUser.name}

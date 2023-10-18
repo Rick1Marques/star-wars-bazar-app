@@ -54,7 +54,7 @@ export default function ListingCard({ _id, name, img, price }) {
         direction="column"
         alignItems="center"
         padding="0rem"
-        gap=".5rem"
+        gap="0.5rem"
       >
         <StyledImageWrapper>
           <StyledStarshipImage

@@ -17,7 +17,7 @@ const StyledNav = styled.nav`
   border: 0.5px solid var(--border-color);
   border-radius: 17px;
   background-color: var(--bar-color);
-  max-width: 446px;
+  max-width: 436px;
   margin-left: auto;
   margin-right: auto;
 

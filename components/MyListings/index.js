@@ -1,4 +1,3 @@
-import useSWR from "swr";
 import Flex from "@/components/Layout/Flex";
 import ListingCard from "@/components/ListingCard";
 import useUser from "@/hooks/useUser";
