@@ -6,7 +6,6 @@ import Flex from "@/components/Layout/Flex";
 import UserList from "@/components/UserListings";
 import useUser from "@/hooks/useUser";
 import { HiArrowLeft } from "react-icons/hi";
-import { StyledBackLink } from "@/components/Layout/StyledLinkAndButton";
 
 const StyledUserImage = styled(Image)`
   margin-top: 3rem;
@@ -29,7 +28,9 @@ const StyledUserName = styled.div`
 const StyledBackButton = styled.button`
   position: absolute;
   top: 35px;
-  left: 20px;
+  left: 10%;
+  @media screen and (min-width: 600px) {
+    left: 32%;
 `;
 
 export default function User() {

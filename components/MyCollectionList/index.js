@@ -1,4 +1,3 @@
-import useSWR from "swr";
 import Flex from "@/components/Layout/Flex";
 import StarshipCollectionCard from "../StarshipCollectionCard";
 import useUser from "@/hooks/useUser";

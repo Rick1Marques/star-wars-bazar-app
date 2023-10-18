@@ -22,14 +22,23 @@ export default createGlobalStyle`
     weight: 400;
     font-size: 16px;
 
+   }
+
+  @media screen and (min-width: 600px) {
+
+    html {
+      weight: 400;
+      font-size: 16px;
+      max-width: 436px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
-  body {
-    margin: 0;
+   body {
     color: var(--secondary-color);
     background: #020409;
-  }
-
+   }
 
   .space-background{
     position:fixed;
@@ -50,8 +59,6 @@ export default createGlobalStyle`
     border: 0.5px solid #0DF205; 
     box-shadow: 0 0 10px 0 #0DF205; 
   }
-
-
 `;
 
 export const colors = {
