@@ -6,7 +6,7 @@ export const StyledBackLink = styled(Link)`
   color: white;
   position: absolute;
   top: 35px;
-  left: 10%;
+  left: 6%;
   @media screen and (min-width: 600px) {
     left: 32%;
 

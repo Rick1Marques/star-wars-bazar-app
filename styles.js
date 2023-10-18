@@ -17,11 +17,9 @@ export default createGlobalStyle`
     --border-color: #baf0e0;
   }
 
-
   html {
     weight: 400;
     font-size: 16px;
-
    }
 
   @media screen and (min-width: 600px) {

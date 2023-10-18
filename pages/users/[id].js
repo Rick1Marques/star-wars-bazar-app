@@ -28,7 +28,7 @@ const StyledUserName = styled.div`
 const StyledBackButton = styled.button`
   position: absolute;
   top: 35px;
-  left: 10%;
+  left: 6%;
   @media screen and (min-width: 600px) {
     left: 32%;
 `;
