@@ -1,12 +1,10 @@
 import useSWR from "swr";
 import { useRouter } from "next/router";
-import styled from "styled-components";
 import Flex from "@/components/Layout/Flex";
 import NewOfferForm from "@/components/NewOfferForm";
-import Link from "next/link";
 import { createListing } from "@/lib/api";
 import { mutate } from "swr";
-import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
+import { StyledPageTitle } from "@/components/Layout/StyledTitles";
 import Offercard from "@/components/OfferCard";
 import { StyledBackLink } from "@/components/Layout/StyledBackLink";
 import { HiArrowLeft } from "react-icons/hi";

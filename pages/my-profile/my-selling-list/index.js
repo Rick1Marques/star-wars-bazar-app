@@ -1,5 +1,5 @@
 import MyListings from "@/components/MyListings";
-import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
+import { StyledPageTitle } from "@/components/Layout/StyledTitles";
 import { StyledBackLink } from "@/components/Layout/StyledBackLink";
 import { HiArrowLeft } from "react-icons/hi";
 

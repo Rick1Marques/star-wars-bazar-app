@@ -1,12 +1,11 @@
 import useSWR from "swr";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import styled from "styled-components";
 import Image from "next/image";
 import Flex from "@/components/Layout/Flex";
 import StarshipInfo from "@/components/StarshipInfo";
 import StarshipSellersList from "@/components/StarshipSellersList";
-import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
+import { StyledPageTitle } from "@/components/Layout/StyledTitles";
 import { StyledBackLink } from "@/components/Layout/StyledBackLink";
 import { HiArrowLeft } from "react-icons/hi";
 import useUser from "@/hooks/useUser";

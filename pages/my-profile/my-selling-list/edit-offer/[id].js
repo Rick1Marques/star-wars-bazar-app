@@ -9,7 +9,7 @@ import StarshipInfo from "@/components/StarshipInfo";
 import { updateListing } from "@/lib/api";
 import { mutate } from "swr";
 import { HiArrowLeft } from "react-icons/hi";
-import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
+import { StyledPageTitle } from "@/components/Layout/StyledTitles";
 import { StyledBackLink } from "@/components/Layout/StyledBackLink";
 
 const StyledStarshipImage = styled(Image)`
