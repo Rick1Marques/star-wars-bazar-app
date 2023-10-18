@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
-import { StyledLink } from "../Layout/StyledLink";
+import { StyledLink } from "../Layout/StyledLinkAndButton";
 import useUser from "@/hooks/useUser";
 
 const StyledCollectionCard = styled.div`

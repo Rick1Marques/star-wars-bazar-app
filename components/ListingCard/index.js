@@ -2,11 +2,9 @@ import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
 import useUser from "@/hooks/useUser";
-import Link from "next/link";
 import { deleteListing } from "@/lib/api";
 import useSWR from "swr";
-import { StyledLink } from "../Layout/StyledLink";
-import { StyledButton } from "../Layout/StyledButton";
+import { StyledLink, StyledButton } from "../Layout/StyledLinkAndButton";
 
 const StyledListingCard = styled.div`
   height: 280px;

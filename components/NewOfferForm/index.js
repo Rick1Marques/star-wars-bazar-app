@@ -1,5 +1,5 @@
 import Flex from "../Layout/Flex";
-import { StyledButton } from "../Layout/StyledButton";
+import { StyledButton } from "../Layout/StyledLinkAndButton";
 import styled from "styled-components";
 
 export const StyledForm = styled.form`

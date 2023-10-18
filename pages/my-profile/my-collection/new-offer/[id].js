@@ -5,8 +5,8 @@ import NewOfferForm from "@/components/NewOfferForm";
 import { createListing } from "@/lib/api";
 import { mutate } from "swr";
 import { StyledPageTitle } from "@/components/Layout/StyledTitles";
-import Offercard from "@/components/OfferCard";
-import { StyledBackLink } from "@/components/Layout/StyledBackLink";
+import Offercard from "@/components/InfoCard";
+import { StyledBackLink } from "@/components/Layout/StyledLinkAndButton";
 import { HiArrowLeft } from "react-icons/hi";
 
 export default function NewOffer({ mainUser }) {

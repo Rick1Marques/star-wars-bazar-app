@@ -6,7 +6,7 @@ import Flex from "@/components/Layout/Flex";
 import UserList from "@/components/UserListings";
 import useUser from "@/hooks/useUser";
 import { HiArrowLeft } from "react-icons/hi";
-import { StyledBackLink } from "@/components/Layout/StyledBackLink";
+import { StyledBackLink } from "@/components/Layout/StyledLinkAndButton";
 
 const StyledUserImage = styled(Image)`
   margin-top: 3rem;
