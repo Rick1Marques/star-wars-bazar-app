@@ -14,6 +14,8 @@ const StyledAppTitle = styled.h1`
   transform: translate(-50%, 0);
   text-wrap: nowrap;
   margin-top: 2rem;
+  width: 100%;
+  text-align: center;
 `;
 
 const StyledTextTop = styled.p`
