@@ -2,12 +2,6 @@ import styled from "styled-components";
 import Link from "next/link";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { BiUserCircle } from "react-icons/bi";
-import { Blinker } from "@next/font/google";
-
-const blinker = Blinker({
-  subsets: ["latin"],
-  weight: ["400", "600"],
-});
 
 const StyledNav = styled.nav`
   display: flex;
@@ -19,12 +13,13 @@ const StyledNav = styled.nav`
   position: fixed;
   padding: 0 1rem;
   height: 3rem;
-
   width: 97%;
   border: 0.5px solid var(--border-color);
-
   border-radius: 17px;
   background-color: var(--bar-color);
+  max-width: 436px;
+  margin-left: auto;
+  margin-right: auto;
 
   a {
     text-decoration: none;

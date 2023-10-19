@@ -1,8 +1,7 @@
 import MyCollectionList from "@/components/MyCollectionList";
-import { StyledPageTitle } from "@/components/Layout/StyledPageTitle";
-import { StyledBackLink } from "@/components/Layout/StyledBackLink";
+import { StyledPageTitle } from "@/components/Layout/StyledTitles";
+import { StyledBackLink } from "@/components/Layout/StyledLinkAndButton";
 import { HiArrowLeft } from "react-icons/hi";
-import Flex from "@/components/Layout/Flex";
 
 export default function MyCollection() {
   return (

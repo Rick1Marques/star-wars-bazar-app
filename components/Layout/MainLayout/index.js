@@ -1,7 +1,6 @@
 import Flex from "../Flex";
 import Nav from "../Nav";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import styled from "styled-components";
 import { Blinker } from "@next/font/google";
 import { Canvas } from "@react-three/fiber";
@@ -18,13 +17,8 @@ const blinker = Blinker({
   weight: ["400", "600"],
 });
 
-
-
 export default function MainLayout({ mainUser, children, mainTheme }) {
-
-
   const { bigGroupRadius } = Universe();
-
 
   if (!mainUser._id) {
     return (
@@ -56,9 +50,7 @@ export default function MainLayout({ mainUser, children, mainTheme }) {
         {children}
       </StyledMain>
       <Flex justifyContent="center">
-
         <Nav mainTheme={mainTheme} />
-
       </Flex>
     </>
   );

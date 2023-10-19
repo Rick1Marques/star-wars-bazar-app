@@ -16,13 +16,14 @@ const StyledImageWrapper = styled.div`
   height: 285px;
   width: 330px;
   border-radius: 11px;
-
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   overflow: hidden;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
-export default function Offercard({
+export default function InfoCard({
   img,
   name,
   model,
@@ -47,9 +48,30 @@ export default function Offercard({
 
       <StarshipInfo label="Model:" value={model} />
       <StarshipInfo label="Manufacturer:" value={manufacturer} />
-      <StarshipInfo label="Max. speed:" value={max_atmosphering_speed} />
-      <StarshipInfo label="Passengers:" value={passengers} />
-      <StarshipInfo label="Cargo capacity:" value={cargo_capacity} />
+      <StarshipInfo
+        label="Max. speed:"
+        value={
+          isNaN(max_atmosphering_speed) === true
+            ? max_atmosphering_speed
+            : Number(max_atmosphering_speed).toLocaleString("en-US")
+        }
+      />
+      <StarshipInfo
+        label="Passengers:"
+        value={
+          isNaN(passengers) === true
+            ? passengers
+            : Number(passengers).toLocaleString("en-US")
+        }
+      />
+      <StarshipInfo
+        label="Cargo capacity:"
+        value={
+          isNaN(cargo_capacity) === true
+            ? cargo_capacity
+            : Number(cargo_capacity).toLocaleString("en-US")
+        }
+      />
       <StarshipInfo label="Starship class:" value={starship_class} />
     </Flex>
   );

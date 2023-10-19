@@ -2,7 +2,6 @@ import Image from "next/image";
 import styled from "styled-components";
 import Flex from "../Layout/Flex";
 import useUser from "@/hooks/useUser";
-import { mutate } from "swr";
 import BuyButton from "../BuyButton";
 
 const StyledCard = styled.div`
